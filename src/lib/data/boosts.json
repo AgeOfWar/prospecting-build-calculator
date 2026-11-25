@@ -365,7 +365,7 @@
 			}
 		},
 		"rawEffects": [
-			"Luminant Totems can be placed in a dig site to grant all players in the effect radius a boost of 1.5× Capacity , +50% Dig Speed , and +50% Shake Speed . In addition, Luminant totems give immunity from the darkness in the Abyssal Depths , and keep the swamp monsters away in Rotwood Swamp . Each totem lasts 30 minutes, but multiple totems can be stacked to extend the time. Obtainment [ edit ] Purchase in Rotwood Swamp for 600 Treasure Chest rewards: Rotwood Swamp Starfall River Purchase in Haunted Creek shop for 60 Forever Pack (Robux) Dredge Master random reward Usage [ edit ] Stand where you want to place the totem, select it from your backpack (or hotbar), and click once . To extend the time, stand in the effect radius of an already-placed totem (yours or someone else's), select the totem from your backpack/hotbar, and click once for each half-hour you want to add to the time. Totems cannot be moved once placed, so be careful when selecting one in your inventory, especially on mobile."
+			"Luminant Totems can be placed in a dig site to grant all players in the effect radius a boost of 1.5× Capacity, +50% Dig Speed, and +50% Shake Speed. In addition, Luminant totems give immunity from the darkness in the Abyssal Depths, and keep the swamp monsters away in Rotwood Swamp."
 		],
 		"duration": "30 minutes",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Relics#Luminant_Totem"

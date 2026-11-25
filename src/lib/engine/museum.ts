@@ -80,15 +80,15 @@ export function getMuseumModifierIneligibilityReason(
 ): string | null {
 	if (!modifierId || isMuseumModifierAllowedForOre(ore, modifierId)) return null;
 	if (modifierId === 'treasured') {
-		return `${ore.name} non si trova nelle 8 zone con Treasure Chest: non può avere il modifier Treasured.`;
+		return `${ore.name} does not drop in the 8 Treasure Chest zones: it cannot have the Treasured modifier.`;
 	}
 	if (modifierId === 'entombed') {
-		return `${ore.name} non si trova nella Pharaoh's Tomb: non può avere il modifier Entombed.`;
+		return `${ore.name} is not found in Pharaoh's Tomb: it cannot have the Entombed modifier.`;
 	}
 	if (ore.chestOnly) {
-		return `${ore.name} si ottiene solo da chest nella Pharaoh's Tomb: non può avere modifier da panning.`;
+		return `${ore.name} only drops from chests in Pharaoh's Tomb: it cannot have panning modifiers.`;
 	}
-	return `${ore.name} non è compatibile con il modifier selezionato.`;
+	return `${ore.name} is not compatible with the selected modifier.`;
 }
 
 function createZeroStatRecord(): Record<StatKey, number> {
@@ -110,7 +110,7 @@ function createZeroStatRecord(): Record<StatKey, number> {
 	};
 }
 
-export function createDefaultSavedMuseum(name = 'Il mio Museo'): SavedMuseum {
+export function createDefaultSavedMuseum(name = 'My Museum'): SavedMuseum {
 	return {
 		id: '',
 		name,
@@ -238,7 +238,7 @@ export function calculateMuseumSummary(museum: SavedMuseum): MuseumSummary {
 	for (const { name, count } of oreCounts.values()) {
 		if (count > 1) {
 			duplicateWarnings.push(
-				`${name} è inserito in ${count} display (in gioco puoi esporre ogni minerale al massimo una volta).`
+				`${name} is placed in ${count} displays (in-game you can only display each mineral once).`
 			);
 		}
 	}

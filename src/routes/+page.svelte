@@ -34,15 +34,15 @@
 	<title>Dashboard • Prospecting! Build Calculator</title>
 </svelte:head>
 
-<main class="mx-auto max-w-6xl space-y-6 px-6 py-8">
+<main class="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 sm:py-8">
 	<section
 		class="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-amber-500/30 bg-gradient-to-r from-amber-500/10 via-slate-900/80 to-slate-900/80 p-6"
 	>
 		<div>
-			<h1 class="text-xl font-bold text-white">Crea e salva il tuo equipaggiamento</h1>
+			<h1 class="text-xl font-bold text-white">Create &amp; save your build</h1>
 			<p class="mt-1 text-sm text-slate-300">
-				Componi Pan, Shovel, 1 Necklace, 1 Charm, 8 Rings (Base o 6★), Runes e Potions, salva nel browser e controlla il
-				riepilogo completo delle statistiche.
+				Customize your Pan, Shovel, 1 Necklace, 1 Charm, 8 Rings (Base or 6★), Runes, and Potions, save them in your
+				browser, and inspect your full stat breakdown.
 			</p>
 		</div>
 		<div class="flex flex-wrap gap-2.5">
@@ -50,26 +50,26 @@
 				href="/builder"
 				class="inline-flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-amber-400"
 			>
-				Apri Equipaggiamento
+				Open Build Builder
 				<span aria-hidden="true">→</span>
 			</a>
 			<a
 				href="/museum"
 				class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-amber-400/50 hover:text-amber-200"
 			>
-				Configura Museo
+				Configure Museum
 			</a>
 			<a
 				href="/optimizer"
 				class="inline-flex items-center gap-2 rounded-lg border border-emerald-500/40 bg-emerald-500/15 px-4 py-2.5 text-sm font-semibold text-emerald-200 transition hover:bg-emerald-500/25"
 			>
-				Ottimizzatore Build + Museo
+				Build + Museum Optimizer
 			</a>
 			<a
 				href="/chance"
 				class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2.5 text-sm font-semibold text-slate-100 transition hover:border-amber-400/50 hover:text-amber-200"
 			>
-				Calcolo Probabilità Minerali
+				Mineral Drop Chances
 			</a>
 		</div>
 	</section>
@@ -78,9 +78,9 @@
 		<section class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
 			<div class="flex items-center justify-between">
 				<h2 class="text-base font-semibold text-white">
-					Equipaggiamenti Salvati ({savedBuilds.length})
+					Saved Builds ({savedBuilds.length})
 				</h2>
-				<a href="/builder" class="text-xs font-medium text-amber-300 hover:underline"> Gestisci tutti → </a>
+				<a href="/builder" class="text-xs font-medium text-amber-300 hover:underline"> Manage all → </a>
 			</div>
 			<div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 				{#each savedBuilds as entry (entry.id)}
@@ -95,20 +95,20 @@
 									href={`/builder?load=${encodeURIComponent(entry.id)}`}
 									class="font-medium text-amber-300 hover:underline"
 								>
-									Modifica
+									Edit
 								</a>
 								<span class="text-slate-600">•</span>
 								<a
 									href={`/chance?build=${encodeURIComponent(entry.id)}`}
 									class="font-medium text-emerald-300 hover:underline"
 								>
-									Calcola %
+									Drop Odds
 								</a>
 							</div>
 						</div>
 						<div class="mt-2 flex flex-wrap gap-1.5 text-[11px]">
 							<span class="rounded bg-slate-800 px-2 py-0.5 text-slate-300">
-								{resolved.pan?.name ?? 'Nessuna Pan'}
+								{resolved.pan?.name ?? 'No Pan'}
 							</span>
 							<span class="rounded bg-amber-500/10 px-2 py-0.5 font-mono text-amber-300">
 								Luck {formatNumber(stats.luck.final)}
@@ -124,7 +124,7 @@
 	{/if}
 
 	<div class="grid gap-6 lg:grid-cols-3">
-		<section class="space-y-6 lg:col-span-2">
+		<section class="min-w-0 space-y-6 lg:col-span-2">
 			<div class="grid gap-4 sm:grid-cols-2">
 				<div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
 					<div class="flex items-center justify-between">
@@ -153,13 +153,13 @@
 
 			<div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
 				<div class="flex items-center justify-between">
-					<h2 class="text-base font-semibold text-white">Jewelry Loadout</h2>
+					<h2 class="text-base font-semibold text-white">Equipment</h2>
 					<span class="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-300">
-						{EQUIPMENT.length} items in catalogo
+						{EQUIPMENT.length} items in catalog
 					</span>
 				</div>
 				<p class="mt-1 text-xs text-slate-400">
-					1 Necklace, 1 Charm e fino a {MAX_RING_SLOTS} Rings (con supporto per Base e 6★).
+					1 Necklace, 1 Charm, and up to {MAX_RING_SLOTS} Rings (supports Base and 6★ upgrades).
 				</p>
 			</div>
 
@@ -171,12 +171,12 @@
 					</span>
 				</div>
 				<p class="mt-1 text-xs text-slate-400">
-					Bonus passivi e moltiplicatori globali: Runes, Museum Collections, Totems, Potions e Mastery.
+					Passive bonuses and global multipliers: Runes, Museum Collections, Totems, Potions, and Mastery.
 				</p>
 			</div>
 		</section>
 
-		<aside class="space-y-6">
+		<aside class="min-w-0 space-y-6">
 			<div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
 				<div class="flex items-center justify-between">
 					<h2 class="text-base font-semibold text-white">Stat Summary</h2>

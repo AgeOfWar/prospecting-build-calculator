@@ -82,7 +82,7 @@
 
 	const oresById = new Map(MUSEUM_ORES.map((o) => [o.id, o]));
 
-	let museum = $state<SavedMuseum>(createDefaultSavedMuseum('Il mio Museo'));
+	let museum = $state<SavedMuseum>(createDefaultSavedMuseum('My Museum'));
 	let savedMuseums = $state<SavedMuseum[]>([]);
 	let hydrated = $state(false);
 	let lastLoadedQueryId = $state<string | null>(null);
@@ -143,32 +143,32 @@
 		const toSave: SavedMuseum = {
 			...snapshot,
 			id,
-			name: snapshot.name.trim() || 'Museo Senza Nome',
+			name: snapshot.name.trim() || 'Untitled Museum',
 			updatedAt: new Date().toISOString(),
 		};
 		savedMuseums = upsertSavedMuseum(toSave);
 		museum = toSave;
-		notify(`Museo "${toSave.name}" salvato.`);
+		notify(`Museum "${toSave.name}" saved.`);
 	}
 
 	function handleSaveAsNew(): void {
 		const snapshot = $state.snapshot(museum);
-		const baseName = snapshot.name.trim() || 'Nuovo Museo';
+		const baseName = snapshot.name.trim() || 'New Museum';
 		const toSave: SavedMuseum = {
 			...snapshot,
 			id: generateMuseumId(),
-			name: snapshot.id ? `${baseName} (Copia)` : baseName,
+			name: snapshot.id ? `${baseName} (Copy)` : baseName,
 			updatedAt: new Date().toISOString(),
 		};
 		savedMuseums = upsertSavedMuseum(toSave);
 		museum = toSave;
-		notify(`Creato nuovo museo "${toSave.name}".`);
+		notify(`Created new museum "${toSave.name}".`);
 	}
 
 	function handleReset(): void {
-		museum = createDefaultSavedMuseum('Il mio Museo');
+		museum = createDefaultSavedMuseum('My Museum');
 		lastLoadedQueryId = null;
-		notify('Museo azzerato.');
+		notify('Museum reset.');
 	}
 
 	function setAllSlotsToMinKg(): void {
@@ -182,23 +182,23 @@
 			});
 		}
 		museum = { ...museum, slots: nextSlots };
-		notify('Tutti i minerali impostati al peso minimo richiesto.');
+		notify('All minerals set to required minimum weight.');
 	}
 
 	function handleLoadSaved(entry: SavedMuseum): void {
 		museum = structuredClone($state.snapshot(entry));
-		notify(`Caricato museo "${entry.name}".`);
+		notify(`Loaded museum "${entry.name}".`);
 	}
 
 	function handleDuplicateSaved(entry: SavedMuseum): void {
 		const copy: SavedMuseum = {
 			...structuredClone($state.snapshot(entry)),
 			id: generateMuseumId(),
-			name: `${entry.name} (Copia)`,
+			name: `${entry.name} (Copy)`,
 			updatedAt: new Date().toISOString(),
 		};
 		savedMuseums = upsertSavedMuseum(copy);
-		notify(`Duplicato "${entry.name}".`);
+		notify(`Duplicated "${entry.name}".`);
 	}
 
 	function handleDeleteSaved(entry: SavedMuseum): void {
@@ -206,7 +206,7 @@
 		if (museum.id === entry.id) {
 			museum = { ...museum, id: '' };
 		}
-		notify(`Eliminato museo "${entry.name}".`);
+		notify(`Deleted museum "${entry.name}".`);
 	}
 
 	function updateSlot(rarity: MuseumRarity, index: number, next: MuseumSlotSelection | null): void {
@@ -274,9 +274,9 @@
 
 	function formatDate(iso: string): string {
 		try {
-			return new Date(iso).toLocaleString('it-IT', {
+			return new Date(iso).toLocaleString('en-US', {
+				month: 'short',
 				day: '2-digit',
-				month: '2-digit',
 				hour: '2-digit',
 				minute: '2-digit',
 			});
@@ -295,37 +295,37 @@
 </script>
 
 <svelte:head>
-	<title>Museo • Prospecting! Build Calculator</title>
+	<title>Museum • Prospecting! Build Calculator</title>
 </svelte:head>
 
-<main class="mx-auto max-w-6xl space-y-6 px-6 py-8">
+<main class="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 sm:py-8">
 	<section class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 		<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
 			<div class="flex-1">
 				<label for="museum-name" class="block text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Nome Museo
+					Museum Name
 				</label>
 				<div class="mt-1.5 flex flex-wrap items-center gap-3">
 					<input
 						id="museum-name"
 						type="text"
 						bind:value={museum.name}
-						placeholder="Es. Museo Max Luck"
+						placeholder="e.g. Max Luck Museum"
 						class="w-full max-w-sm rounded-lg border border-slate-700 bg-slate-950 px-3.5 py-2 text-sm font-medium text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
 					/>
 					{#if museum.id}
 						<span
 							class="rounded-md bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-300 ring-1 ring-emerald-500/20"
 						>
-							Museo salvato
+							Saved museum
 						</span>
 					{:else}
 						<span class="rounded-md bg-slate-800 px-2.5 py-1 text-xs text-slate-400">
-							Bozza locale (auto-salvata)
+							Auto-saved draft
 						</span>
 					{/if}
 					<span class="rounded-md bg-slate-800 px-2.5 py-1 font-mono text-xs text-amber-300">
-						{summary.filledSlots}/{summary.totalSlots} display
+						{summary.filledSlots}/{summary.totalSlots} displays
 					</span>
 				</div>
 			</div>
@@ -336,21 +336,21 @@
 					onclick={handleSaveCurrent}
 					class="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-400"
 				>
-					{museum.id ? 'Aggiorna Museo' : 'Salva in LocalStorage'}
+					{museum.id ? 'Update Museum' : 'Save Museum'}
 				</button>
 				<button
 					type="button"
 					onclick={handleSaveAsNew}
 					class="rounded-lg border border-slate-700 bg-slate-800 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-700"
 				>
-					Salva come Nuovo
+					Save as New
 				</button>
 				<button
 					type="button"
 					onclick={setAllSlotsToMinKg}
 					class="rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2 text-sm font-medium text-emerald-300 transition hover:bg-emerald-500/20"
 				>
-					Tutti a Peso Min
+					Set All to Min Weight
 				</button>
 				<button
 					type="button"
@@ -367,19 +367,19 @@
 		{/if}
 
 		<div class="mt-5 border-t border-slate-800/80 pt-4">
-			<div class="flex items-center justify-between">
+			<div class="flex flex-wrap items-center justify-between gap-2">
 				<h2 class="text-sm font-semibold text-white">
-					Musei Salvati ({savedMuseums.length})
+					Saved Museums ({savedMuseums.length})
 				</h2>
-				<span class="text-xs text-slate-400"> Selezionabili nella pagina Equipaggiamento </span>
+				<span class="text-xs text-slate-400">Selectable on the Build Builder page</span>
 			</div>
 
 			{#if savedMuseums.length === 0}
 				<p
 					class="mt-3 rounded-lg border border-dashed border-slate-800 bg-slate-950/40 px-4 py-3 text-xs text-slate-400"
 				>
-					Nessun museo salvato. Inserisci i tuoi minerali negli slot qui sotto e clicca
-					<strong class="text-slate-200">Salva in LocalStorage</strong> per poterlo collegare alle tue build.
+					No saved museums yet. Add minerals to the displays below and click
+					<strong class="text-slate-200">Save Museum</strong> to link it to your builds.
 				</p>
 			{:else}
 				<div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -403,7 +403,7 @@
 								</div>
 								<div class="mt-2 flex flex-wrap gap-1.5 text-[11px]">
 									<span class="rounded bg-slate-800 px-2 py-0.5 text-slate-300">
-										{entrySummary.filledSlots}/{entrySummary.totalSlots} display
+										{entrySummary.filledSlots}/{entrySummary.totalSlots} displays
 									</span>
 									{#each topBadges as b}
 										<span class="rounded bg-emerald-500/10 px-2 py-0.5 font-mono text-emerald-300">
@@ -420,21 +420,21 @@
 									onclick={() => handleLoadSaved(entry)}
 									class="rounded-md bg-slate-800 px-2.5 py-1 font-medium text-white transition hover:bg-amber-500 hover:text-slate-950"
 								>
-									Carica
+									Load
 								</button>
 								<button
 									type="button"
 									onclick={() => handleDuplicateSaved(entry)}
 									class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 transition hover:border-slate-500"
 								>
-									Duplica
+									Duplicate
 								</button>
 								<button
 									type="button"
 									onclick={() => handleDeleteSaved(entry)}
 									class="ml-auto rounded-md px-2 py-1 text-rose-400 transition hover:bg-rose-500/10"
 								>
-									Elimina
+									Delete
 								</button>
 							</div>
 						</div>
@@ -445,7 +445,7 @@
 	</section>
 
 	<div class="grid items-start gap-6 lg:grid-cols-3">
-		<div class="space-y-5 lg:col-span-2">
+		<div class="min-w-0 space-y-5 lg:col-span-2">
 			{#each MUSEUM_RARITIES_DESC as rarity}
 				{@const slotCount = MUSEUM_SLOT_COUNTS[rarity]}
 				{@const raritySlots = museum.slots[rarity] ?? []}
@@ -459,12 +459,12 @@
 								{MUSEUM_RARITY_LABELS[rarity]}
 							</span>
 							<span class="text-xs text-slate-400">
-								{filledInRarity}/{slotCount} display occupati
+								{filledInRarity}/{slotCount} displays filled
 							</span>
 						</div>
 						<span class="text-[11px] text-slate-400">
-							Rider Modificatore: <strong class="font-mono text-slate-200">+{riderPct}%</strong>
-							<span class="text-slate-500">(2× per Treasured/Entombed)</span>
+							Modifier Bonus: <strong class="font-mono text-slate-200">+{riderPct}%</strong>
+							<span class="text-slate-500">(2× for Treasured/Entombed)</span>
 						</span>
 					</div>
 
@@ -486,7 +486,7 @@
 											type="button"
 											onclick={() => updateSlot(rarity, slotIndex, null)}
 											class="rounded px-1.5 py-0.5 text-xs text-slate-400 transition hover:bg-slate-800 hover:text-rose-300"
-											title="Svuota display"
+											title="Clear display"
 										>
 											✕
 										</button>
@@ -499,7 +499,7 @@
 									onchange={(e) => handleOreSelect(rarity, slotIndex, (e.currentTarget as HTMLSelectElement).value)}
 									class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-2 text-xs text-slate-100 focus:border-amber-400 focus:outline-none"
 								>
-									<option value="">— Display Vuoto —</option>
+									<option value="">— Empty Display —</option>
 									{#each oresByRarity[rarity] as ore (ore.id)}
 										<option value={ore.id}>{formatOreOption(ore)}</option>
 									{/each}
@@ -510,7 +510,7 @@
 										<div>
 											<div class="flex items-center justify-between text-[11px]">
 												<label for={`weight-${rarity}-${slotIndex}`} class="font-medium text-slate-400">
-													Peso (kg)
+													Weight (kg)
 												</label>
 												<div class="flex items-center gap-1.5">
 													<button
@@ -553,7 +553,7 @@
 
 										<div>
 											<label for={`mod-${rarity}-${slotIndex}`} class="block text-[11px] font-medium text-slate-400">
-												Modificatore
+												Modifier
 											</label>
 											<select
 												id={`mod-${rarity}-${slotIndex}`}
@@ -562,14 +562,14 @@
 													handleModifierSelect(rarity, slotIndex, (e.currentTarget as HTMLSelectElement).value)}
 												class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-xs text-slate-100 focus:border-fuchsia-400 focus:outline-none"
 											>
-												<option value="">— Nessuno —</option>
+												<option value="">— None —</option>
 												{#each MUSEUM_MODIFIER_RIDERS as rider (rider.id)}
 													{@const allowed = isMuseumModifierAllowedForOre(calc.ore, rider.id)}
 													<option value={rider.id} disabled={!allowed && slot.modifierId !== rider.id}>
 														{rider.name} ({rider.stats.map((s) => STAT_LABELS[s]).join(' + ')}{rider.multiplierFactor >
 														1
 															? ` • ${rider.multiplierFactor}×`
-															: ''}){allowed ? '' : ' (non ottenibile)'}
+															: ''}){allowed ? '' : ' (unobtainable)'}
 													</option>
 												{/each}
 											</select>
@@ -606,12 +606,12 @@
 			{/each}
 		</div>
 
-		<aside class="space-y-4 lg:sticky lg:top-20">
+		<aside class="min-w-0 space-y-4 lg:sticky lg:top-20">
 			<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 				<div class="flex flex-wrap items-center justify-between gap-2">
 					<div>
-						<h2 class="text-base font-semibold text-white">Bonus Totali Museo</h2>
-						<p class="text-[11px] text-slate-400">Sommati nei Boost del personaggio</p>
+						<h2 class="text-base font-semibold text-white">Total Museum Bonuses</h2>
+						<p class="text-[11px] text-slate-400">Added to character stat Boosts</p>
 					</div>
 
 					<div class="inline-flex rounded-lg border border-slate-700 bg-slate-950 p-0.5 text-xs">
@@ -622,7 +622,7 @@
 								onlyActiveStats ? 'bg-amber-500/20 text-amber-300' : 'text-slate-400 hover:text-slate-200'
 							}`}
 						>
-							Solo attive
+							Active only
 						</button>
 						<button
 							type="button"
@@ -631,7 +631,7 @@
 								!onlyActiveStats ? 'bg-amber-500/20 text-amber-300' : 'text-slate-400 hover:text-slate-200'
 							}`}
 						>
-							Tutte
+							All
 						</button>
 					</div>
 				</div>
@@ -649,8 +649,7 @@
 
 				{#if visibleStats.length === 0}
 					<p class="mt-4 rounded-lg border border-dashed border-slate-800 bg-slate-950/40 p-4 text-xs text-slate-400">
-						Nessun minerale inserito nei display. Aggiungi un minerale a sinistra per calcolare i bonus percentuali del
-						museo.
+						No minerals placed in displays. Add a mineral on the left to calculate Museum percentage bonuses.
 					</p>
 				{:else}
 					<dl class="mt-4 divide-y divide-slate-800/80 rounded-lg border border-slate-800/80 bg-slate-950/40">
@@ -693,7 +692,7 @@
 						href="/builder"
 						class="flex w-full items-center justify-center gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-2 text-xs font-semibold text-amber-300 transition hover:bg-amber-500/20"
 					>
-						Usa questo Museo in Equipaggiamento →
+						Use this Museum in Build Builder →
 					</a>
 				</div>
 			</div>

@@ -151,7 +151,7 @@ function normalizeSavedOptimizerSearch(raw: unknown): SavedOptimizerSearch | nul
 	const config = normalizeOptimizerSearchConfig(obj.config);
 	if (!id || !config) return null;
 	const name =
-		typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Ricerca Senza Nome';
+		typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Untitled Search';
 	const updatedAt =
 		typeof obj.updatedAt === 'string' && obj.updatedAt ? obj.updatedAt : new Date().toISOString();
 	return { id, name, updatedAt, config };
@@ -198,7 +198,7 @@ export function upsertSavedOptimizerSearch(search: SavedOptimizerSearch): SavedO
 	const id = search.id || generateSearchId('opt');
 	const normalized: SavedOptimizerSearch = {
 		id,
-		name: search.name.trim() || 'Ricerca Ottimizzatore',
+		name: search.name.trim() || 'Optimizer Search',
 		updatedAt: now,
 		config: search.config
 	};
@@ -281,7 +281,7 @@ function normalizeSavedChanceSearch(raw: unknown): SavedChanceSearch | null {
 	const state = normalizeChanceSearchState(obj.state);
 	if (!id || !state) return null;
 	const name =
-		typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Ricerca Senza Nome';
+		typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Untitled Search';
 	const updatedAt =
 		typeof obj.updatedAt === 'string' && obj.updatedAt ? obj.updatedAt : new Date().toISOString();
 	return { id, name, updatedAt, state };
@@ -328,7 +328,7 @@ export function upsertSavedChanceSearch(search: SavedChanceSearch): SavedChanceS
 	const id = search.id || generateSearchId('chance');
 	const normalized: SavedChanceSearch = {
 		id,
-		name: search.name.trim() || 'Ricerca Probabilità',
+		name: search.name.trim() || 'Drop Chance Search',
 		updatedAt: now,
 		state: search.state
 	};

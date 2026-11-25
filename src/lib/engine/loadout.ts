@@ -116,13 +116,14 @@ function addStatMaps(target: StatMap, source?: StatMap): void {
 
 /**
  * Resolves an equipment item's modifiers for a given star tier, roll quality in [0, 1],
- * and optional equipment mutation (scaling positive item stats and adding mutation bonuses).
+ * optional equipment mutation, and optional per-stat roll overrides in [0, 1].
  */
 export function resolveEquipmentModifiers(
 	item: EquipmentItem,
 	tier: EquipmentTier,
 	rollQuality: number,
-	mutation?: EquipmentMutation | null
+	mutation?: EquipmentMutation | null,
+	statRollQualities?: Partial<Record<StatKey, number>> | null
 ): StatModifiers {
 	const roll = clampRoll(rollQuality);
 	const useSixStar = tier === '6star' && hasValidSixStarData(item);
@@ -142,7 +143,9 @@ export function resolveEquipmentModifiers(
 			const range = ranges[key];
 			if (!range) continue;
 			const [minVal, maxVal] = range;
-			const value = minVal + (maxVal - minVal) * roll;
+			const override = statRollQualities?.[key];
+			const statRoll = override !== undefined ? clampRoll(override) : roll;
+			const value = minVal + (maxVal - minVal) * statRoll;
 			if (isPercentStatForItem(key, tierModifiers, item.modifiers)) {
 				resolved.boosts![key] = value;
 			} else {
@@ -179,12 +182,91 @@ export function resolveEquipmentModifiers(
 	return resolved;
 }
 
+export interface EquipmentRangedStatEntry {
+	key: StatKey;
+	label: string;
+	min: number;
+	max: number;
+	isPercent: boolean;
+	mutMultiplier: number;
+	rollQuality: number;
+	value: number;
+}
+
+/** Returns all ranged stats of an equipment item for the active tier, ordered by ALL_STAT_KEYS. */
+export function getEquipmentRangedStats(
+	item: EquipmentItem,
+	tier: EquipmentTier,
+	mutation: EquipmentMutation | null | undefined,
+	fallbackRoll: number,
+	statRollQualities?: Partial<Record<StatKey, number>> | null
+): EquipmentRangedStatEntry[] {
+	const roll = clampRoll(fallbackRoll);
+	const useSixStar = tier === '6star' && hasValidSixStarData(item);
+	const ranges = useSixStar ? item.sixStarStatRanges : item.statRanges;
+	if (!ranges) return [];
+
+	const tierModifiers = (useSixStar ? item.sixStarModifiers : item.modifiers) ?? item.modifiers;
+	const entries: EquipmentRangedStatEntry[] = [];
+
+	for (const key of ALL_STAT_KEYS) {
+		const range = ranges[key];
+		if (!range) continue;
+		const [minVal, maxVal] = range;
+		const override = statRollQualities?.[key];
+		const statRoll = override !== undefined ? clampRoll(override) : roll;
+		const mutMultiplier = mutation && maxVal > 0 ? mutation.statMultiplier : 1;
+		entries.push({
+			key,
+			label: STAT_LABELS[key],
+			min: minVal,
+			max: maxVal,
+			isPercent: isPercentStatForItem(key, tierModifiers, item.modifiers),
+			mutMultiplier,
+			rollQuality: statRoll,
+			value: (minVal + (maxVal - minVal) * statRoll) * mutMultiplier
+		});
+	}
+
+	return entries;
+}
+
+/** Computes the global roll quality [0, 1] as the arithmetic mean of all ranged stat rolls. */
+export function computeAverageRollQuality(
+	item: EquipmentItem,
+	tier: EquipmentTier,
+	fallbackRoll: number,
+	statRollQualities?: Partial<Record<StatKey, number>> | null
+): number {
+	const roll = clampRoll(fallbackRoll);
+	const useSixStar = tier === '6star' && hasValidSixStarData(item);
+	const ranges = useSixStar ? item.sixStarStatRanges : item.statRanges;
+	if (!ranges) return roll;
+
+	let sum = 0;
+	let count = 0;
+	for (const key of ALL_STAT_KEYS) {
+		if (!ranges[key]) continue;
+		const override = statRollQualities?.[key];
+		sum += override !== undefined ? clampRoll(override) : roll;
+		count += 1;
+	}
+
+	return count > 0 ? clampRoll(sum / count) : roll;
+}
+
 function resolveJewelrySelection(selection: EquippedJewelrySelection | null): EquipmentItem | null {
 	if (!selection) return null;
 	const item = EQUIPMENT_BY_ID.get(selection.itemId);
 	if (!item) return null;
 	const mutation = selection.mutationId ? (MUTATIONS_BY_ID.get(selection.mutationId) ?? null) : null;
-	const modifiers = resolveEquipmentModifiers(item, selection.tier, selection.rollQuality, mutation);
+	const modifiers = resolveEquipmentModifiers(
+		item,
+		selection.tier,
+		selection.rollQuality,
+		mutation,
+		selection.statRollQualities
+	);
 	return {
 		...item,
 		stars: selection.tier === '6star' && hasValidSixStarData(item) ? 6 : item.stars,
@@ -193,7 +275,7 @@ function resolveJewelrySelection(selection: EquippedJewelrySelection | null): Eq
 }
 
 /** Creates an empty saved build template with 8 empty ring slots. */
-export function createDefaultSavedBuild(name = 'Nuova Build'): SavedBuild {
+export function createDefaultSavedBuild(name = 'New Build'): SavedBuild {
 	return {
 		id: '',
 		name,
@@ -279,7 +361,7 @@ export function findUniqueRingWarnings(saved: SavedBuild): string[] {
 	const warnings: string[] = [];
 	for (const { name, count } of counts.values()) {
 		if (count > 1) {
-			warnings.push(`${name} ha la restrizione "ONLY ONE CAN BE WORN" (equipaggiato ${count}×).`);
+			warnings.push(`${name} has the "ONLY ONE CAN BE WORN" restriction (equipped ${count}×).`);
 		}
 	}
 	return warnings;
@@ -297,7 +379,7 @@ export function collectActivePassives(
 		entries.push({
 			source: museum.name,
 			category: 'Museum',
-			text: `${mSummary.filledSlots}/${mSummary.totalSlots} display attivi`
+			text: `${mSummary.filledSlots}/${mSummary.totalSlots} active displays`
 		});
 	}
 

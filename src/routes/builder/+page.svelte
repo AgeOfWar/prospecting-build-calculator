@@ -44,7 +44,7 @@
 	const trinketsById = new Map(TRINKETS.map((t) => [t.id, t]));
 	const ringsById = new Map(rings.map((r) => [r.id, r]));
 
-	let build = $state<SavedBuild>(createDefaultSavedBuild('La mia Build'));
+	let build = $state<SavedBuild>(createDefaultSavedBuild('My Build'));
 	let savedBuilds = $state<SavedBuild[]>([]);
 	let savedMuseums = $state<SavedMuseum[]>([]);
 	let hydrated = $state(false);
@@ -161,48 +161,48 @@
 		const toSave: SavedBuild = {
 			...snapshot,
 			id,
-			name: snapshot.name.trim() || 'Build Senza Nome',
+			name: snapshot.name.trim() || 'Untitled Build',
 			updatedAt: new Date().toISOString(),
 		};
 		savedBuilds = upsertSavedBuild(toSave);
 		build = toSave;
-		notify(`Build "${toSave.name}" salvata.`);
+		notify(`Build "${toSave.name}" saved.`);
 	}
 
 	function handleSaveAsNew(): void {
 		const snapshot = $state.snapshot(build);
-		const baseName = snapshot.name.trim() || 'Nuova Build';
+		const baseName = snapshot.name.trim() || 'New Build';
 		const toSave: SavedBuild = {
 			...snapshot,
 			id: generateBuildId(),
-			name: snapshot.id ? `${baseName} (Copia)` : baseName,
+			name: snapshot.id ? `${baseName} (Copy)` : baseName,
 			updatedAt: new Date().toISOString(),
 		};
 		savedBuilds = upsertSavedBuild(toSave);
 		build = toSave;
-		notify(`Creata nuova build "${toSave.name}".`);
+		notify(`Created new build "${toSave.name}".`);
 	}
 
 	function handleReset(): void {
-		build = createDefaultSavedBuild('Nuova Build');
+		build = createDefaultSavedBuild('New Build');
 		lastLoadedQueryId = null;
-		notify('Loadout azzerato.');
+		notify('Loadout reset.');
 	}
 
 	function handleLoadSaved(entry: SavedBuild): void {
 		build = structuredClone($state.snapshot(entry));
-		notify(`Caricata build "${entry.name}".`);
+		notify(`Loaded build "${entry.name}".`);
 	}
 
 	function handleDuplicateSaved(entry: SavedBuild): void {
 		const copy: SavedBuild = {
 			...structuredClone($state.snapshot(entry)),
 			id: generateBuildId(),
-			name: `${entry.name} (Copia)`,
+			name: `${entry.name} (Copy)`,
 			updatedAt: new Date().toISOString(),
 		};
 		savedBuilds = upsertSavedBuild(copy);
-		notify(`Duplicata "${entry.name}".`);
+		notify(`Duplicated "${entry.name}".`);
 	}
 
 	function handleDeleteSaved(entry: SavedBuild): void {
@@ -210,7 +210,7 @@
 		if (build.id === entry.id) {
 			build = { ...build, id: '' };
 		}
-		notify(`Eliminata build "${entry.name}".`);
+		notify(`Deleted build "${entry.name}".`);
 	}
 
 	function updateRing(index: number, next: EquippedJewelrySelection | null): void {
@@ -222,7 +222,14 @@
 	function copyFirstRingToEmptySlots(): void {
 		const first = build.rings[0];
 		if (!first) return;
-		const updated = build.rings.map((slot, idx) => (idx === 0 || slot !== null ? slot : { ...first }));
+		const updated = build.rings.map((slot, idx) =>
+			idx === 0 || slot !== null
+				? slot
+				: {
+						...first,
+						statRollQualities: first.statRollQualities ? { ...first.statRollQualities } : undefined
+					}
+		);
 		build = { ...build, rings: updated };
 	}
 
@@ -232,9 +239,9 @@
 
 	function formatDate(iso: string): string {
 		try {
-			return new Date(iso).toLocaleString('it-IT', {
+			return new Date(iso).toLocaleString('en-US', {
+				month: 'short',
 				day: '2-digit',
-				month: '2-digit',
 				hour: '2-digit',
 				minute: '2-digit',
 			});
@@ -262,7 +269,7 @@
 			(entry.necklace ? 1 : 0) + (entry.charm ? 1 : 0) + entry.rings.filter((r) => r !== null).length;
 
 		return {
-			panName: resolved.pan?.name ?? 'Nessuna Pan',
+			panName: resolved.pan?.name ?? 'No Pan',
 			luck: Number.isInteger(stats.luck.final) ? stats.luck.final.toString() : stats.luck.final.toFixed(1),
 			rollsPerSec: efficiency.hasPanningStats ? fmtCompactRate(efficiency.rollsPerSecond) : null,
 			sellBoost: `${Math.round(stats.sellBoost.final * 100)}%`,
@@ -272,33 +279,33 @@
 </script>
 
 <svelte:head>
-	<title>Equipaggiamento • Prospecting! Build Calculator</title>
+	<title>Build Builder • Prospecting! Build Calculator</title>
 </svelte:head>
 
-<main class="mx-auto max-w-6xl space-y-6 px-6 py-8">
+<main class="mx-auto max-w-6xl space-y-6 px-4 py-6 sm:px-6 sm:py-8">
 	<section class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 		<div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
 			<div class="flex-1">
 				<label for="build-name" class="block text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Nome Build
+					Build Name
 				</label>
 				<div class="mt-1.5 flex flex-wrap items-center gap-3">
 					<input
 						id="build-name"
 						type="text"
 						bind:value={build.name}
-						placeholder="Es. Endgame Luck Build"
+						placeholder="e.g. Endgame Luck Build"
 						class="w-full max-w-sm rounded-lg border border-slate-700 bg-slate-950 px-3.5 py-2 text-sm font-medium text-white placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
 					/>
 					{#if build.id}
 						<span
 							class="rounded-md bg-emerald-500/10 px-2.5 py-1 text-xs font-medium text-emerald-300 ring-1 ring-emerald-500/20"
 						>
-							Collegata a build salvata
+							Linked to saved build
 						</span>
 					{:else}
 						<span class="rounded-md bg-slate-800 px-2.5 py-1 text-xs text-slate-400">
-							Bozza locale (auto-salvata)
+							Auto-saved draft
 						</span>
 					{/if}
 				</div>
@@ -310,14 +317,14 @@
 					onclick={handleSaveCurrent}
 					class="rounded-lg bg-amber-500 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-amber-400"
 				>
-					{build.id ? 'Aggiorna Build' : 'Salva in LocalStorage'}
+					{build.id ? 'Update Build' : 'Save Build'}
 				</button>
 				<button
 					type="button"
 					onclick={handleSaveAsNew}
 					class="rounded-lg border border-slate-700 bg-slate-800 px-3.5 py-2 text-sm font-medium text-slate-100 transition hover:border-slate-500 hover:bg-slate-700"
 				>
-					Salva come Nuova
+					Save as New
 				</button>
 				<button
 					type="button"
@@ -334,19 +341,19 @@
 		{/if}
 
 		<div class="mt-5 border-t border-slate-800/80 pt-4">
-			<div class="flex items-center justify-between">
+			<div class="flex flex-wrap items-center justify-between gap-2">
 				<h2 class="text-sm font-semibold text-white">
-					Equipaggiamenti Salvati ({savedBuilds.length})
+					Saved Builds ({savedBuilds.length})
 				</h2>
-				<span class="text-xs text-slate-400">Salvati nel browser (localStorage)</span>
+				<span class="text-xs text-slate-400">Saved in your browser</span>
 			</div>
 
 			{#if savedBuilds.length === 0}
 				<p
 					class="mt-3 rounded-lg border border-dashed border-slate-800 bg-slate-950/40 px-4 py-3 text-xs text-slate-400"
 				>
-					Nessun equipaggiamento salvato. Configura i tuoi oggetti qui sotto e clicca
-					<strong class="text-slate-200">Salva in LocalStorage</strong>.
+					No saved builds yet. Configure your gear below and click
+					<strong class="text-slate-200">Save Build</strong>.
 				</p>
 			{:else}
 				<div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -383,7 +390,7 @@
 										Sell +{preview.sellBoost}
 									</span>
 									<span class="rounded bg-slate-800 px-2 py-0.5 text-slate-400">
-										{preview.jewelryCount}/10 gioielli
+										{preview.jewelryCount}/10 equipment
 									</span>
 								</div>
 							</div>
@@ -394,21 +401,21 @@
 									onclick={() => handleLoadSaved(entry)}
 									class="rounded-md bg-slate-800 px-2.5 py-1 font-medium text-white transition hover:bg-amber-500 hover:text-slate-950"
 								>
-									Carica
+									Load
 								</button>
 								<button
 									type="button"
 									onclick={() => handleDuplicateSaved(entry)}
 									class="rounded-md border border-slate-700 px-2.5 py-1 text-slate-300 transition hover:border-slate-500"
 								>
-									Duplica
+									Duplicate
 								</button>
 								<button
 									type="button"
 									onclick={() => handleDeleteSaved(entry)}
 									class="ml-auto rounded-md px-2 py-1 text-rose-400 transition hover:bg-rose-500/10"
 								>
-									Elimina
+									Delete
 								</button>
 							</div>
 						</div>
@@ -419,9 +426,9 @@
 	</section>
 
 	<div class="grid items-start gap-6 lg:grid-cols-3">
-		<div class="space-y-6 lg:col-span-2">
+		<div class="min-w-0 space-y-6 lg:col-span-2">
 			<section class="grid gap-4 sm:grid-cols-2">
-				<div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+				<div class="min-w-0 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
 					<div class="flex flex-wrap items-center justify-between gap-2">
 						<h2 class="text-base font-semibold text-white">Pan &amp; Enchant</h2>
 						<div class="flex flex-wrap items-center gap-1.5">
@@ -449,7 +456,7 @@
 								bind:value={build.panId}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value={null}>— Nessuna Pan —</option>
+								<option value={null}>— No Pan —</option>
 								{#each PANS as pan}
 									<option value={pan.id}>{pan.name}</option>
 								{/each}
@@ -465,7 +472,7 @@
 								bind:value={build.panEnchantId}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value={null}>— Nessun Enchant —</option>
+								<option value={null}>— No Enchant —</option>
 								{#each panEnchants as enchant}
 									<option value={enchant.id}>{enchant.name}</option>
 								{/each}
@@ -481,10 +488,10 @@
 								bind:value={build.panTrinketId}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-cyan-400 focus:outline-none"
 							>
-								<option value={null}>— Nessun Trinket —</option>
+								<option value={null}>— No Trinket —</option>
 								{#each TRINKETS as trinket (trinket.id)}
 									<option value={trinket.id}>
-										{trinket.name}{trinket.modeled ? '' : ' (passivo)'}
+										{trinket.name}{trinket.modeled ? '' : ' (passive)'}
 									</option>
 								{/each}
 							</select>
@@ -496,7 +503,7 @@
 									{#each panPreview.stats as stat}
 										<div class="rounded-md border border-slate-800/80 bg-slate-900/60 px-2.5 py-1.5">
 											<div class="text-[11px] text-slate-400">{stat.label}</div>
-											<div class="mt-0.5 flex items-baseline justify-between gap-1 font-mono">
+											<div class="mt-0.5 flex flex-wrap items-baseline justify-between gap-1 font-mono">
 												<span class="text-sm font-semibold text-white">
 													{formatToolNum(stat.final)}
 												</span>
@@ -555,7 +562,7 @@
 								{/if}
 								{#if selectedPanTrinket}
 									<p class="text-amber-300">
-										⚠ Seleziona una Pan per attivare il Trinket {selectedPanTrinket.name} ({selectedPanTrinket.effect}).
+										⚠ Select a Pan to activate the {selectedPanTrinket.name} Trinket ({selectedPanTrinket.effect}).
 									</p>
 								{/if}
 							</div>
@@ -563,8 +570,8 @@
 					</div>
 				</div>
 
-				<div class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
-					<div class="flex items-center justify-between gap-2">
+				<div class="min-w-0 rounded-xl border border-slate-800 bg-slate-900/60 p-5">
+					<div class="flex flex-wrap items-center justify-between gap-2">
 						<h2 class="text-base font-semibold text-white">Shovel &amp; Enchant</h2>
 						{#if selectedShovelEnchant}
 							<span
@@ -582,7 +589,7 @@
 								bind:value={build.shovelId}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value={null}>— Nessuna Shovel —</option>
+								<option value={null}>— No Shovel —</option>
 								{#each SHOVELS as shovel}
 									<option value={shovel.id}>{shovel.name}</option>
 								{/each}
@@ -598,7 +605,7 @@
 								bind:value={build.shovelEnchantId}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value={null}>— Nessun Enchant —</option>
+								<option value={null}>— No Enchant —</option>
 								{#each shovelEnchants as enchant}
 									<option value={enchant.id}>{enchant.name}</option>
 								{/each}
@@ -607,7 +614,7 @@
 
 						{#if shovelPreview && selectedShovel}
 							<div class="space-y-2.5 rounded-lg border border-slate-800 bg-slate-950/60 p-3 text-xs">
-								<div class="grid grid-cols-3 gap-2">
+								<div class="grid grid-cols-2 gap-2 sm:grid-cols-3">
 									{#each shovelPreview.stats as stat}
 										<div class="rounded-md border border-slate-800/80 bg-slate-900/60 px-2.5 py-1.5">
 											<div class="text-[11px] text-slate-400">{stat.label}</div>
@@ -646,9 +653,9 @@
 			<section class="rounded-xl border border-slate-800 bg-slate-900/60 p-5">
 				<div class="flex flex-wrap items-center justify-between gap-2">
 					<div>
-						<h2 class="text-base font-semibold text-white">Jewelry Loadout</h2>
+						<h2 class="text-base font-semibold text-white">Equipment</h2>
 						<p class="text-xs text-slate-400">
-							1 Necklace, 1 Charm e fino a {MAX_RING_SLOTS} Rings. Scegli Base o 6★, Mutation e qualità del roll.
+							1 Necklace, 1 Charm, and up to {MAX_RING_SLOTS} Rings. Choose Base or 6★, Mutation, and individual stat rolls.
 						</p>
 					</div>
 
@@ -658,7 +665,7 @@
 							onclick={copyFirstRingToEmptySlots}
 							class="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-xs font-medium text-amber-300 transition hover:bg-amber-500/20"
 						>
-							Copia Ring #1 negli slot vuoti
+							Copy Ring #1 to empty slots
 						</button>
 					{/if}
 				</div>
@@ -699,20 +706,20 @@
 					<div>
 						<h2 class="text-base font-semibold text-white">Museum</h2>
 						<p class="text-xs text-slate-400">
-							Collega un Museo salvato per applicarne tutti i boost percentuali alle statistiche.
+							Link a saved Museum to apply all its percentage stat boosts.
 						</p>
 					</div>
 					<a
 						href={selectedMuseum ? `/museum?load=${encodeURIComponent(selectedMuseum.id)}` : '/museum'}
 						class="text-xs font-medium text-amber-300 hover:underline"
 					>
-						{selectedMuseum ? 'Modifica Museo ↗' : 'Apri Pagina Museo →'}
+						{selectedMuseum ? 'Edit Museum ↗' : 'Open Museum Page →'}
 					</a>
 				</div>
 
 				<div class="mt-3">
 					<select
-						aria-label="Seleziona Museo"
+						aria-label="Select Museum"
 						value={build.museumId ?? ''}
 						onchange={(e) => {
 							const val = (e.currentTarget as HTMLSelectElement).value;
@@ -720,19 +727,19 @@
 						}}
 						class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="">— Nessun Museo —</option>
+						<option value="">— No Museum —</option>
 						{#each savedMuseums as m (m.id)}
 							{@const ms = calculateMuseumSummary(m)}
-							<option value={m.id}>{m.name} ({ms.filledSlots}/{ms.totalSlots} display)</option>
+							<option value={m.id}>{m.name} ({ms.filledSlots}/{ms.totalSlots} displays)</option>
 						{/each}
 					</select>
 				</div>
 
 				{#if savedMuseums.length === 0}
 					<p class="mt-2.5 text-xs text-slate-400">
-						Nessun museo salvato. Crea il tuo museo nella pagina
-						<a href="/museum" class="font-medium text-amber-300 hover:underline">Museo</a>
-						e salvalo per selezionarlo qui.
+						No saved museums yet. Create your museum on the
+						<a href="/museum" class="font-medium text-amber-300 hover:underline">Museum</a>
+						page and save it to select it here.
 					</p>
 				{:else if selectedMuseum && selectedMuseumSummary}
 					<div class="mt-3 flex flex-wrap gap-1.5">
@@ -755,7 +762,7 @@
 					</div>
 				{:else if build.museumId && !selectedMuseum}
 					<p class="mt-2.5 text-xs text-amber-300">
-						Il museo collegato in precedenza non è più presente in localStorage.
+						The previously linked museum is no longer available.
 					</p>
 				{/if}
 			</section>
@@ -765,13 +772,13 @@
 					<div>
 						<h2 class="text-base font-semibold text-white">Runes</h2>
 						<p class="text-xs text-slate-400">
-							Seleziona le rune equipaggiate ({build.runeIds.length} attive).
+							Select equipped runes ({build.runeIds.length} active).
 						</p>
 					</div>
 					<input
 						type="search"
 						bind:value={runeQuery}
-						placeholder="Cerca rune..."
+						placeholder="Search runes..."
 						class="w-full max-w-xs rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-xs text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
 					/>
 				</div>
@@ -795,7 +802,7 @@
 										active ? 'bg-amber-500 text-slate-950' : 'bg-slate-800 text-slate-400'
 									}`}
 								>
-									{active ? 'Attiva' : 'Off'}
+									{active ? 'Active' : 'Off'}
 								</span>
 							</div>
 							{#if rune.rawEffects?.length}
@@ -811,8 +818,7 @@
 					<div>
 						<h2 class="text-base font-semibold text-white">Potions &amp; Totems</h2>
 						<p class="text-xs text-slate-400">
-							Attiva buff temporanei per simulare le statistiche in game ({build.boostIds.length}
-							attivi).
+							Toggle temporary buffs to simulate in-game stats ({build.boostIds.length} active).
 						</p>
 					</div>
 				</div>
@@ -877,7 +883,7 @@
 			</section>
 		</div>
 
-		<aside class="lg:sticky lg:top-20">
+		<aside class="min-w-0 lg:sticky lg:top-20">
 			<StatSummaryPanel
 				stats={calculatedStats}
 				passives={activePassives}

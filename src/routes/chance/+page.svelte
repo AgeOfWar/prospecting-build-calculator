@@ -27,7 +27,7 @@
 	const WEIGHT_PRESETS = [null, 20, 40, 60, 100] as const;
 
 	const RARITY_OPTIONS: Array<{ value: 'all' | MineralRarity; label: string }> = [
-		{ value: 'all', label: 'Tutte le rarità' },
+		{ value: 'all', label: 'All rarities' },
 		{ value: 'common', label: 'Common' },
 		{ value: 'uncommon', label: 'Uncommon' },
 		{ value: 'rare', label: 'Rare' },
@@ -211,15 +211,15 @@
 	}
 
 	function buildDefaultSearchName(): string {
-		const parts = [selectedMineralName || 'Minerale'];
+		const parts = [selectedMineralName || 'Mineral'];
 		if (inputs.minWeightKg) parts.push(`>= ${inputs.minWeightKg}kg`);
-		if (inputs.targetModifierId === 'any') parts.push('Qualsiasi Mod');
+		if (inputs.targetModifierId === 'any') parts.push('Any Mod');
 		else if (selectedTargetModifier) parts.push(selectedTargetModifier.name);
 		return parts.join(' • ');
 	}
 
 	function summarizeChanceSearch(st: ChanceSearchState): string {
-		const bits = [st.selectedMineralName || 'Minerale'];
+		const bits = [st.selectedMineralName || 'Mineral'];
 		if (st.inputs.minWeightKg) bits.push(`>=${st.inputs.minWeightKg}kg`);
 		if (st.inputs.targetModifierId === 'any') bits.push('Any Mod');
 		else if (st.inputs.targetModifierId) bits.push(st.inputs.targetModifierId);
@@ -261,34 +261,34 @@
 </script>
 
 <svelte:head>
-	<title>Calcolo Probabilità Minerali • Prospecting! Build Calculator</title>
+	<title>Mineral Drop Chances • Prospecting! Build Calculator</title>
 </svelte:head>
 
-<main class="mx-auto max-w-[1520px] space-y-6 px-6 py-8">
+<main class="mx-auto max-w-[1520px] space-y-6 px-4 py-6 sm:px-6 sm:py-8">
 	<section class="flex flex-wrap items-end justify-between gap-4">
 		<div>
 			<p class="text-xs font-semibold tracking-wider text-amber-400 uppercase">Mineral Drop &amp; Location Odds</p>
-			<h1 class="text-2xl font-bold tracking-tight text-white">Calcolo Probabilità Minerali</h1>
+			<h1 class="text-2xl font-bold tracking-tight text-white">Mineral Drop Chances</h1>
 			<p class="mt-1 text-sm text-slate-400">
-				Calcola le probabilità di drop per pan, tentativi e tempi stimati in ogni location — caricando le statistiche da
-				una build salvata o modificandole manualmente.
+				Calculate drop odds per pan, attempts, and estimated farming times across every location — using a saved build
+				or manual stats.
 			</p>
 		</div>
 		<span class="rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-1.5 text-xs text-slate-400">
-			{MINERALS.length} minerali • {allLocationNames.length} location/chest
+			{MINERALS.length} minerals • {allLocationNames.length} locations/chests
 		</span>
 	</section>
 
 	<div class="grid items-start gap-6 xl:grid-cols-12">
 		<!-- LEFT COLUMN: SETUP -->
-		<section class="space-y-5 rounded-xl border border-slate-800 bg-slate-900/70 p-5 xl:col-span-4">
+		<section class="min-w-0 space-y-5 rounded-xl border border-slate-800 bg-slate-900/70 p-5 xl:col-span-4">
 			<!-- SAVED SEARCHES -->
 			<div class="rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
 				<div class="flex items-center justify-between gap-2">
 					<h2 class="text-xs font-semibold tracking-wider text-slate-300 uppercase">
-						Ricerche Salvate ({savedSearches.length})
+						Saved Searches ({savedSearches.length})
 					</h2>
-					<span class="text-[10px] text-emerald-300/90">Bozza auto-salvata</span>
+					<span class="text-[10px] text-emerald-300/90">Auto-saved draft</span>
 				</div>
 
 				<div class="mt-2 flex gap-1.5">
@@ -303,7 +303,7 @@
 						onclick={handleSaveSearch}
 						class="shrink-0 rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-semibold text-slate-950 transition hover:bg-amber-400"
 					>
-						Salva
+						Save
 					</button>
 				</div>
 
@@ -325,7 +325,7 @@
 								</button>
 								<button
 									type="button"
-									aria-label={`Elimina ricerca ${entry.name}`}
+									aria-label={`Delete search ${entry.name}`}
 									onclick={() => handleDeleteSavedSearch(entry.id)}
 									class="shrink-0 rounded px-1.5 py-0.5 text-xs text-slate-500 transition hover:bg-rose-500/15 hover:text-rose-300"
 								>
@@ -344,19 +344,19 @@
 
 				<div class="mt-3 space-y-3">
 					<div>
-						<label for="mineral-search" class="block text-xs font-medium text-slate-400"> Cerca minerale </label>
+						<label for="mineral-search" class="block text-xs font-medium text-slate-400"> Search mineral </label>
 						<input
 							id="mineral-search"
 							type="search"
 							bind:value={mineralSearch}
-							placeholder="Es. Celestium, Diamond, Voidstone..."
+							placeholder="e.g. Celestium, Diamond, Voidstone..."
 							class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
 						/>
 					</div>
 
 					<div class="grid gap-3 sm:grid-cols-2">
 						<div>
-							<label for="rarity-filter" class="block text-xs font-medium text-slate-400"> Filtra per rarità </label>
+							<label for="rarity-filter" class="block text-xs font-medium text-slate-400"> Filter by rarity </label>
 							<select
 								id="rarity-filter"
 								bind:value={rarityFilter}
@@ -370,7 +370,7 @@
 
 						<div>
 							<label for="mineral-select" class="block text-xs font-medium text-slate-400">
-								Seleziona minerale ({filteredMinerals.length})
+								Select mineral ({filteredMinerals.length})
 							</label>
 							<select
 								id="mineral-select"
@@ -378,7 +378,7 @@
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
 								{#if filteredMinerals.length === 0}
-									<option value="">Nessun minerale trovato</option>
+									<option value="">No minerals found</option>
 								{:else}
 									{#each filteredMinerals as mineral}
 										<option value={mineral.mineral}>{mineral.mineral}</option>
@@ -392,28 +392,28 @@
 
 			{#if summary?.isChestOnly}
 				<div class="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3.5 text-xs text-amber-200">
-					Minerale esclusivo da <strong>Chest</strong>. Ogni apertura è un tentativo indipendente: Luck, Capacity e
-					velocità della Pan non influenzano la probabilità.
+					<strong>Chest-exclusive</strong> mineral. Each roll is an independent drop: Luck, Capacity, and Pan speed
+					do not affect chest drop odds.
 				</div>
 			{:else}
 				<!-- SAVED BUILD LOADER -->
 				<div class="rounded-xl border border-slate-800 bg-slate-950/60 p-4">
 					<div class="flex flex-wrap items-center justify-between gap-2">
 						<label for="saved-build-select" class="text-xs font-semibold tracking-wider text-slate-300 uppercase">
-							Statistiche da Build Salvata
+							Stats from Saved Build
 						</label>
 						{#if selectedSavedBuild}
 							{#if isManuallyEdited}
 								<span
 									class="rounded bg-amber-500/15 px-2 py-0.5 text-[10px] font-medium text-amber-300 ring-1 ring-amber-500/30"
 								>
-									Modificata a mano
+									Manually edited
 								</span>
 							{:else}
 								<span
 									class="rounded bg-emerald-500/15 px-2 py-0.5 text-[10px] font-medium text-emerald-300 ring-1 ring-emerald-500/30"
 								>
-									Sincronizzata con build
+									Synced with build
 								</span>
 							{/if}
 						{/if}
@@ -426,7 +426,7 @@
 							onchange={(e) => applySavedBuild((e.currentTarget as HTMLSelectElement).value)}
 							class="min-w-0 flex-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 						>
-							<option value="">— Inserimento Manuale —</option>
+							<option value="">— Manual Input —</option>
 							{#each savedBuilds as b (b.id)}
 								<option value={b.id}>{b.name}</option>
 							{/each}
@@ -438,16 +438,16 @@
 								onclick={restoreFromBuild}
 								class="rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs font-medium text-amber-300 transition hover:bg-amber-500/20"
 							>
-								Ripristina
+								Restore
 							</button>
 						{/if}
 					</div>
 
 					{#if savedBuilds.length === 0}
 						<p class="mt-2 text-[11px] text-slate-400">
-							Nessuna build salvata in localStorage. Puoi crearne una in
-							<a href="/builder" class="text-amber-300 hover:underline">Equipaggiamento</a>
-							oppure inserire i valori a mano qui sotto.
+							No saved builds yet. Create one in
+							<a href="/builder" class="text-amber-300 hover:underline">Build Builder</a>
+							or enter your values manually below.
 						</p>
 					{/if}
 				</div>
@@ -488,7 +488,7 @@
 							class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 						>
 							<option value="autopan">Autopan / Macro</option>
-							<option value="sand">Sandshaking (Manuale)</option>
+							<option value="sand">Sandshaking (Manual)</option>
 						</select>
 					</div>
 
@@ -552,7 +552,7 @@
 					<div class="space-y-3 rounded-xl border border-slate-800 bg-slate-950/60 p-4">
 						<div class="flex items-center justify-between gap-2">
 							<h3 class="text-xs font-semibold tracking-wider text-slate-300 uppercase">
-								Filtri Peso &amp; Modificatore
+								Weight &amp; Modifier Filters
 							</h3>
 							{#if inputs.minWeightKg || inputs.targetModifierId}
 								<button
@@ -563,14 +563,14 @@
 									}}
 									class="text-[11px] text-slate-400 hover:text-amber-300"
 								>
-									Pulisci filtri
+									Clear filters
 								</button>
 							{/if}
 						</div>
 
 						<div>
-							<div class="flex items-center justify-between gap-2">
-								<label for="min-weight-input" class="text-xs font-medium text-slate-400"> Peso minimo (kg) </label>
+							<div class="flex flex-wrap items-center justify-between gap-2">
+								<label for="min-weight-input" class="text-xs font-medium text-slate-400"> Minimum weight (kg) </label>
 								<div class="flex flex-wrap gap-1">
 									{#each WEIGHT_PRESETS as preset}
 										<button
@@ -592,7 +592,7 @@
 								type="number"
 								min="0"
 								step="0.5"
-								placeholder="Es. 40 (lascia vuoto per tutti i pesi)"
+								placeholder="e.g. 40 (leave empty for any weight)"
 								value={inputs.minWeightKg ?? ''}
 								oninput={handleMinWeightInput}
 								class="mt-1.5 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 font-mono text-sm text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
@@ -601,7 +601,7 @@
 
 						<div>
 							<label for="target-modifier-select" class="block text-xs font-medium text-slate-400">
-								Modificatore richiesto
+								Required modifier
 							</label>
 							<select
 								id="target-modifier-select"
@@ -609,8 +609,8 @@
 								onchange={handleTargetModifierChange}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value="">— Nessun filtro modificatore —</option>
-								<option value="any">Qualsiasi Modificatore</option>
+								<option value="">— No modifier filter —</option>
+								<option value="any">Any Modifier</option>
 								{#each MODIFIERS as mod}
 									<option value={mod.id}>
 										{mod.name} ({mod.sellMultiplier}×{mod.notes ? ` • ${mod.notes}` : ''})
@@ -690,7 +690,7 @@
 										: 'border-slate-700 bg-slate-900 text-slate-400 hover:border-slate-600'
 								}`}
 							>
-								Notte (Lunar)
+								Night (Lunar)
 							</button>
 							<button
 								type="button"
@@ -763,7 +763,7 @@
 		</section>
 
 		<!-- RIGHT COLUMN: SUMMARY + LOCATIONS TABLE -->
-		<div class="space-y-6 xl:col-span-8">
+		<div class="min-w-0 space-y-6 xl:col-span-8">
 			{#if selectedMineral && summary}
 				<section class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 					<div class="flex flex-wrap items-center justify-between gap-3">
@@ -804,7 +804,7 @@
 						</div>
 
 						<div
-							class="inline-flex items-center gap-2 rounded-full border border-slate-700/80 bg-slate-950/70 px-3.5 py-1.5 text-xs text-slate-300"
+							class="inline-flex max-w-full flex-wrap items-center gap-2 rounded-2xl border border-slate-700/80 bg-slate-950/70 px-3.5 py-1.5 text-xs text-slate-300"
 						>
 							<span>{summary.isChestOnly ? 'Chest:' : 'Best location:'}</span>
 							<strong class="text-amber-300">
@@ -851,9 +851,9 @@
 					{#if summary.weightInfo.active || summary.modifierInfo.active}
 						<div class="mt-4 space-y-2 rounded-xl border border-slate-800 bg-slate-950/60 p-3.5 text-xs">
 							<div class="flex flex-wrap items-center justify-between gap-2">
-								<span class="font-semibold text-slate-200">Dettaglio Filtri Applicati</span>
+								<span class="font-semibold text-slate-200">Active Filter Details</span>
 								<span class="font-mono text-emerald-300">
-									Probabilità condizione / ore: {fmtPct(summary.combinedConditionChance, 4)}
+									Condition chance / ore: {fmtPct(summary.combinedConditionChance, 4)}
 								</span>
 							</div>
 
@@ -861,20 +861,20 @@
 								{#if summary.weightInfo.active}
 									<div class="rounded-lg border border-slate-800/80 bg-slate-900/60 p-2.5">
 										<div class="flex items-center justify-between text-slate-300">
-											<span>Peso ≥ {inputs.minWeightKg} kg</span>
+											<span>Weight ≥ {inputs.minWeightKg} kg</span>
 											<strong class="font-mono text-amber-300">
 												{fmtPct(summary.weightInfo.probability, 2)}
 											</strong>
 										</div>
 										<p class="mt-1 text-[11px] text-slate-400">
-											Moltiplicatore peso: <span class="font-mono text-slate-200"
+											Weight multiplier: <span class="font-mono text-slate-200"
 												>{summary.weightInfo.weightMultiplier.toFixed(2)}×</span
 											>
-											(base richiesta: <span class="font-mono">{summary.weightInfo.requiredBaseKg.toFixed(2)} kg</span>)
+											(required base: <span class="font-mono">{summary.weightInfo.requiredBaseKg.toFixed(2)} kg</span>)
 										</p>
 										{#if summary.weightInfo.minSizeBoostNeededPct !== null}
 											<p class="mt-1 text-[11px] font-medium text-rose-300">
-												Impossibile con il Size Boost attuale: serve almeno +{summary.weightInfo.minSizeBoostNeededPct}%
+												Unreachable with current Size Boost: needs at least +{summary.weightInfo.minSizeBoostNeededPct}%
 												Size Boost.
 											</p>
 										{/if}
@@ -884,7 +884,7 @@
 								{#if summary.modifierInfo.active}
 									<div class="rounded-lg border border-slate-800/80 bg-slate-900/60 p-2.5">
 										<div class="flex items-center justify-between text-slate-300">
-											<span>Modificatore: {summary.modifierInfo.label}</span>
+											<span>Modifier: {summary.modifierInfo.label}</span>
 											<strong class="font-mono text-fuchsia-300">
 												{fmtPct(summary.modifierInfo.probability, 4)}
 											</strong>
@@ -904,8 +904,8 @@
 							</div>
 
 							<p class="text-[11px] text-slate-500">
-								Le probabilità di peso e modificatore sono stimate secondo le leggi empiriche della Stat Systems Guide
-								sulla wiki Miraheze (split 25/25/50 su Capacity/Modifier Luck e cap Job 1 al 99.4%).
+								Weight and modifier odds are estimated from the empirical Stat Systems Guide formulas on the Miraheze
+								wiki (25/25/50 split on Capacity/Modifier Luck and 99.4% Job 1 cap).
 							</p>
 						</div>
 					{/if}
@@ -916,18 +916,18 @@
 						<div>
 							<h2 class="text-base font-semibold text-white">All Locations Overview</h2>
 							<p class="text-xs text-slate-400">
-								"Attempt" = 1 pan completo. Il filtro sotto filtra solo la tabella (i box sopra mostrano sempre la
-								location migliore).
+								"Attempt" = 1 full pan (or 1 chest drop). The filter below only filters the table (the summary cards
+								above always show the best location).
 							</p>
 						</div>
 
 						<div class="w-full sm:w-64">
 							<select
-								aria-label="Filtra tabella location"
+								aria-label="Filter locations table"
 								bind:value={locationFilter}
 								class="w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-1.5 text-xs text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value="all">Tutte le location ({summary.rows.length})</option>
+								<option value="all">All locations ({summary.rows.length})</option>
 								{#each allLocationNames as locName}
 									<option value={locName}>{locName}</option>
 								{/each}
@@ -954,7 +954,7 @@
 								{#if visibleRows.length === 0}
 									<tr>
 										<td colspan="6" class="px-4 py-6 text-center text-slate-500">
-											Nessuna location corrispondente al filtro selezionato per questo minerale.
+											No locations match the selected filter for this mineral.
 										</td>
 									</tr>
 								{:else}
@@ -981,15 +981,15 @@
 												<div class="text-[11px] text-slate-300">~1 in {row.attemptOneIn}</div>
 											</td>
 											<td class="px-3 py-2.5 font-mono">
-												<div class="text-slate-200">{formatAttempts(row.a50)} pan</div>
+												<div class="text-slate-200">{formatAttempts(row.a50)} {row.isChest ? 'chest' : 'pan'}</div>
 												<div class="text-[11px] text-slate-400">{fmtDuration(row.t50)}</div>
 											</td>
 											<td class="px-3 py-2.5 font-mono">
-												<div class="text-slate-200">{formatAttempts(row.a90)} pan</div>
+												<div class="text-slate-200">{formatAttempts(row.a90)} {row.isChest ? 'chest' : 'pan'}</div>
 												<div class="text-[11px] text-slate-400">{fmtDuration(row.t90)}</div>
 											</td>
 											<td class="px-3.5 py-2.5 font-mono">
-												<div class="text-slate-200">{formatAttempts(row.a99)} pan</div>
+												<div class="text-slate-200">{formatAttempts(row.a99)} {row.isChest ? 'chest' : 'pan'}</div>
 												<div class="text-[11px] text-amber-300">{fmtDuration(row.t99)}</div>
 											</td>
 										</tr>
@@ -1005,7 +1005,7 @@
 							<p
 								class="rounded-xl border border-slate-800 bg-slate-950/60 px-4 py-6 text-center text-xs text-slate-500"
 							>
-								Nessuna location corrispondente al filtro selezionato per questo minerale.
+								No locations match the selected filter for this mineral.
 							</p>
 						{:else}
 							{#each visibleRows as row}

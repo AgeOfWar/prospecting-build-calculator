@@ -716,7 +716,17 @@ function parseTotemsFromWiki(shardMerchantTables, relicsHtml) {
 			if (seenIds.has(id)) continue;
 
 			const cleanText = normalizeText(panel.text).replace(/\n+/g, ' ');
-			const firstSentence = cleanText.split(/\.\s+/)[0] ?? cleanText;
+			const introText = cleanText
+				.split(/\b(?:Obtainment|Usage|Trivia|Gallery|Notes)\s*(?:\[\s*edit\s*\])?/i)[0]
+				.replace(/\s+([,.;:!?])/g, '$1')
+				.replace(/\s+/g, ' ')
+				.trim();
+			const effectSentences = introText
+				.split(/(?<=\.)\s+/)
+				.filter((s) => s && !/^Each totem lasts\b/i.test(s));
+			const summaryText = effectSentences.slice(0, 2).join(' ').trim() || introText;
+
+			const firstSentence = introText.split(/\.\s+/)[0] ?? introText;
 			const boostSegmentMatch = firstSentence.match(/\bboost\s+of\s+(.+)$/i);
 			const boostSegment = (boostSegmentMatch ? boostSegmentMatch[1] : firstSentence).replace(
 				/\band\b/gi,
@@ -726,14 +736,14 @@ function parseTotemsFromWiki(shardMerchantTables, relicsHtml) {
 			const hasStats = Object.values(parsed.modifiers).some((b) => b && Object.keys(b).length > 0);
 			if (!hasStats) continue;
 
-			const durMatch = cleanText.match(/for\s+(\d+\s*min(?:utes?)?)/i);
+			const durMatch = cleanText.match(/(?:for|lasts)\s+(\d+\s*min(?:utes?)?)/i);
 			seenIds.add(id);
 			totems.push({
 				id,
 				name,
 				category: 'totem',
 				modifiers: parsed.modifiers,
-				rawEffects: [cleanText],
+				rawEffects: [summaryText],
 				duration: durMatch ? durMatch[1] : '30 minutes',
 				wikiUrl: `${WIKI_ORIGIN}/wiki/Relics#${panel.label}`
 			});
@@ -880,16 +890,16 @@ function parseModifiersFromWiki(modifiersHtml, museumHtml) {
 		let notes;
 		if (id === 'lunar') {
 			source = 'night';
-			notes = 'Solo di notte';
+			notes = 'Night only';
 		} else if (id === 'voidtorn') {
 			source = 'void_touched';
-			notes = '5% con Void Touched enchant / Galactic tools / The Void';
+			notes = '5% with Void Touched enchant / Galactic tools / The Void';
 		} else if (id === 'crystalline') {
 			source = 'crystal_touch';
-			notes = '10% con Crystal Touch shovel enchant';
+			notes = '10% with Crystal Touch shovel enchant';
 		} else if (id === 'treasured') {
 			source = 'chest';
-			notes = '100% da Treasure Chests';
+			notes = '100% from Treasure Chests';
 		}
 
 		const bonusText = liFields.get('museum bonus')?.text;

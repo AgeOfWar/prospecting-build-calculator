@@ -93,8 +93,8 @@
 	<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 		<div class="flex flex-wrap items-center justify-between gap-2">
 			<div>
-				<h2 class="text-base font-semibold text-white">Efficienza Panning</h2>
-				<p class="text-[11px] text-slate-400">Statistiche derivate in tempo reale</p>
+				<h2 class="text-base font-semibold text-white">Panning Efficiency</h2>
+				<p class="text-[11px] text-slate-400">Real-time derived stats</p>
 			</div>
 
 			<div class="flex flex-wrap items-center gap-1.5">
@@ -108,7 +108,7 @@
 								: 'border-slate-700 bg-slate-950 text-slate-400 hover:text-slate-200'
 						}`}
 					>
-						Notte
+						Night
 					</button>
 				{/if}
 				<div class="inline-flex rounded-lg border border-slate-700 bg-slate-950 p-0.5 text-[11px]">
@@ -140,13 +140,12 @@
 
 		{#if !efficiency.hasPanningStats}
 			<p class="mt-3 rounded-lg border border-dashed border-slate-800 bg-slate-950/40 p-3 text-xs text-slate-400">
-				Seleziona una <strong class="text-slate-200">Pan</strong> per calcolare Rolls/sec, durata
-				del ciclo e statistiche di panning.
+				Select a <strong class="text-slate-200">Pan</strong> to calculate Rolls/sec, cycle duration, and panning efficiency.
 			</p>
 		{:else}
 			<div class="mt-3 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-2.5">
 				<div class="flex items-baseline justify-between gap-2">
-					<span class="text-xs font-medium text-emerald-200">Rolls Effettivi / sec</span>
+					<span class="text-xs font-medium text-emerald-200">Effective Rolls / sec</span>
 					<span class="font-mono text-lg font-bold text-white">
 						{fmtCompactRate(efficiency.rollsPerSecond)} / s
 					</span>
@@ -161,18 +160,18 @@
 					}`}
 				>
 					{#if efficiency.qualityPct === 51}
-						⚠ Autopan 51% quality: ⅔ Luck eff. • no 1.5× Dig (serve Mastered)
+						⚠ Autopan 51% quality: ⅔ eff. Luck • no 1.5× Dig (requires Mastered)
 					{:else if timeMethod === 'autopan'}
 						✓ Autopan 100% quality (Mastered • 1.5× Dig Strength)
 					{:else}
-						Manuale 100% quality (1.5× Dig Strength)
+						Manual 100% quality (1.5× Dig Strength)
 					{/if}
 				</p>
 			</div>
 
 			<div class="mt-2.5 grid grid-cols-2 gap-2">
 				<div class="rounded-lg border border-slate-800/80 bg-slate-950/50 px-3 py-2">
-					<p class="text-[10px] font-medium text-slate-400 uppercase">Durata Ciclo</p>
+					<p class="text-[10px] font-medium text-slate-400 uppercase">Cycle Time</p>
 					<p class="mt-0.5 font-mono text-sm font-semibold text-white">
 						{efficiency.cycleSeconds.toFixed(2)}s
 					</p>
@@ -194,7 +193,7 @@
 				</div>
 
 				<div class="rounded-lg border border-slate-800/80 bg-slate-950/50 px-3 py-2">
-					<p class="text-[10px] font-medium text-slate-400 uppercase">Peso Max (no eventi)</p>
+					<p class="text-[10px] font-medium text-slate-400 uppercase">Max Weight (no events)</p>
 					<p class="mt-0.5 font-mono text-sm font-semibold text-sky-300">
 						{efficiency.maxOreWeightKg.toFixed(1)} kg
 					</p>
@@ -204,7 +203,7 @@
 				</div>
 
 				<div class="rounded-lg border border-slate-800/80 bg-slate-950/50 px-3 py-2">
-					<p class="text-[10px] font-medium text-slate-400 uppercase">Chance Modificatore</p>
+					<p class="text-[10px] font-medium text-slate-400 uppercase">Modifier Chance</p>
 					<p
 						class={`mt-0.5 font-mono text-sm font-semibold ${
 							efficiency.hasPurityRune ? 'text-rose-300' : 'text-fuchsia-300'
@@ -216,17 +215,17 @@
 					</p>
 					<p class="text-[10px] text-slate-500">
 						{efficiency.hasPurityRune
-							? 'Bloccata da Purity'
+							? 'Blocked by Purity'
 							: `Mod Luck ${efficiency.modifierLuck.toFixed(1)}×`}
 					</p>
 				</div>
 
 				<div class="rounded-lg border border-slate-800/80 bg-slate-950/50 px-3 py-2">
-					<p class="text-[10px] font-medium text-slate-400 uppercase">Rolls / Minuto</p>
+					<p class="text-[10px] font-medium text-slate-400 uppercase">Rolls / Minute</p>
 					<p class="mt-0.5 font-mono text-sm font-semibold text-amber-300">
 						{fmtCompactRate(efficiency.rollsPerSecond * 60)}
 					</p>
-					<p class="text-[10px] text-slate-500">Media continua</p>
+					<p class="text-[10px] text-slate-500">Continuous average</p>
 				</div>
 
 				<div class="rounded-lg border border-slate-800/80 bg-slate-950/50 px-3 py-2">
@@ -234,7 +233,7 @@
 					<p class="mt-0.5 font-mono text-sm font-semibold text-slate-100">
 						{Math.round(efficiency.rollsPerPan).toLocaleString('en-US')}
 					</p>
-					<p class="text-[10px] text-slate-500">Per singola pan</p>
+					<p class="text-[10px] text-slate-500">Per single pan</p>
 				</div>
 			</div>
 		{/if}
@@ -243,7 +242,7 @@
 	<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 		<div class="flex flex-wrap items-center justify-between gap-2">
 			<div>
-				<h2 class="text-base font-semibold text-white">Riepilogo Statistiche</h2>
+				<h2 class="text-base font-semibold text-white">Stat Summary</h2>
 				<p class="text-[11px] text-slate-400">Formula: (Base + Flats) × (1 + Boosts)</p>
 			</div>
 
@@ -255,7 +254,7 @@
 						!onlyActive ? 'bg-amber-500/20 text-amber-300' : 'text-slate-400 hover:text-slate-200'
 					}`}
 				>
-					Tutte le stat
+					All stats
 				</button>
 				<button
 					type="button"
@@ -264,7 +263,7 @@
 						onlyActive ? 'bg-amber-500/20 text-amber-300' : 'text-slate-400 hover:text-slate-200'
 					}`}
 				>
-					Solo attive
+					Active only
 				</button>
 			</div>
 		</div>
@@ -338,7 +337,7 @@
 
 	<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 		<div class="flex items-center justify-between">
-			<h2 class="text-base font-semibold text-white">Effetti Passivi &amp; Speciali</h2>
+			<h2 class="text-base font-semibold text-white">Passive &amp; Special Effects</h2>
 			<span class="rounded bg-slate-800 px-2 py-0.5 text-xs text-slate-300">
 				{passives.length}
 			</span>
@@ -346,7 +345,7 @@
 
 		{#if passives.length === 0}
 			<p class="mt-3 text-xs text-slate-500">
-				Nessun effetto passivo attivo. Seleziona Pan, Shovel, Enchant, Rune o Boost per vederli qui.
+				No active passive effects. Select a Pan, Shovel, Enchant, Rune, or Boost to see them here.
 			</p>
 		{:else}
 			<ul class="mt-3 space-y-2">

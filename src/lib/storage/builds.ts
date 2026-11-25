@@ -1,11 +1,13 @@
-import { MAX_RING_SLOTS } from '#lib/engine/stats.ts';
+import { ALL_STAT_KEYS, MAX_RING_SLOTS } from '#lib/engine/stats.ts';
 import type {
 	EquippedJewelrySelection,
-	SavedBuild
+	SavedBuild,
+	StatKey
 } from '#lib/types/prospecting.ts';
 
 const SAVED_BUILDS_KEY = 'prospecting-calculator:saved-builds:v1';
 const DRAFT_BUILD_KEY = 'prospecting-calculator:draft-build:v1';
+const VALID_STAT_KEYS = new Set<string>(ALL_STAT_KEYS);
 
 function isBrowser(): boolean {
 	return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
@@ -18,6 +20,19 @@ export function generateBuildId(): string {
 	return `build-${Date.now()}-${Math.random().toString(36).slice(2, 9)}`;
 }
 
+function normalizeStatRollQualities(raw: unknown): Partial<Record<StatKey, number>> | undefined {
+	if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return undefined;
+	const out: Partial<Record<StatKey, number>> = {};
+	let count = 0;
+	for (const [k, v] of Object.entries(raw as Record<string, unknown>)) {
+		if (!VALID_STAT_KEYS.has(k)) continue;
+		if (typeof v !== 'number' || !Number.isFinite(v)) continue;
+		out[k as StatKey] = Math.min(1, Math.max(0, v));
+		count += 1;
+	}
+	return count > 0 ? out : undefined;
+}
+
 function normalizeJewelrySelection(raw: unknown): EquippedJewelrySelection | null {
 	if (!raw || typeof raw !== 'object') return null;
 	const candidate = raw as Record<string, unknown>;
@@ -26,12 +41,17 @@ function normalizeJewelrySelection(raw: unknown): EquippedJewelrySelection | nul
 	const rawRoll = typeof candidate.rollQuality === 'number' ? candidate.rollQuality : 1;
 	const rollQuality = Number.isFinite(rawRoll) ? Math.min(1, Math.max(0, rawRoll)) : 1;
 	const mutationId = normalizeStringOrNull(candidate.mutationId);
-	return {
+	const statRollQualities = normalizeStatRollQualities(candidate.statRollQualities);
+	const selection: EquippedJewelrySelection = {
 		itemId: candidate.itemId,
 		tier,
 		rollQuality,
 		mutationId
 	};
+	if (statRollQualities) {
+		selection.statRollQualities = statRollQualities;
+	}
+	return selection;
 }
 
 function normalizeStringOrNull(val: unknown): string | null {
@@ -48,7 +68,7 @@ export function normalizeSavedBuild(raw: unknown): SavedBuild | null {
 	if (!raw || typeof raw !== 'object') return null;
 	const obj = raw as Record<string, unknown>;
 
-	const name = typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Build Senza Nome';
+	const name = typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Untitled Build';
 	const id = typeof obj.id === 'string' ? obj.id : '';
 	const updatedAt =
 		typeof obj.updatedAt === 'string' && obj.updatedAt ? obj.updatedAt : new Date().toISOString();
@@ -107,7 +127,7 @@ export function upsertSavedBuild(build: SavedBuild): SavedBuild[] {
 	const normalized: SavedBuild = {
 		...build,
 		id,
-		name: build.name.trim() || 'Build Senza Nome',
+		name: build.name.trim() || 'Untitled Build',
 		updatedAt: now
 	};
 

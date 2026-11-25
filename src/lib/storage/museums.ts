@@ -36,7 +36,7 @@ export function normalizeSavedMuseum(raw: unknown): SavedMuseum | null {
 	const obj = raw as Record<string, unknown>;
 
 	const name =
-		typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Museo Senza Nome';
+		typeof obj.name === 'string' && obj.name.trim() ? obj.name.trim() : 'Untitled Museum';
 	const id = typeof obj.id === 'string' ? obj.id : '';
 	const updatedAt =
 		typeof obj.updatedAt === 'string' && obj.updatedAt ? obj.updatedAt : new Date().toISOString();
@@ -87,7 +87,7 @@ export function upsertSavedMuseum(museum: SavedMuseum): SavedMuseum[] {
 	const normalized: SavedMuseum = {
 		...museum,
 		id,
-		name: museum.name.trim() || 'Museo Senza Nome',
+		name: museum.name.trim() || 'Untitled Museum',
 		updatedAt: now
 	};
 

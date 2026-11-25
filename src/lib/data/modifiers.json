@@ -16,7 +16,7 @@
 		"color": "#ffe99b",
 		"source": "night",
 		"museumBonus": "Dig Speed + Shake Speed + WalkSpeed",
-		"notes": "Solo di notte"
+		"notes": "Night only"
 	},
 	{
 		"id": "mutated",
@@ -98,7 +98,7 @@
 		"color": "#ffd849",
 		"source": "chest",
 		"museumBonus": "2× Luck",
-		"notes": "100% da Treasure Chests"
+		"notes": "100% from Treasure Chests"
 	},
 	{
 		"id": "voidtorn",
@@ -108,7 +108,7 @@
 		"color": "#8307ff",
 		"source": "void_touched",
 		"museumBonus": "Luck + Capacity",
-		"notes": "5% con Void Touched enchant / Galactic tools / The Void"
+		"notes": "5% with Void Touched enchant / Galactic tools / The Void"
 	},
 	{
 		"id": "crystalline",
@@ -118,6 +118,6 @@
 		"color": "#b7e6ff",
 		"source": "crystal_touch",
 		"museumBonus": "Size Boost",
-		"notes": "10% con Crystal Touch shovel enchant"
+		"notes": "10% with Crystal Touch shovel enchant"
 	}
 ]

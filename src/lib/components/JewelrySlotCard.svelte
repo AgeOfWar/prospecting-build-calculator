@@ -1,6 +1,13 @@
 <script lang="ts">
 	import { MUTATIONS } from '#lib/data/index.ts';
-	import { hasValidSixStarData, isUniqueOnlyEquipment, resolveEquipmentModifiers } from '#lib/engine/loadout.ts';
+	import {
+		type EquipmentRangedStatEntry,
+		computeAverageRollQuality,
+		getEquipmentRangedStats,
+		hasValidSixStarData,
+		isUniqueOnlyEquipment,
+		resolveEquipmentModifiers,
+	} from '#lib/engine/loadout.ts';
 	import { ALL_STAT_KEYS, STAT_LABELS } from '#lib/engine/stats.ts';
 	import type {
 		EquipmentItem,
@@ -8,6 +15,7 @@
 		EquipmentSlot,
 		EquipmentTier,
 		EquippedJewelrySelection,
+		StatKey,
 	} from '#lib/types/prospecting.ts';
 
 	interface Props {
@@ -51,20 +59,34 @@
 	const selectedItem = $derived(value ? (itemsById.get(value.itemId) ?? null) : null);
 	const selectedMutation = $derived(value?.mutationId ? (mutationsById.get(value.mutationId) ?? null) : null);
 	const canSixStar = $derived(selectedItem ? hasValidSixStarData(selectedItem) : false);
-	const hasRanges = $derived(
-		selectedItem
-			? Boolean(
-					(value?.tier === '6star' && canSixStar ? selectedItem.sixStarStatRanges : selectedItem.statRanges) &&
-						Object.keys(
-							(value?.tier === '6star' && canSixStar ? selectedItem.sixStarStatRanges : selectedItem.statRanges) ?? {},
-						).length > 0,
+
+	const rangedStats = $derived(
+		selectedItem && value
+			? getEquipmentRangedStats(
+					selectedItem,
+					value.tier,
+					selectedMutation,
+					value.rollQuality,
+					value.statRollQualities,
 				)
-			: false,
+			: [],
+	);
+	const hasRanges = $derived(rangedStats.length > 0);
+	const globalRollQuality = $derived(
+		selectedItem && value
+			? computeAverageRollQuality(selectedItem, value.tier, value.rollQuality, value.statRollQualities)
+			: 1,
 	);
 
 	const resolvedStats = $derived.by(() => {
 		if (!selectedItem || !value) return [];
-		const mods = resolveEquipmentModifiers(selectedItem, value.tier, value.rollQuality, selectedMutation);
+		const mods = resolveEquipmentModifiers(
+			selectedItem,
+			value.tier,
+			value.rollQuality,
+			selectedMutation,
+			value.statRollQualities,
+		);
 		const badges: Array<{ label: string; formatted: string; negative: boolean }> = [];
 
 		for (const key of ALL_STAT_KEYS) {
@@ -91,6 +113,21 @@
 
 		return badges;
 	});
+
+	function clamp01(val: number): number {
+		if (!Number.isFinite(val)) return 1;
+		return Math.min(1, Math.max(0, val));
+	}
+
+	function fmtInputNum(val: number): string {
+		const rounded = Math.round(val * 100) / 100;
+		return Object.is(rounded, -0) ? '0' : String(rounded);
+	}
+
+	function fmtGlobalPct(roll: number): string {
+		const pct = Math.round(clamp01(roll) * 1000) / 10;
+		return `${Number.isInteger(pct) ? pct : pct.toFixed(1)}%`;
+	}
 
 	function formatMutationOption(mutation: EquipmentMutation): string {
 		const hasBonus = Boolean(mutation.bonusModifiers);
@@ -126,18 +163,83 @@
 	}
 
 	function setTier(tier: EquipmentTier): void {
-		if (!value) return;
-		onchange({ ...value, tier });
+		if (!value || !selectedItem) return;
+		const nextEntries = getEquipmentRangedStats(
+			selectedItem,
+			tier,
+			selectedMutation,
+			value.rollQuality,
+			value.statRollQualities,
+		);
+		let nextMap: Partial<Record<StatKey, number>> | undefined;
+		if (value.statRollQualities && nextEntries.length > 0) {
+			nextMap = {};
+			for (const entry of nextEntries) {
+				nextMap[entry.key] = entry.rollQuality;
+			}
+		}
+		const avg = computeAverageRollQuality(selectedItem, tier, value.rollQuality, nextMap);
+		onchange({
+			...value,
+			tier,
+			rollQuality: avg,
+			statRollQualities: nextMap,
+		});
 	}
 
-	function setRollQuality(rollQuality: number): void {
+	function setAllRolls(rollQuality: number): void {
 		if (!value) return;
-		onchange({ ...value, rollQuality: Math.min(1, Math.max(0, rollQuality)) });
+		onchange({
+			itemId: value.itemId,
+			tier: value.tier,
+			rollQuality: clamp01(rollQuality),
+			mutationId: value.mutationId ?? null,
+		});
+	}
+
+	function setStatRoll(key: StatKey, nextRoll: number): void {
+		if (!value || !selectedItem) return;
+		const nextMap: Partial<Record<StatKey, number>> = {};
+		let sum = 0;
+		for (const entry of rangedStats) {
+			const r = entry.key === key ? clamp01(nextRoll) : entry.rollQuality;
+			nextMap[entry.key] = r;
+			sum += r;
+		}
+		const avg = rangedStats.length > 0 ? clamp01(sum / rangedStats.length) : clamp01(nextRoll);
+		onchange({
+			...value,
+			rollQuality: avg,
+			statRollQualities: nextMap,
+		});
+	}
+
+	function handleStatValueInput(entry: EquipmentRangedStatEntry, inputEl: HTMLInputElement, commit: boolean): void {
+		const raw = inputEl.value.trim();
+		const scale = (entry.isPercent ? 100 : 1) * entry.mutMultiplier;
+		const dMin = entry.min * scale;
+		const dMax = entry.max * scale;
+		const span = dMax - dMin;
+		if (Math.abs(span) < 1e-12) return;
+
+		if (!commit) {
+			if (raw === '' || raw === '-' || raw.endsWith('.') || /\.\d*0$/.test(raw)) return;
+			const parsed = Number(raw);
+			if (!Number.isFinite(parsed) || parsed < dMin - 1e-9 || parsed > dMax + 1e-9) return;
+			setStatRoll(entry.key, (parsed - dMin) / span);
+			return;
+		}
+
+		const parsed = Number(raw);
+		const targetVal = Number.isFinite(parsed) ? Math.min(dMax, Math.max(dMin, parsed)) : entry.value * (entry.isPercent ? 100 : 1);
+		const nextRoll = clamp01((targetVal - dMin) / span);
+		setStatRoll(entry.key, nextRoll);
+		inputEl.value = fmtInputNum(dMin + span * nextRoll);
 	}
 </script>
 
 <div
-	class={`rounded-xl border p-3.5 transition ${
+	class={`min-w-0 rounded-xl border p-3.5 transition ${
 		duplicateWarning
 			? 'border-amber-500/60 bg-amber-950/20'
 			: selectedItem
@@ -169,7 +271,7 @@
 				type="button"
 				onclick={() => onchange(null)}
 				class="rounded px-1.5 py-0.5 text-xs text-slate-400 transition hover:bg-slate-800 hover:text-rose-300"
-				title="Rimuovi {slot}"
+				title={`Remove ${slot}`}
 			>
 				✕
 			</button>
@@ -182,7 +284,7 @@
 		onchange={handleSelectChange}
 		class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-2.5 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 	>
-		<option value="">— Vuoto —</option>
+		<option value="">— Empty —</option>
 		{#each groupedItems as [rarity, list]}
 			<optgroup label={rarity}>
 				{#each list as item}
@@ -204,7 +306,7 @@
 					onchange={handleMutationChange}
 					class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-2.5 py-1.5 text-xs text-slate-100 focus:border-fuchsia-400 focus:outline-none"
 				>
-					<option value="">— Nessuna Mutation —</option>
+					<option value="">— No Mutation —</option>
 					{#each mutations as mutation}
 						<option value={mutation.id}>{formatMutationOption(mutation)}</option>
 					{/each}
@@ -237,24 +339,24 @@
 					{/if}
 
 					{#if hasRanges}
-						<div class="flex items-center gap-1 text-[11px]">
+						<div class="flex flex-wrap items-center gap-1 text-[11px]">
 							<button
 								type="button"
-								onclick={() => setRollQuality(0)}
+								onclick={() => setAllRolls(0)}
 								class="rounded border border-slate-700 px-1.5 py-0.5 text-slate-300 hover:border-slate-500"
 							>
 								Min
 							</button>
 							<button
 								type="button"
-								onclick={() => setRollQuality(0.5)}
+								onclick={() => setAllRolls(0.5)}
 								class="rounded border border-slate-700 px-1.5 py-0.5 text-slate-300 hover:border-slate-500"
 							>
 								50%
 							</button>
 							<button
 								type="button"
-								onclick={() => setRollQuality(1)}
+								onclick={() => setAllRolls(1)}
 								class="rounded border border-slate-700 px-1.5 py-0.5 text-slate-300 hover:border-slate-500"
 							>
 								Max
@@ -265,20 +367,61 @@
 			{/if}
 
 			{#if hasRanges}
-				<div class="space-y-1">
-					<div class="flex items-center justify-between text-[11px] text-slate-400">
-						<span>Roll stat</span>
-						<span class="font-mono text-slate-200">{Math.round(value.rollQuality * 100)}%</span>
+				<div class="space-y-2 rounded-lg border border-slate-800/80 bg-slate-950/60 p-2.5">
+					<div class="flex items-center justify-between gap-2 text-[11px]">
+						<span class="font-medium text-slate-300">Overall quality (stat avg)</span>
+						<span class="font-mono font-semibold text-amber-300">{fmtGlobalPct(globalRollQuality)}</span>
 					</div>
-					<input
-						type="range"
-						min="0"
-						max="1"
-						step="0.01"
-						value={value.rollQuality}
-						oninput={(e) => setRollQuality(Number((e.currentTarget as HTMLInputElement).value))}
-						class="h-1.5 w-full cursor-pointer accent-amber-400"
-					/>
+
+					<div class="space-y-2 border-t border-slate-800/70 pt-2">
+						{#each rangedStats as entry (entry.key)}
+							{@const scale = (entry.isPercent ? 100 : 1) * entry.mutMultiplier}
+							{@const dMin = entry.min * scale}
+							{@const dMax = entry.max * scale}
+							{@const dVal = entry.value * (entry.isPercent ? 100 : 1)}
+							<div class="space-y-1">
+								<div class="flex flex-wrap items-center justify-between gap-1.5 text-[11px]">
+									<div class="min-w-0 truncate text-slate-300">
+										<span>{entry.label}</span>
+										<span class="ml-1 font-mono text-[10px] text-slate-500">
+											({fmtInputNum(dMin)}–{fmtInputNum(dMax)}{entry.isPercent ? '%' : ''})
+										</span>
+									</div>
+									<div class="flex shrink-0 items-center gap-1.5">
+										<div class="inline-flex items-center rounded border border-slate-700 bg-slate-900 px-1.5 py-0.5">
+											<input
+												type="number"
+												aria-label={`${label} ${entry.label}`}
+												min={fmtInputNum(dMin)}
+												max={fmtInputNum(dMax)}
+												step="any"
+												value={fmtInputNum(dVal)}
+												oninput={(e) => handleStatValueInput(entry, e.currentTarget as HTMLInputElement, false)}
+												onchange={(e) => handleStatValueInput(entry, e.currentTarget as HTMLInputElement, true)}
+												class="w-14 bg-transparent text-right font-mono text-[11px] text-slate-100 focus:outline-none"
+											/>
+											{#if entry.isPercent}
+												<span class="ml-0.5 font-mono text-[10px] text-slate-400">%</span>
+											{/if}
+										</div>
+										<span class="w-9 text-right font-mono text-[10px] text-amber-300">
+											{Math.round(entry.rollQuality * 100)}%
+										</span>
+									</div>
+								</div>
+								<input
+									type="range"
+									aria-label={`Roll percentage ${entry.label}`}
+									min="0"
+									max="1"
+									step="0.01"
+									value={entry.rollQuality}
+									oninput={(e) => setStatRoll(entry.key, Number((e.currentTarget as HTMLInputElement).value))}
+									class="h-1.5 w-full cursor-pointer accent-amber-400"
+								/>
+							</div>
+						{/each}
+					</div>
 				</div>
 			{/if}
 
@@ -301,10 +444,10 @@
 
 			{#if duplicateWarning}
 				<p class="rounded-md bg-amber-500/10 px-2 py-1 text-[11px] font-medium text-amber-300">
-					Attenzione: ONLY ONE CAN BE WORN — rimuovi i duplicati.
+					Warning: ONLY ONE CAN BE WORN — remove duplicates.
 				</p>
 			{:else if isUniqueOnlyEquipment(selectedItem)}
-				<p class="text-[11px] text-slate-400">Unico: se ne può indossare solo 1.</p>
+				<p class="text-[11px] text-slate-400">Unique: only 1 can be worn.</p>
 			{/if}
 		</div>
 	{/if}

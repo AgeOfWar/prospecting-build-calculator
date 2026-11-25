@@ -20,13 +20,11 @@
 		fmtPct,
 		getBuildDigCritChance,
 		getCycleSeconds,
-		getDigQualityMultipliers,
-		getRarityBadgeClass
+		getDigQualityMultipliers
 	} from '#lib/engine/chance.ts';
 	import {
 		isUniqueOnlyEquipment,
-		resolveEquipmentModifiers,
-		resolveSavedBuild
+		resolveEquipmentModifiers
 	} from '#lib/engine/loadout.ts';
 	import {
 		MUSEUM_RARITIES_DESC,
@@ -75,7 +73,7 @@
 	};
 
 	const RARITY_OPTIONS: Array<{ value: 'all' | MineralRarity; label: string }> = [
-		{ value: 'all', label: 'Tutte le rarità' },
+		{ value: 'all', label: 'All rarities' },
 		{ value: 'exotic', label: 'Exotic' },
 		{ value: 'mythic', label: 'Mythic' },
 		{ value: 'legendary', label: 'Legendary' },
@@ -305,14 +303,14 @@
 			bans.shovelEnchantIds,
 			(id) => ENCHANTS_BY_ID.get(id)?.name
 		);
-		pushList('equipmentIds', 'Jewelry', bans.equipmentIds, (id) => EQUIPMENT_BY_ID.get(id)?.name);
+		pushList('equipmentIds', 'Equipment', bans.equipmentIds, (id) => EQUIPMENT_BY_ID.get(id)?.name);
 		pushList('mutationIds', 'Mutation', bans.mutationIds, (id) => MUTATIONS_BY_ID.get(id)?.name);
 		pushList('runeIds', 'Rune', bans.runeIds, (id) => RUNES_BY_ID.get(id)?.name);
 		pushList('boostIds', 'Boost', bans.boostIds, (id) => BOOSTS_BY_ID.get(id)?.name);
-		pushList('museumOreIds', 'Museo Ore', bans.museumOreIds, (id) => MUSEUM_ORES_BY_ID.get(id)?.name);
+		pushList('museumOreIds', 'Museum Ore', bans.museumOreIds, (id) => MUSEUM_ORES_BY_ID.get(id)?.name);
 		pushList(
 			'museumRiderIds',
-			'Museo Mod',
+			'Museum Mod',
 			bans.museumRiderIds,
 			(id) => MUSEUM_RIDERS_BY_ID.get(id)?.name
 		);
@@ -344,8 +342,8 @@
 		)
 	);
 
-	const selectedNecklace = $derived(resolveJewelryMeta(result.build.necklace));
-	const selectedCharm = $derived(resolveJewelryMeta(result.build.charm));
+	const selectedNecklace = $derived(resolveEquipmentMeta(result.build.necklace));
+	const selectedCharm = $derived(resolveEquipmentMeta(result.build.charm));
 	const groupedRings = $derived.by(() => {
 		const groups = new Map<
 			string,
@@ -355,7 +353,7 @@
 				tier: 'base' | '6star';
 				mutation: EquipmentMutation | null;
 				isUnique: boolean;
-				statBadges: JewelryStatBadge[];
+				statBadges: EquipmentStatBadge[];
 			}
 		>();
 		for (const sel of result.build.rings) {
@@ -374,7 +372,7 @@
 					tier: sel.tier,
 					mutation,
 					isUnique: isUniqueOnlyEquipment(item),
-					statBadges: formatResolvedJewelryStats(item, sel.tier, sel.rollQuality, mutation)
+					statBadges: formatResolvedEquipmentStats(item, sel.tier, sel.rollQuality, mutation)
 				});
 			}
 		}
@@ -444,7 +442,7 @@
 		};
 	});
 
-	interface JewelryStatBadge {
+	interface EquipmentStatBadge {
 		text: string;
 		negative: boolean;
 	}
@@ -454,14 +452,14 @@
 		return Number.isInteger(rounded) ? rounded.toLocaleString('en-US') : rounded.toString();
 	}
 
-	function formatResolvedJewelryStats(
+	function formatResolvedEquipmentStats(
 		item: EquipmentItem,
 		tier: 'base' | '6star',
 		rollQuality: number,
 		mutation: EquipmentMutation | null
-	): JewelryStatBadge[] {
+	): EquipmentStatBadge[] {
 		const mods = resolveEquipmentModifiers(item, tier, rollQuality, mutation);
-		const badges: JewelryStatBadge[] = [];
+		const badges: EquipmentStatBadge[] = [];
 		for (const key of ALL_STAT_KEYS) {
 			const flatVal = (mods.base?.[key] ?? 0) + (mods.flats?.[key] ?? 0);
 			if (Math.abs(flatVal) > 1e-6) {
@@ -490,11 +488,11 @@
 		return badges;
 	}
 
-	function resolveJewelryMeta(sel: EquippedJewelrySelection | null): {
+	function resolveEquipmentMeta(sel: EquippedJewelrySelection | null): {
 		item: EquipmentItem;
 		tier: 'base' | '6star';
 		mutation: EquipmentMutation | null;
-		statBadges: JewelryStatBadge[];
+		statBadges: EquipmentStatBadge[];
 	} | null {
 		if (!sel) return null;
 		const item = EQUIPMENT_BY_ID.get(sel.itemId);
@@ -504,7 +502,7 @@
 			item,
 			tier: sel.tier,
 			mutation,
-			statBadges: formatResolvedJewelryStats(item, sel.tier, sel.rollQuality, mutation)
+			statBadges: formatResolvedEquipmentStats(item, sel.tier, sel.rollQuality, mutation)
 		};
 	}
 
@@ -549,8 +547,8 @@
 		savedNotice = {
 			message:
 				savedMuseumId && saveMuseumToo && options.museumMode === 'optimize'
-					? `Salvati build "${bName}" e museo collegato!`
-					: `Build "${bName}" salvata in localStorage!`,
+					? `Saved build "${bName}" and linked museum!`
+					: `Build "${bName}" saved!`,
 			buildId: createdBuildId,
 			museumId: savedMuseumId
 		};
@@ -581,12 +579,12 @@
 	function buildDefaultSearchName(): string {
 		const base =
 			options.targetMode === 'specific'
-				? (options.mineralName ?? 'Minerale')
-				: 'Minerali Rari';
+				? (options.mineralName ?? 'Mineral')
+				: 'Rare Minerals';
 		const parts = [base];
 		if (options.minWeightKg) parts.push(`>= ${options.minWeightKg}kg`);
 		if (options.targetModifierId === 'any') {
-			parts.push('Qualsiasi Mod');
+			parts.push('Any Mod');
 		} else if (options.targetModifierId) {
 			const mod = MODIFIERS.find((m) => m.id === options.targetModifierId);
 			if (mod) parts.push(mod.name);
@@ -599,7 +597,7 @@
 
 	function summarizeSavedSearch(cfg: OptimizerSearchConfig): string {
 		const bits: string[] = [];
-		bits.push(cfg.targetMode === 'specific' ? (cfg.mineralName ?? 'Minerale') : 'Rari');
+		bits.push(cfg.targetMode === 'specific' ? (cfg.mineralName ?? 'Mineral') : 'Rare');
 		if (cfg.minWeightKg) bits.push(`>=${cfg.minWeightKg}kg`);
 		if (cfg.targetModifierId === 'any') bits.push('Any Mod');
 		else if (cfg.targetModifierId) bits.push(cfg.targetModifierId);
@@ -644,38 +642,38 @@
 </script>
 
 <svelte:head>
-	<title>Ottimizzatore Build + Museo • Prospecting! Build Calculator</title>
+	<title>Build + Museum Optimizer • Prospecting! Build Calculator</title>
 </svelte:head>
 
-<main class="mx-auto max-w-[1520px] space-y-6 px-6 py-8">
+<main class="mx-auto max-w-[1520px] space-y-6 px-4 py-6 sm:px-6 sm:py-8">
 	<section class="flex flex-wrap items-end justify-between gap-4">
 		<div>
 			<p class="text-xs font-semibold tracking-wider text-amber-400 uppercase">
 				Optimal Farming Loadout + Museum
 			</p>
 			<h1 class="text-2xl font-bold tracking-tight text-white">
-				Ottimizzatore Equipaggiamento + Museo
+				Build + Museum Optimizer
 			</h1>
 			<p class="mt-1 text-sm text-slate-400">
-				Trova la combinazione di Pan, Shovel, Jewelry (+ Mutations), Runes e Museo che minimizza il
-				tempo per ottenere minerali rari, anche con vincoli di peso minimo e modificatore.
+				Find the Pan, Shovel, Equipment (+ Mutations), Runes, and Museum combination that minimizes time to obtain
+				rare minerals, including minimum weight and modifier filters.
 			</p>
 		</div>
 		<span class="rounded-lg border border-slate-800 bg-slate-900/70 px-3 py-1.5 font-mono text-xs text-slate-300">
-			Calcolato in {result.computeTimeMs} ms
+			Computed in {result.computeTimeMs} ms
 		</span>
 	</section>
 
 	<div class="grid items-start gap-6 xl:grid-cols-12">
 		<!-- LEFT COLUMN: TARGET & CONSTRAINTS -->
-		<section class="space-y-5 rounded-xl border border-slate-800 bg-slate-900/70 p-5 xl:col-span-4">
+		<section class="min-w-0 space-y-5 rounded-xl border border-slate-800 bg-slate-900/70 p-5 xl:col-span-4">
 			<!-- Saved Searches -->
 			<div class="rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
 				<div class="flex items-center justify-between gap-2">
 					<h2 class="text-xs font-semibold tracking-wider text-slate-300 uppercase">
-						Ricerche Salvate ({savedSearches.length})
+						Saved Searches ({savedSearches.length})
 					</h2>
-					<span class="text-[10px] text-emerald-300/90">Bozza auto-salvata</span>
+					<span class="text-[10px] text-emerald-300/90">Auto-saved draft</span>
 				</div>
 
 				<div class="mt-2 flex gap-1.5">
@@ -690,7 +688,7 @@
 						onclick={handleSaveSearch}
 						class="shrink-0 rounded-lg bg-amber-500 px-3 py-1.5 text-xs font-semibold text-slate-950 transition hover:bg-amber-400"
 					>
-						Salva
+						Save
 					</button>
 				</div>
 
@@ -712,7 +710,7 @@
 								</button>
 								<button
 									type="button"
-									aria-label={`Elimina ricerca ${entry.name}`}
+									aria-label={`Delete search ${entry.name}`}
 									onclick={() => handleDeleteSavedSearch(entry.id)}
 									class="shrink-0 rounded px-1.5 py-0.5 text-xs text-slate-500 transition hover:bg-rose-500/15 hover:text-rose-300"
 								>
@@ -727,7 +725,7 @@
 			<!-- Target Mode -->
 			<div class="border-t border-slate-800/80 pt-4">
 				<h2 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Obiettivo Ricerca
+					Search Target
 				</h2>
 				<div class="mt-2 grid grid-cols-2 gap-1.5 rounded-lg bg-slate-950 p-1">
 					<button
@@ -739,7 +737,7 @@
 								: 'text-slate-300 hover:text-white'
 						}`}
 					>
-						Minerale Specifico
+						Specific Mineral
 					</button>
 					<button
 						type="button"
@@ -750,7 +748,7 @@
 								: 'text-slate-300 hover:text-white'
 						}`}
 					>
-						Minerali Rari (Generico)
+						Rare Minerals (Generic)
 					</button>
 				</div>
 			</div>
@@ -759,13 +757,13 @@
 				<div class="space-y-3 border-t border-slate-800/80 pt-4">
 					<div>
 						<label for="opt-mineral-search" class="block text-xs font-medium text-slate-400">
-							Cerca minerale
+							Search mineral
 						</label>
 						<input
 							id="opt-mineral-search"
 							type="search"
 							bind:value={mineralSearch}
-							placeholder="Es. Singularium, Celestium, Feather..."
+							placeholder="e.g. Singularium, Celestium, Feather..."
 							class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
 						/>
 					</div>
@@ -773,7 +771,7 @@
 					<div class="grid gap-3 sm:grid-cols-2">
 						<div>
 							<label for="opt-rarity-filter" class="block text-xs font-medium text-slate-400">
-								Rarità
+								Rarity
 							</label>
 							<select
 								id="opt-rarity-filter"
@@ -788,7 +786,7 @@
 
 						<div>
 							<label for="opt-mineral-select" class="block text-xs font-medium text-slate-400">
-								Minerale ({filteredMinerals.length})
+								Mineral ({filteredMinerals.length})
 							</label>
 							<select
 								id="opt-mineral-select"
@@ -809,7 +807,7 @@
 					{#if availablePanningLocations.length > 0}
 						<div>
 							<label for="opt-location-select" class="block text-xs font-medium text-slate-400">
-								Location (default: migliore)
+								Location (default: best)
 							</label>
 							<select
 								id="opt-location-select"
@@ -820,7 +818,7 @@
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
 								<option value="">
-									Migliore: {availablePanningLocations[0].location} ({availablePanningLocations[0].chance_percent}%)
+									Best: {availablePanningLocations[0].location} ({availablePanningLocations[0].chance_percent}%)
 								</option>
 								{#each availablePanningLocations as loc (loc.location)}
 									<option value={loc.location}>
@@ -836,13 +834,13 @@
 			<!-- Weight & Modifier Filters -->
 			<div class="space-y-3 border-t border-slate-800/80 pt-4">
 				<h3 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Vincoli Peso &amp; Modificatore
+					Weight &amp; Modifier Constraints
 				</h3>
 
 				<div>
 					<div class="flex flex-wrap items-center justify-between gap-2">
 						<label for="opt-min-kg" class="block text-xs font-medium text-slate-400">
-							Peso minimo (kg)
+							Minimum weight (kg)
 						</label>
 						<div class="flex flex-wrap gap-1.5">
 							{#if selectedMineralMuseumOre}
@@ -851,7 +849,7 @@
 									onclick={() => (options.minWeightKg = selectedMineralMuseumOre.minKg)}
 									class="rounded border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[11px] font-medium text-amber-300 transition hover:bg-amber-500/20"
 								>
-									Min Kg Museo ({selectedMineralMuseumOre.minKg} kg)
+									Museum Min Kg ({selectedMineralMuseumOre.minKg} kg)
 								</button>
 							{/if}
 							{#if options.minWeightKg !== null}
@@ -872,14 +870,14 @@
 						step="any"
 						value={options.minWeightKg ?? ''}
 						oninput={handleMinWeightInput}
-						placeholder="Nessun minimo (qualsiasi peso)"
+						placeholder="No minimum (any weight)"
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 font-mono text-sm text-slate-100 placeholder:text-slate-500 focus:border-amber-400 focus:outline-none"
 					/>
 				</div>
 
 				<div>
 					<label for="opt-target-mod" class="block text-xs font-medium text-slate-400">
-						Modificatore target
+						Target modifier
 					</label>
 					<select
 						id="opt-target-mod"
@@ -890,8 +888,8 @@
 						}}
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="">Qualsiasi (nessun vincolo)</option>
-						<option value="any">Qualsiasi Modificatore (non normale)</option>
+						<option value="">Any (no constraint)</option>
+						<option value="any">Any Modifier (non-normal)</option>
 						{#each MODIFIERS as mod (mod.id)}
 							<option value={mod.id}>
 								{mod.name} ({mod.sellMultiplier}×{mod.notes ? ` • ${mod.notes}` : ''})
@@ -904,13 +902,13 @@
 			<!-- Equipment Options -->
 			<div class="space-y-3 border-t border-slate-800/80 pt-4">
 				<h3 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Equipaggiamento &amp; Museo
+					Loadout &amp; Museum
 				</h3>
 
 				<div class="grid gap-3 sm:grid-cols-2">
 					<div>
 						<label for="opt-time-method" class="block text-xs font-medium text-slate-400">
-							Metodo Panning
+							Panning Method
 						</label>
 						<select
 							id="opt-time-method"
@@ -918,20 +916,20 @@
 							class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 						>
 							<option value="autopan">Autopan / Macro</option>
-							<option value="sand">Sandshaking (Manuale)</option>
+							<option value="sand">Sandshaking (Manual)</option>
 						</select>
 					</div>
 
 					<div>
 						<label for="opt-tier" class="block text-xs font-medium text-slate-400">
-							Stelle Jewelry
+							Equipment Stars
 						</label>
 						<select
 							id="opt-tier"
 							bind:value={options.jewelryTier}
 							class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 						>
-							<option value="6star">6★ (Massimo Forge)</option>
+							<option value="6star">6★ (Max Forge)</option>
 							<option value="base">Base (0★–5★)</option>
 						</select>
 					</div>
@@ -947,10 +945,10 @@
 						bind:value={options.trinketMode}
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-cyan-400 focus:outline-none"
 					>
-						<option value="auto">Ottimizza automaticamente</option>
-						<option value="none">Nessun Trinket</option>
+						<option value="auto">Auto-optimize</option>
+						<option value="none">No Trinket</option>
 						{#each optimizerTrinkets as t (t.id)}
-							<option value={t.id}>Solo: {t.name}</option>
+							<option value={t.id}>Only: {t.name}</option>
 						{/each}
 					</select>
 				</div>
@@ -970,22 +968,22 @@
 						}}
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="auto">Ottimizza automaticamente</option>
-						<option value="mastered">Blocca: Mastered (100% Autopan Quality)</option>
-						<option value="none">Nessun enchant</option>
+						<option value="auto">Auto-optimize</option>
+						<option value="mastered">Lock: Mastered (100% Autopan Quality)</option>
+						<option value="none">No enchant</option>
 						{#each shovelEnchants.filter((e) => e.id !== 'shovel-mastered') as enc (enc.id)}
-							<option value={enc.id}>Solo: {enc.name}</option>
+							<option value={enc.id}>Only: {enc.name}</option>
 						{/each}
 					</select>
 					<p class="mt-1 text-[11px] text-slate-500">
-						Autopan senza <em>Mastered</em> scava al 51% quality (⅔ Luck, no 1.5× Dig).
+						Autopan without <em>Mastered</em> digs at 51% quality (⅔ Luck, no 1.5× Dig).
 					</p>
 				</div>
 
 				<div>
 					<div class="flex items-center justify-between text-xs">
 						<label for="opt-roll-quality" class="font-medium text-slate-400">
-							Qualità Roll Jewelry
+							Equipment Roll Quality
 						</label>
 						<span class="font-mono text-amber-300">{Math.round(options.rollQuality * 100)}%</span>
 					</div>
@@ -1009,17 +1007,17 @@
 						bind:value={options.mutationMode}
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="auto">Ottimizza automaticamente (Tutte)</option>
-						<option value="none">Nessuna Mutation</option>
+						<option value="auto">Auto-optimize (All)</option>
+						<option value="none">No Mutation</option>
 						{#each MUTATIONS as mut (mut.id)}
-							<option value={mut.id}>Solo {mut.name} ({mut.rawEffects?.[0] ?? `${mut.statMultiplier}×`})</option>
+							<option value={mut.id}>Only {mut.name} ({mut.rawEffects?.[0] ?? `${mut.statMultiplier}×`})</option>
 						{/each}
 					</select>
 				</div>
 
 				<div>
 					<label for="opt-museum-mode" class="block text-xs font-medium text-slate-400">
-						Modalità Museo
+						Museum Mode
 					</label>
 					<select
 						id="opt-museum-mode"
@@ -1035,10 +1033,10 @@
 						}}
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="optimize">Ottimizza Museo ideale (18 slot)</option>
-						<option value="none">Nessun Museo</option>
+						<option value="optimize">Optimize ideal Museum (18 slots)</option>
+						<option value="none">No Museum</option>
 						{#each savedMuseums as m (m.id)}
-							<option value={`saved:${m.id}`}>Usa Museo salvato: {m.name}</option>
+							<option value={`saved:${m.id}`}>Use saved Museum: {m.name}</option>
 						{/each}
 					</select>
 				</div>
@@ -1048,7 +1046,7 @@
 						<div>
 							<div class="flex items-center justify-between text-xs">
 								<label for="opt-museum-pct" class="font-medium text-slate-300">
-									Peso Minerali nel Museo (% Min Kg)
+									Museum Mineral Weight (% Min Kg)
 								</label>
 								<span class="font-mono text-emerald-300">{options.museumWeightPct}%</span>
 							</div>
@@ -1065,19 +1063,19 @@
 
 						<div>
 							<label for="opt-museum-rider" class="block text-xs font-medium text-slate-300">
-								Modifier nei Display del Museo
+								Modifiers on Museum Displays
 							</label>
 							<select
 								id="opt-museum-rider"
 								bind:value={options.museumRiderMode}
 								class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-900 px-2.5 py-1.5 text-xs text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
-								<option value="all">Tutti (incl. Treasured / Entombed)</option>
-								<option value="panning_only">Solo Modifier da Panning</option>
-								<option value="none">Nessun Modifier sui display</option>
+								<option value="all">All (incl. Treasured / Entombed)</option>
+								<option value="panning_only">Panning Modifiers only</option>
+								<option value="none">No Modifiers on displays</option>
 							</select>
 							<p class="mt-1 text-[11px] text-slate-500">
-								Treasured (8 zone Treasure Chest) ed Entombed (Pharaoh's Tomb) vengono assegnati solo ai minerali che possono ottenerli.
+								Treasured (8 Treasure Chest zones) and Entombed (Pharaoh's Tomb) are only assigned to eligible minerals.
 							</p>
 						</div>
 					</div>
@@ -1087,19 +1085,19 @@
 			<!-- Runes, Consumables & Toughness -->
 			<div class="space-y-2.5 border-t border-slate-800/80 pt-4">
 				<h3 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Runes, Consumabili &amp; Vincoli
+					Runes, Consumables &amp; Constraints
 				</h3>
 
 				<div class="flex items-center justify-between gap-2">
 					<label class="flex items-center gap-2 text-xs text-slate-200">
 						<input type="checkbox" bind:checked={options.optimizeRunes} class="accent-amber-400" />
-						<span>Ottimizza Runes</span>
+						<span>Optimize Runes</span>
 					</label>
 					{#if options.optimizeRunes}
 						<label class="flex items-center gap-1.5 text-[11px] text-slate-400">
-							<span>Max slot</span>
+							<span>Max slots</span>
 							<select
-								aria-label="Slot massimi Runes"
+								aria-label="Max Rune slots"
 								bind:value={options.maxRunes}
 								class="rounded border border-slate-700 bg-slate-950 px-2 py-0.5 font-mono text-xs text-slate-100 focus:border-amber-400 focus:outline-none"
 							>
@@ -1124,9 +1122,9 @@
 							class="accent-amber-400"
 						/>
 						<span>
-							Consenti Purity Rune
+							Allow Purity Rune
 							{#if options.targetModifierId !== null}
-								<span class="text-[11px] text-amber-300/90">(disabilitata per target modifier)</span>
+								<span class="text-[11px] text-amber-300/90">(disabled for target modifier)</span>
 							{/if}
 						</span>
 					</label>
@@ -1134,28 +1132,28 @@
 
 				<label class="flex items-center gap-2 text-xs text-slate-200">
 					<input type="checkbox" bind:checked={options.includeTotems} class="accent-amber-400" />
-					<span>Includi Totem (Luck / Strength / Luminant)</span>
+					<span>Include Totems (Luck / Strength / Luminant)</span>
 				</label>
 
 				<div class="pt-0.5">
 					<label for="opt-potion-mode" class="block text-xs font-medium text-slate-300">
-						Pozioni
+						Potions
 					</label>
 					<select
 						id="opt-potion-mode"
 						bind:value={options.potionMode}
 						class="mt-1 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-xs text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="none">Nessuna pozione</option>
-						<option value="shop_cash">Solo negozio in $ (no Shard, no Mercante)</option>
-						<option value="cash_all">Tutte in $ (incl. Mercante: Instability / Quake / Blitz)</option>
-						<option value="all">Tutte le pozioni (incl. Shard)</option>
+						<option value="none">No potions</option>
+						<option value="shop_cash">Shop cash ($) only (no Shard, no Merchant)</option>
+						<option value="cash_all">All cash ($) (incl. Merchant: Instability / Quake / Blitz)</option>
+						<option value="all">All potions (incl. Shards)</option>
 					</select>
 				</div>
 
 				<div class="flex items-center justify-between gap-3 pt-1">
 					<label for="opt-toughness" class="text-xs font-medium text-slate-300">
-						Toughness minima Shovel
+						Min Shovel Toughness
 					</label>
 					<input
 						id="opt-toughness"
@@ -1172,12 +1170,12 @@
 			<!-- Events & Time -->
 			<div class="space-y-2 border-t border-slate-800/80 pt-4">
 				<h3 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
-					Orario &amp; Eventi Attivi
+					Time &amp; Active Events
 				</h3>
-				<div class="grid grid-cols-2 gap-2 text-xs text-slate-200">
+				<div class="grid grid-cols-1 gap-2 text-xs text-slate-200 sm:grid-cols-2">
 					<label class="flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-950/60 px-2.5 py-2">
 						<input type="checkbox" bind:checked={options.isNight} class="accent-amber-400" />
-						<span>Notte</span>
+						<span>Night</span>
 					</label>
 					<label class="flex items-center gap-2 rounded-lg border border-slate-800 bg-slate-950/60 px-2.5 py-2">
 						<input type="checkbox" bind:checked={options.solarMagnifier} class="accent-amber-400" />
@@ -1198,14 +1196,14 @@
 			{#if savedBuilds.length > 0}
 				<div class="border-t border-slate-800/80 pt-4">
 					<label for="opt-compare" class="block text-xs font-semibold tracking-wider text-slate-400 uppercase">
-						Confronta con una tua Build
+						Compare with Your Build
 					</label>
 					<select
 						id="opt-compare"
 						bind:value={compareBuildId}
 						class="mt-2 w-full rounded-lg border border-slate-700 bg-slate-950 px-3 py-2 text-sm text-slate-100 focus:border-amber-400 focus:outline-none"
 					>
-						<option value="">— Nessun confronto —</option>
+						<option value="">— No comparison —</option>
 						{#each savedBuilds as b (b.id)}
 							<option value={b.id}>{b.name}</option>
 						{/each}
@@ -1215,7 +1213,7 @@
 		</section>
 
 		<!-- RIGHT COLUMN: RESULTS -->
-		<section class="space-y-5 xl:col-span-8">
+		<section class="min-w-0 space-y-5 xl:col-span-8">
 			<!-- Warnings Banner -->
 			{#if result.warnings.length > 0}
 				<div class="space-y-2 rounded-xl border border-amber-500/40 bg-amber-500/10 p-4 text-xs text-amber-200">
@@ -1228,7 +1226,7 @@
 							onclick={() => (options.shovelEnchantMode = 'auto')}
 							class="mt-1 mr-2 rounded-lg bg-amber-400 px-3 py-1 text-xs font-semibold text-slate-950 transition hover:bg-amber-300"
 						>
-							Sblocca Shovel Enchant (Auto)
+							Unlock Shovel Enchant (Auto)
 						</button>
 					{/if}
 					{#if options.targetModifierId === 'lunar' && !options.isNight}
@@ -1237,7 +1235,7 @@
 							onclick={() => (options.isNight = true)}
 							class="mt-1 rounded-lg bg-amber-400 px-3 py-1 text-xs font-semibold text-slate-950 transition hover:bg-amber-300"
 						>
-							Attiva Notte
+							Enable Night
 						</button>
 					{/if}
 					{#if result.weightInfo.active && result.weightInfo.probability <= 0}
@@ -1248,7 +1246,7 @@
 									onclick={() => (options.solarMagnifier = true)}
 									class="rounded-lg border border-amber-400/50 bg-slate-950/60 px-2.5 py-1 text-xs font-medium text-amber-200 hover:bg-slate-900"
 								>
-									+ Attiva Solar Magnifier (1.5× Peso)
+									+ Enable Solar Magnifier (1.5× Weight)
 								</button>
 							{/if}
 							{#if !options.volcanicEruption}
@@ -1257,7 +1255,7 @@
 									onclick={() => (options.volcanicEruption = true)}
 									class="rounded-lg border border-amber-400/50 bg-slate-950/60 px-2.5 py-1 text-xs font-medium text-amber-200 hover:bg-slate-900"
 								>
-									+ Attiva Volcanic Eruption (1.5× Peso)
+									+ Enable Volcanic Eruption (1.5× Weight)
 								</button>
 							{/if}
 						</div>
@@ -1271,9 +1269,9 @@
 					<p class="text-[11px] font-semibold tracking-wider text-emerald-300 uppercase">
 						{options.targetMode === 'specific'
 							? result.isChestOnly
-								? 'Chance Apertura'
-								: 'Tempo 50% / Atteso'
-							: 'Rolls Effettivi / sec'}
+								? 'Chest Drop Odds'
+								: 'Time 50% / Expected'
+							: 'Effective Rolls / sec'}
 					</p>
 					<p class="mt-1 font-mono text-xl font-bold text-white">
 						{#if options.targetMode === 'specific'}
@@ -1288,7 +1286,7 @@
 					</p>
 					<p class="mt-0.5 text-[11px] text-emerald-200/80">
 						{#if options.targetMode === 'specific' && !result.isChestOnly}
-							Media attesa: {fmtDuration(result.expectedTimeSeconds)}
+							Expected avg: {fmtDuration(result.expectedTimeSeconds)}
 						{:else if options.targetMode === 'rare_generic'}
 							{result.mineralSummary === null
 								? `${Math.round(result.chanceInputs.luck * Math.sqrt(result.chanceInputs.capacity)).toLocaleString('en-US')} rolls/pan`
@@ -1302,8 +1300,8 @@
 				<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
 					<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
 						{options.targetMode === 'specific' && !result.isChestOnly
-							? 'Tempo 90% / 99%'
-							: 'Rolls & Ciclo Pan'}
+							? 'Time 90% / 99%'
+							: 'Rolls & Pan Cycle'}
 					</p>
 					<p class="mt-1 font-mono text-lg font-bold text-white">
 						{#if options.targetMode === 'specific' && !result.isChestOnly}
@@ -1321,14 +1319,14 @@
 							Luck {Math.round(result.chanceInputs.luck).toLocaleString('en-US')} • Cap
 							{Math.round(result.chanceInputs.capacity).toLocaleString('en-US')}
 						{:else}
-							Solo apertura Chest
+							Chest openings only
 						{/if}
 					</p>
 				</div>
 
 				<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
 					<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
-						{options.targetMode === 'specific' ? 'Location & Chance/Pan' : 'Efficienza Panning'}
+						{options.targetMode === 'specific' ? 'Location & Chance/Pan' : 'Panning Efficiency'}
 					</p>
 					<p class="mt-1 truncate font-mono text-lg font-bold text-amber-300">
 						{#if result.mineralSummary}
@@ -1349,13 +1347,13 @@
 
 				<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
 					<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
-						Filtro Peso / Modifier
+						Weight / Modifier Filter
 					</p>
 					<p class="mt-1 font-mono text-lg font-bold text-sky-300">
 						{fmtPct(result.weightInfo.probability * result.modifierInfo.probability, 3)}
 					</p>
 					<p class="mt-0.5 text-[11px] text-slate-400">
-						Peso: {result.weightInfo.active ? fmtPct(result.weightInfo.probability, 1) : '100%'} •
+						Weight: {result.weightInfo.active ? fmtPct(result.weightInfo.probability, 1) : '100%'} •
 						Mod: {result.modifierInfo.active ? fmtPct(result.modifierInfo.probability, 2) : '100%'}
 					</p>
 				</div>
@@ -1366,12 +1364,12 @@
 				<div class="flex flex-wrap items-center justify-between gap-3 rounded-xl border border-sky-500/30 bg-sky-500/10 p-4 text-xs">
 					<div>
 						<span class="font-semibold text-sky-200">
-							Confronto vs "{compareStatsSummary.name}":
+							Comparison vs "{compareStatsSummary.name}":
 						</span>
 						<span class="ml-1 text-slate-300">
 							{#if options.targetMode === 'specific' && !result.isChestOnly}
 								T50 {fmtDuration(compareStatsSummary.summary.t50)} → {fmtDuration(result.t50Seconds)}
-								(Atteso {fmtDuration(compareStatsSummary.compExpected)} →
+								(Expected {fmtDuration(compareStatsSummary.compExpected)} →
 								{fmtDuration(result.expectedTimeSeconds)})
 							{:else}
 								{compareStatsSummary.compRollsPerSec.toFixed(1)}/s →
@@ -1388,8 +1386,8 @@
 							}`}
 						>
 							{compareStatsSummary.speedup >= 1
-								? `${compareStatsSummary.speedup.toFixed(2)}× più veloce`
-								: `${(1 / compareStatsSummary.speedup).toFixed(2)}× più lenta`}
+								? `${compareStatsSummary.speedup.toFixed(2)}× faster`
+								: `${(1 / compareStatsSummary.speedup).toFixed(2)}× slower`}
 						</span>
 					{/if}
 				</div>
@@ -1400,7 +1398,7 @@
 				<div class="grid gap-3 md:grid-cols-12 md:items-end">
 					<div class={options.museumMode === 'optimize' ? 'md:col-span-4' : 'md:col-span-7'}>
 						<label for="save-build-name" class="block text-xs font-medium text-slate-400">
-							Nome Build da salvare
+							Build name to save
 						</label>
 						<input
 							id="save-build-name"
@@ -1414,7 +1412,7 @@
 					{#if options.museumMode === 'optimize' && result.museum}
 						<div class="md:col-span-4">
 							<label for="save-museum-name" class="block text-xs font-medium text-slate-400">
-								Nome Museo da collegare
+								Museum name to link
 							</label>
 							<input
 								id="save-museum-name"
@@ -1432,7 +1430,7 @@
 							onclick={() => handleSaveAll(options.museumMode === 'optimize')}
 							class="flex-1 rounded-lg bg-amber-500 px-3.5 py-2 text-xs font-semibold text-slate-950 transition hover:bg-amber-400"
 						>
-							{options.museumMode === 'optimize' ? 'Salva Build + Museo' : 'Salva Build'}
+							{options.museumMode === 'optimize' ? 'Save Build + Museum' : 'Save Build'}
 						</button>
 						{#if options.museumMode === 'optimize'}
 							<button
@@ -1440,7 +1438,7 @@
 								onclick={() => handleSaveAll(false)}
 								class="rounded-lg border border-slate-700 bg-slate-800 px-3 py-2 text-xs font-medium text-slate-200 transition hover:border-amber-400/50 hover:text-white"
 							>
-								Solo Build
+								Build Only
 							</button>
 						{/if}
 					</div>
@@ -1455,13 +1453,13 @@
 									href={`/builder?load=${encodeURIComponent(savedNotice.buildId)}`}
 									class="text-amber-300 hover:underline"
 								>
-									Apri in Builder ↗
+									Open in Build Builder ↗
 								</a>
 								<a
 									href={`/chance?build=${encodeURIComponent(savedNotice.buildId)}`}
 									class="text-emerald-300 hover:underline"
 								>
-									Apri in Probabilità ↗
+									Open in Drop Chances ↗
 								</a>
 							{/if}
 							{#if savedNotice.museumId}
@@ -1469,7 +1467,7 @@
 									href={`/museum?load=${encodeURIComponent(savedNotice.museumId)}`}
 									class="text-fuchsia-300 hover:underline"
 								>
-									Apri in Museo ↗
+									Open in Museum ↗
 								</a>
 							{/if}
 						</div>
@@ -1483,10 +1481,10 @@
 					<div class="flex flex-wrap items-center justify-between gap-2">
 						<div class="flex flex-wrap items-center gap-2">
 							<h2 class="text-xs font-semibold tracking-wider text-rose-200 uppercase">
-								Elementi Bannati ({bannedChips.length})
+								Banned Items ({bannedChips.length})
 							</h2>
 							<span class="rounded bg-rose-500/20 px-2 py-0.5 text-[10px] font-medium text-rose-200/90">
-								Solo ricerca corrente
+								Current search only
 							</span>
 						</div>
 						<button
@@ -1494,7 +1492,7 @@
 							onclick={clearAllBans}
 							class="rounded-lg border border-rose-400/40 bg-slate-950/60 px-2.5 py-1 text-xs font-medium text-rose-200 transition hover:bg-rose-500/20 hover:text-white"
 						>
-							Ripristina tutti
+							Reset all
 						</button>
 					</div>
 					<div class="mt-2.5 flex flex-wrap gap-1.5">
@@ -1502,7 +1500,7 @@
 							<button
 								type="button"
 								onclick={() => unbanItem(chip.category, chip.id)}
-								title="Clicca per ripristinare"
+								title="Click to restore"
 								class="inline-flex items-center gap-1.5 rounded-md border border-rose-500/30 bg-slate-950/70 px-2.5 py-1 text-xs text-rose-200 transition hover:border-emerald-400/50 hover:text-emerald-200"
 							>
 								<span class="text-[10px] text-rose-300/75 uppercase">{chip.categoryLabel}:</span>
@@ -1517,7 +1515,7 @@
 			<!-- Recommended Equipment Card -->
 			<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
 				<div class="flex flex-wrap items-center justify-between gap-2">
-					<h2 class="text-base font-semibold text-white">Equipaggiamento Consigliato</h2>
+					<h2 class="text-base font-semibold text-white">Recommended Loadout</h2>
 					<span class="text-xs text-slate-400">
 						{options.jewelryTier === '6star' ? '6★' : 'Base'} • Roll
 						{Math.round(options.rollQuality * 100)}%
@@ -1535,8 +1533,8 @@
 										<span>Enchant: {selectedPanEnchant.name}</span>
 										<button
 											type="button"
-											title={`Banna enchant ${selectedPanEnchant.name}`}
-											aria-label={`Banna enchant ${selectedPanEnchant.name}`}
+											title={`Ban enchant ${selectedPanEnchant.name}`}
+											aria-label={`Ban enchant ${selectedPanEnchant.name}`}
 											onclick={() => banItem('panEnchantIds', selectedPanEnchant.id)}
 											class="ml-0.5 rounded px-1 text-amber-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 										>
@@ -1549,8 +1547,8 @@
 										<span>Trinket: {selectedPanTrinket.name}</span>
 										<button
 											type="button"
-											title={`Banna trinket ${selectedPanTrinket.name}`}
-											aria-label={`Banna trinket ${selectedPanTrinket.name}`}
+											title={`Ban trinket ${selectedPanTrinket.name}`}
+											aria-label={`Ban trinket ${selectedPanTrinket.name}`}
 											onclick={() => banItem('trinketIds', selectedPanTrinket.id)}
 											class="ml-0.5 rounded px-1 text-cyan-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 										>
@@ -1561,7 +1559,7 @@
 							</div>
 						</div>
 						<div class="mt-1 flex items-center justify-between gap-2">
-							<p class="text-sm font-semibold text-white">{selectedPan?.name ?? 'Nessuna'}</p>
+							<p class="text-sm font-semibold text-white">{selectedPan?.name ?? 'None'}</p>
 							{#if selectedPan}
 								<button
 									type="button"
@@ -1608,8 +1606,8 @@
 									<span>Enchant: {selectedShovelEnchant.name}</span>
 									<button
 										type="button"
-										title={`Banna enchant ${selectedShovelEnchant.name}`}
-										aria-label={`Banna enchant ${selectedShovelEnchant.name}`}
+										title={`Ban enchant ${selectedShovelEnchant.name}`}
+										aria-label={`Ban enchant ${selectedShovelEnchant.name}`}
 										onclick={() => banItem('shovelEnchantIds', selectedShovelEnchant.id)}
 										class="ml-0.5 rounded px-1 text-sky-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 									>
@@ -1619,7 +1617,7 @@
 							{/if}
 						</div>
 						<div class="mt-1 flex items-center justify-between gap-2">
-							<p class="text-sm font-semibold text-white">{selectedShovel?.name ?? 'Nessuna'}</p>
+							<p class="text-sm font-semibold text-white">{selectedShovel?.name ?? 'None'}</p>
 							{#if selectedShovel}
 								<button
 									type="button"
@@ -1636,7 +1634,7 @@
 								• Toughness {Math.round(result.stats.toughness.final)}
 							</p>
 							<p class="mt-1 font-mono text-[11px] text-slate-400">
-								Digs medi: {result.chanceInputs.digsToFill}
+								Avg digs: {result.chanceInputs.digsToFill}
 								{#if activeDigCritChance > 0}
 									<span class="text-sky-300">
 										• {Math.round(activeDigCritChance * 100)}% crit 2×
@@ -1677,8 +1675,8 @@
 										<span>{mut.name}</span>
 										<button
 											type="button"
-											title={`Banna mutation ${mut.name}`}
-											aria-label={`Banna mutation ${mut.name}`}
+											title={`Ban mutation ${mut.name}`}
+											aria-label={`Ban mutation ${mut.name}`}
 											onclick={() => banItem('mutationIds', mut.id)}
 											class="ml-0.5 rounded px-1 text-fuchsia-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 										>
@@ -1723,7 +1721,7 @@
 									</div>
 								{/if}
 							{:else}
-								<p class="mt-1 text-sm text-slate-500">Slot vuoto</p>
+								<p class="mt-1 text-sm text-slate-500">Empty slot</p>
 							{/if}
 						</div>
 					{/each}
@@ -1731,12 +1729,12 @@
 
 				<!-- Rings (grouped) -->
 				<div class="mt-3 rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
-					<div class="flex items-center justify-between">
+					<div class="flex flex-wrap items-center justify-between gap-1">
 						<span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
 							8 Rings
 						</span>
 						<span class="text-[11px] text-slate-500">
-							I ring con "ONLY ONE CAN BE WORN" appaiono max 1×
+							Rings with "ONLY ONE CAN BE WORN" appear max 1×
 						</span>
 					</div>
 					<div class="mt-2.5 grid gap-2 sm:grid-cols-2">
@@ -1754,7 +1752,7 @@
 												• <span class="text-sky-300">Unique</span>
 											{/if}
 											{#if g.count > 1}
-												• <span class="text-slate-500">stat per singolo ring</span>
+												• <span class="text-slate-500">stats per individual ring</span>
 											{/if}
 										</p>
 									</div>
@@ -1765,8 +1763,8 @@
 												<span>{gMut.name}</span>
 												<button
 													type="button"
-													title={`Banna mutation ${gMut.name}`}
-													aria-label={`Banna mutation ${gMut.name}`}
+													title={`Ban mutation ${gMut.name}`}
+													aria-label={`Ban mutation ${gMut.name}`}
 													onclick={() => banItem('mutationIds', gMut.id)}
 													class="rounded px-0.5 text-fuchsia-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 												>
@@ -1776,7 +1774,7 @@
 										{/if}
 										<button
 											type="button"
-											title={`Banna ${g.item.name}`}
+											title={`Ban ${g.item.name}`}
 											onclick={() => banItem('equipmentIds', g.item.id)}
 											class="shrink-0 rounded border border-slate-700/80 bg-slate-950 px-1.5 py-0.5 text-[10px] text-slate-400 transition hover:border-rose-500/50 hover:bg-rose-500/15 hover:text-rose-200"
 										>
@@ -1812,7 +1810,7 @@
 								Runes ({activeRunes.length}/{options.maxRunes})
 							</span>
 							{#if activeRunes.length === 0}
-								<p class="mt-1 text-xs text-slate-500">Nessuna runa attiva</p>
+								<p class="mt-1 text-xs text-slate-500">No active runes</p>
 							{:else}
 								<div class="mt-2 flex flex-wrap gap-1.5">
 									{#each activeRunes as rune (rune.id)}
@@ -1820,8 +1818,8 @@
 											<span>{rune.name}</span>
 											<button
 												type="button"
-												title={`Banna runa ${rune.name}`}
-												aria-label={`Banna runa ${rune.name}`}
+												title={`Ban rune ${rune.name}`}
+												aria-label={`Ban rune ${rune.name}`}
 												onclick={() => banItem('runeIds', rune.id)}
 												class="rounded px-0.5 text-emerald-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 											>
@@ -1835,10 +1833,10 @@
 
 						<div class="rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
 							<span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
-								Totem &amp; Pozioni ({activeBoosts.length})
+								Totems &amp; Potions ({activeBoosts.length})
 							</span>
 							{#if activeBoosts.length === 0}
-								<p class="mt-1 text-xs text-slate-500">Disattivati</p>
+								<p class="mt-1 text-xs text-slate-500">Disabled</p>
 							{:else}
 								<div class="mt-2 flex flex-wrap gap-1.5">
 									{#each activeBoosts as boost (boost.id)}
@@ -1852,8 +1850,8 @@
 											</span>
 											<button
 												type="button"
-												title={`Banna ${boost.name}`}
-												aria-label={`Banna ${boost.name}`}
+												title={`Ban ${boost.name}`}
+												aria-label={`Ban ${boost.name}`}
 												onclick={() => banItem('boostIds', boost.id)}
 												class="rounded px-0.5 text-amber-200/70 transition hover:bg-rose-500/30 hover:text-rose-200"
 											>
@@ -1875,12 +1873,12 @@
 						<div>
 							<h2 class="text-base font-semibold text-white">
 								{options.museumMode === 'saved'
-									? `Museo Collegato: ${result.museum.name}`
-									: 'Museo Consigliato (18 Display)'}
+									? `Linked Museum: ${result.museum.name}`
+									: 'Recommended Museum (18 Displays)'}
 							</h2>
 							<p class="text-xs text-slate-400">
-								{result.museumSummary.filledSlots}/{result.museumSummary.totalSlots} slot riempiti •
-								Peso target {options.museumWeightPct}% del Min Kg
+								{result.museumSummary.filledSlots}/{result.museumSummary.totalSlots} displays filled •
+								Target weight {options.museumWeightPct}% of Min Kg
 							</p>
 						</div>
 					</div>
@@ -1914,7 +1912,7 @@
 									<span class={`rounded border px-2 py-0.5 text-[11px] font-semibold ${rStyle.badge}`}>
 										{MUSEUM_RARITY_LABELS[rarity]}
 									</span>
-									<span class="text-[11px] text-slate-500">{slots.length} slot</span>
+									<span class="text-[11px] text-slate-500">{slots.length} slots</span>
 								</div>
 
 								<div class="mt-2 space-y-1.5">
@@ -1931,8 +1929,8 @@
 													{#if options.museumMode === 'optimize'}
 														<button
 															type="button"
-															title={`Banna ${ore.name} dal Museo`}
-															aria-label={`Banna ${ore.name} dal Museo`}
+															title={`Ban ${ore.name} from Museum`}
+															aria-label={`Ban ${ore.name} from Museum`}
 															onclick={() => banItem('museumOreIds', ore.id)}
 															class="shrink-0 rounded px-1 text-[11px] text-slate-500 transition hover:bg-rose-500/20 hover:text-rose-200"
 														>
@@ -1949,8 +1947,8 @@
 														{#if options.museumMode === 'optimize'}
 															<button
 																type="button"
-																title={`Banna modifier ${rider.name}`}
-																aria-label={`Banna modifier ${rider.name}`}
+																title={`Ban modifier ${rider.name}`}
+																aria-label={`Ban modifier ${rider.name}`}
 																onclick={() => banItem('museumRiderIds', rider.id)}
 																class="rounded px-0.5 opacity-75 transition hover:bg-rose-500/30 hover:text-rose-200 hover:opacity-100"
 															>
@@ -1962,7 +1960,7 @@
 													<span class="text-[10px] text-slate-500">No mod</span>
 												{/if}
 											{:else}
-												<span class="text-slate-500">Slot #{idx + 1} vuoto</span>
+												<span class="text-slate-500">Slot #{idx + 1} empty</span>
 											{/if}
 										</div>
 									{/each}
@@ -1975,7 +1973,7 @@
 
 			<!-- Final Stats Summary -->
 			<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-5">
-				<h2 class="text-base font-semibold text-white">Statistiche Finali Raggiunte</h2>
+				<h2 class="text-base font-semibold text-white">Final Stats Reached</h2>
 				<div class="mt-3 grid gap-2.5 sm:grid-cols-2 lg:grid-cols-4">
 					{#each DISPLAY_STAT_KEYS as key (key)}
 						{@const bd = result.stats[key]}

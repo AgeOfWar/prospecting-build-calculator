@@ -781,7 +781,7 @@ function buildPanPairCandidates(
 	if (allowedPans.length === 0) {
 		return {
 			candidates: [{ pan: null, enchant: null, vec: createEmptyVector() }],
-			allPansBannedWarning: 'Tutte le Pan sono state bannate per questa ricerca.'
+			allPansBannedWarning: 'All Pans have been banned for this search.'
 		};
 	}
 
@@ -850,7 +850,7 @@ function buildShovelPairCandidates(
 				const reqName =
 					requiredEnchantId === 'shovel-crystal-touch' ? 'Crystal Touch' : 'Void Touched';
 				const modName = targetModifierId === 'crystalline' ? 'Crystalline' : 'Voidtorn';
-				shovelConflictWarning = `${modName} richiede l'enchant ${reqName} sulla Shovel, ma hai bloccato ${locked.name} (max 1 enchant per Shovel).`;
+				shovelConflictWarning = `${modName} requires the ${reqName} Shovel Enchant, but ${locked.name} is locked (max 1 enchant per Shovel).`;
 			}
 		} else {
 			allowedEnchants = requiredEnchantId
@@ -867,7 +867,7 @@ function buildShovelPairCandidates(
 		const reqName =
 			requiredEnchantId === 'shovel-crystal-touch' ? 'Crystal Touch' : 'Void Touched';
 		const modName = targetModifierId === 'crystalline' ? 'Crystalline' : 'Voidtorn';
-		shovelConflictWarning = `${modName} richiede l'enchant ${reqName} sulla Shovel, ma hai impostato nessun enchant.`;
+		shovelConflictWarning = `${modName} requires the ${reqName} Shovel Enchant, but Shovel Enchant is set to none.`;
 	}
 
 	allowedEnchants = allowedEnchants.filter((e) => e === null || !bannedShovelEnchantIds.has(e.id));
@@ -877,7 +877,7 @@ function buildShovelPairCandidates(
 			const reqName =
 				requiredEnchantId === 'shovel-crystal-touch' ? 'Crystal Touch' : 'Void Touched';
 			const modName = targetModifierId === 'crystalline' ? 'Crystalline' : 'Voidtorn';
-			shovelConflictWarning = `${modName} richiede l'enchant ${reqName}, ma è stato bannato per questa ricerca.`;
+			shovelConflictWarning = `${modName} requires the ${reqName} enchant, which has been banned for this search.`;
 		}
 	}
 
@@ -895,7 +895,7 @@ function buildShovelPairCandidates(
 					digCritChance: 0
 				}
 			],
-			toughnessFallbackWarning: 'Tutte le Shovel sono state bannate per questa ricerca.',
+			toughnessFallbackWarning: 'All Shovels have been banned for this search.',
 			shovelConflictWarning
 		};
 	}
@@ -940,7 +940,7 @@ function buildShovelPairCandidates(
 	}
 	return {
 		candidates: allPairs.filter((p) => p.vec.base[S_TOUGHNESS] + p.vec.flat[S_TOUGHNESS] >= maxT),
-		toughnessFallbackWarning: `La Toughness minima richiesta (${minToughness}) supera il massimo ottenibile (${maxT}); usata la massima disponibile.`,
+		toughnessFallbackWarning: `Minimum Toughness required (${minToughness}) exceeds the highest available (${maxT}); using the highest available.`,
 		shovelConflictWarning
 	};
 }
@@ -1950,8 +1950,8 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 		finalMuseum = options.fixedMuseum;
 	} else if (options.museumMode === 'optimize') {
 		const targetLabel =
-			targetMineral?.mineral ?? 'Minerali Rari';
-		const museumDoc = createDefaultSavedMuseum(`Museo Ottimale: ${targetLabel}`);
+			targetMineral?.mineral ?? 'Rare Minerals';
+		const museumDoc = createDefaultSavedMuseum(`Optimal Museum: ${targetLabel}`);
 		for (const r of MUSEUM_RARITIES_DESC) {
 			const count = MUSEUM_SLOT_COUNTS[r];
 			const slotPairs: Array<{ oreIdx: number; riderIdx: number | null }> = [];
@@ -1983,11 +1983,11 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 		.filter((_, idx) => best.boostActive[idx])
 		.map((b) => b.boost.id);
 
-	const targetTitle = targetMineral?.mineral ?? 'Minerali Rari';
+	const targetTitle = targetMineral?.mineral ?? 'Rare Minerals';
 	const finalPanId = panPairs[best.panIdx].pan?.id ?? null;
 	const finalBuild: SavedBuild = {
 		id: '',
-		name: `Ottimale: ${targetTitle}`,
+		name: `Optimal: ${targetTitle}`,
 		updatedAt: new Date().toISOString(),
 		panId: finalPanId,
 		panEnchantId: panPairs[best.panIdx].enchant?.id ?? null,
@@ -2067,13 +2067,13 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 	if (shovelConflictWarning) warnings.push(shovelConflictWarning);
 	if (isChestOnly) {
 		warnings.push(
-			`${targetMineral?.mineral} si ottiene solo da Treasure Chests: il tempo non dipende dalla velocità di panning.`
+			`${targetMineral?.mineral} only drops from Treasure Chests: completion time does not depend on panning speed.`
 		);
 	}
 	if (weightInfo.active && weightInfo.probability <= 0 && weightInfo.minSizeBoostNeededPct !== null) {
 		const currentSB = chanceInputs.sizeBoostPct;
 		warnings.push(
-			`Peso >= ${options.minWeightKg} kg irraggiungibile con le condizioni attuali: serve almeno +${weightInfo.minSizeBoostNeededPct}% Size Boost (massimo raggiunto +${currentSB}%). Prova ad attivare eventi Size Boost (Solar Magnifier / Volcanic Eruption) o Pozioni.`
+			`Weight >= ${options.minWeightKg} kg is unreachable under current conditions: requires at least +${weightInfo.minSizeBoostNeededPct}% Size Boost (highest reached +${currentSB}%). Try enabling Size Boost events (Solar Magnifier / Volcanic Eruption) or Potions.`
 		);
 	}
 	if (modifierInfo.warning) {

@@ -155,8 +155,10 @@ export interface EquipmentMutation {
 export interface EquippedJewelrySelection {
 	itemId: string;
 	tier: EquipmentTier;
-	/** Normalized roll quality from 0 (min) to 1 (max). Defaults to 1. */
+	/** Normalized roll quality from 0 (min) to 1 (max), representing the global/average quality. Defaults to 1. */
 	rollQuality: number;
+	/** Optional per-stat roll qualities in [0, 1] for items with ranged stats. */
+	statRollQualities?: Partial<Record<StatKey, number>>;
 	mutationId?: string | null;
 }
 

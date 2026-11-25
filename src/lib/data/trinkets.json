@@ -6,7 +6,7 @@
 		"location": "Sunscorched Desert",
 		"obtainment": "Complete the Brewing Trouble quest for the Desert Alchemist.",
 		"modeled": true,
-		"modelNote": "Modellato: +10% probabilità di upgrade al tier successivo nel pool panning (aumenta i modifier rari come Perfect).",
+		"modelNote": "Modeled: +10% chance to upgrade to the next tier in the panning pool (boosts rare modifiers like Perfect).",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -17,7 +17,7 @@
 		"obtainment": "Purchased from the Blueprint & Trinket Vendor.",
 		"price": "1,000 Sand Dollars",
 		"modeled": true,
-		"modelNote": "Modellato a regime: +25 × √Capacity × ChanceMod Base Luck (0 se Purity è attiva).",
+		"modelNote": "Modeled at steady state: +25 × √Capacity × ModChance Base Luck (0 if Purity is active).",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -27,7 +27,7 @@
 		"location": "Starfall River",
 		"obtainment": "Repair the Broken Device behind the house (requires Crafting Mastery 5).",
 		"modeled": false,
-		"modelNote": "Solo passivo: duplica i drop Mythic/Exotic (+10% quantità), non cambia il tempo per il primo drop.",
+		"modelNote": "Passive only: duplicates Mythic/Exotic drops (+10% quantity), does not change time to first drop.",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -37,7 +37,7 @@
 		"location": "Pharaoh's Tomb (Sunscorched Desert)",
 		"obtainment": "Found inside the Pharaoh's Tomb.",
 		"modeled": true,
-		"modelNote": "Modellato a regime al cap: +100% Sell Boost.",
+		"modelNote": "Modeled at steady state at cap: +100% Sell Boost.",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -47,7 +47,7 @@
 		"location": "Fortune River Delta",
 		"obtainment": "Dig at the red X in the Delta (requires Treasure Mastery 5).",
 		"modeled": false,
-		"modelNote": "Solo passivo: buff temporaneo condizionato allo scavo di una Treasure Map.",
+		"modelNote": "Passive only: temporary buff triggered by digging up a Treasure Map.",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -57,7 +57,7 @@
 		"location": "Rotwood Swamp",
 		"obtainment": "Complete the Going Nuclear quest for the Nuclear Scientist.",
 		"modeled": true,
-		"modelNote": "Modellato a regime: +25 × max(0, √Capacity − 20) Base Luck (funziona anche con Purity).",
+		"modelNote": "Modeled at steady state: +25 × max(0, √Capacity − 20) Base Luck (also works with Purity).",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -67,7 +67,7 @@
 		"location": "Pharaoh's Tomb (Sunscorched Desert)",
 		"obtainment": "Found inside the Pharaoh's Tomb.",
 		"modeled": true,
-		"modelNote": "Modellato su 1 deposito attivo: +15% Luck (in gioco scala cambiando più depositi ogni ora).",
+		"modelNote": "Modeled on 1 active deposit: +15% Luck (scales in-game across multiple deposits per hour).",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -77,7 +77,7 @@
 		"location": "Pharaoh's Tomb (Sunscorched Desert)",
 		"obtainment": "Found inside the Pharaoh's Tomb.",
 		"modeled": true,
-		"modelNote": "Modellato come moltiplicatore medio atteso sulla Luck finale: (0.5 + 0.75 + 1 + 1.25 + 1.5 + 3) / 6 = 4/3 (~1.3333x).",
+		"modelNote": "Modeled as expected multiplier on final Luck: (0.5 + 0.75 + 1 + 1.25 + 1.5 + 3) / 6 = 4/3 (~1.3333x).",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	},
 	{
@@ -88,7 +88,7 @@
 		"obtainment": "Purchased next to the Pumpkin Pan & Shovel during the Halloween event.",
 		"price": "1,500 Candy",
 		"modeled": false,
-		"modelNote": "Solo passivo: effetto evento speciale / potenziamento Pumpkin Set non quantificato.",
+		"modelNote": "Passive only: special event effect / Pumpkin Set empowerment not quantified.",
 		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
 	}
 ]

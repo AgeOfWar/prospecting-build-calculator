@@ -312,8 +312,8 @@ export function calculateModifierChance(
 			anyModifierChance: 0,
 			conditionalShare: 0,
 			modifierLuck,
-			warning: 'La Purity Rune impedisce di ottenere modificatori.',
-			label: targetId === 'any' ? 'Qualsiasi Modificatore' : (MODIFIERS_BY_ID.get(targetId)?.name ?? targetId)
+			warning: 'Purity Rune prevents obtaining modifiers.',
+			label: targetId === 'any' ? 'Any Modifier' : (MODIFIERS_BY_ID.get(targetId)?.name ?? targetId)
 		};
 	}
 
@@ -325,7 +325,7 @@ export function calculateModifierChance(
 			conditionalShare: 1,
 			modifierLuck,
 			warning: null,
-			label: 'Qualsiasi Modificatore'
+			label: 'Any Modifier'
 		};
 	}
 
@@ -349,7 +349,7 @@ export function calculateModifierChance(
 			anyModifierChance: isChestOnly ? 1 : anyModifierChance,
 			conditionalShare: isChestOnly ? 1 : 0,
 			modifierLuck,
-			warning: isChestOnly ? null : 'Treasured si ottiene solo da Treasure Chests (0% dal panning).',
+			warning: isChestOnly ? null : 'Treasured can only be obtained from Treasure Chests (0% from panning).',
 			label: mod.name
 		};
 	}
@@ -361,7 +361,7 @@ export function calculateModifierChance(
 			anyModifierChance: 1,
 			conditionalShare: 0,
 			modifierLuck,
-			warning: 'Le Chest danno sempre Treasured (0% per altri modificatori).',
+			warning: 'Chests always drop Treasured (0% for other modifiers).',
 			label: mod.name
 		};
 	}
@@ -375,7 +375,7 @@ export function calculateModifierChance(
 			modifierLuck,
 			warning: inputs.hasCrystalTouch
 				? null
-				: "Attiva l'enchant Crystal Touch (10% fisso) per ottenere Crystalline.",
+				: 'Enable the Crystal Touch enchant (fixed 10%) to obtain Crystalline.',
 			label: mod.name
 		};
 	}
@@ -389,7 +389,7 @@ export function calculateModifierChance(
 			modifierLuck,
 			warning: inputs.hasVoidTouched
 				? null
-				: 'Attiva Void Touched / Galactic tools (5%) per ottenere Voidtorn.',
+				: 'Enable Void Touched / Galactic tools (5%) to obtain Voidtorn.',
 			label: mod.name
 		};
 	}
@@ -401,7 +401,7 @@ export function calculateModifierChance(
 			anyModifierChance,
 			conditionalShare: 0,
 			modifierLuck,
-			warning: 'Lunar si ottiene solo di notte — attiva il toggle Notte.',
+			warning: 'Lunar can only be obtained at night — enable the Night toggle.',
 			label: mod.name
 		};
 	}
