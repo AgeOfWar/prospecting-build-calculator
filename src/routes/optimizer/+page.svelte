@@ -1089,6 +1089,21 @@
 				</h3>
 
 				<div class="flex items-center justify-between gap-2">
+					<span class="text-xs text-slate-200" title="Unlocked Ring slots (some are unlocked with Meteor Shards or the More Ring Slots gamepass)">
+						Ring slots
+					</span>
+					<select
+						aria-label="Unlocked Ring slots"
+						bind:value={options.ringSlots}
+						class="rounded border border-slate-700 bg-slate-950 px-2 py-0.5 font-mono text-xs text-slate-100 focus:border-amber-400 focus:outline-none"
+					>
+						{#each [1, 2, 3, 4, 5, 6, 7, 8] as n}
+							<option value={n}>{n}</option>
+						{/each}
+					</select>
+				</div>
+
+				<div class="flex items-center justify-between gap-2">
 					<label class="flex items-center gap-2 text-xs text-slate-200">
 						<input type="checkbox" bind:checked={options.optimizeRunes} class="accent-amber-400" />
 						<span>Optimize Runes</span>
@@ -1731,7 +1746,7 @@
 				<div class="mt-3 rounded-xl border border-slate-800 bg-slate-950/60 p-3.5">
 					<div class="flex flex-wrap items-center justify-between gap-1">
 						<span class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
-							8 Rings
+							{result.build.rings.filter(Boolean).length} Rings
 						</span>
 						<span class="text-[11px] text-slate-500">
 							Rings with "ONLY ONE CAN BE WORN" appear max 1×

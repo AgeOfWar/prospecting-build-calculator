@@ -130,6 +130,7 @@ export function normalizeOptimizerSearchConfig(raw: unknown): OptimizerSearchCon
 				: 'all',
 		optimizeRunes: asBoolean(obj.optimizeRunes, DEFAULT_OPTIMIZER_OPTIONS.optimizeRunes),
 		maxRunes: Math.min(5, Math.max(0, Math.floor(asFiniteNumber(obj.maxRunes, 5)))),
+		ringSlots: Math.min(8, Math.max(1, Math.floor(asFiniteNumber(obj.ringSlots, 8)))),
 		allowPurityRune: asBoolean(obj.allowPurityRune, DEFAULT_OPTIMIZER_OPTIONS.allowPurityRune),
 		includeTotems: asBoolean(obj.includeTotems, DEFAULT_OPTIMIZER_OPTIONS.includeTotems),
 		potionMode: normalizePotionMode(obj.potionMode),

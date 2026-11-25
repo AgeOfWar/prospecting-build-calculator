@@ -127,6 +127,8 @@ export interface OptimizerOptions {
 	museumRiderMode: OptimizerMuseumRiderMode;
 	optimizeRunes: boolean;
 	maxRunes: number;
+	/** Number of unlocked Ring slots (1–8). */
+	ringSlots: number;
 	allowPurityRune: boolean;
 	includeTotems: boolean;
 	potionMode: OptimizerPotionMode;
@@ -178,6 +180,7 @@ export const DEFAULT_OPTIMIZER_OPTIONS: OptimizerOptions = {
 	museumRiderMode: 'all',
 	optimizeRunes: true,
 	maxRunes: 5,
+	ringSlots: 8,
 	allowPurityRune: true,
 	includeTotems: false,
 	potionMode: 'none',
@@ -1323,6 +1326,10 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 		rollQuality: Math.min(1, Math.max(0, Number(rawOptions.rollQuality) || 0)),
 		museumWeightPct: Math.min(100, Math.max(0, Number(rawOptions.museumWeightPct) || 0)),
 		maxRunes: Math.min(5, Math.max(0, Math.floor(rawOptions.maxRunes ?? 5))),
+		ringSlots: Math.min(
+			MAX_RING_SLOTS,
+			Math.max(1, Math.floor(Number(rawOptions.ringSlots ?? MAX_RING_SLOTS) || MAX_RING_SLOTS))
+		),
 		minToughness: Math.max(0, Number(rawOptions.minToughness) || 0)
 	};
 
@@ -1448,6 +1455,8 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 		addBoostMapInPlace(fixedMuseumVec, mSum.totalBoosts, 1);
 	}
 
+	const ringSlotCount = options.ringSlots;
+
 	function buildAccumulator(state: InternalState): StatVector {
 		const acc = createEmptyVector();
 		addVectorInPlace(acc, panPairs[state.panIdx].vec, 1);
@@ -1525,7 +1534,7 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 			charms.length > 0 ? pickBestIndex(charms, (c) => scoreCandidateForSeed(c.vec, strategy)) : null;
 		const runeIdx = pickBestIndex(runeSubsets, (c) => scoreCandidateForSeed(c.vec, strategy));
 
-		// Pick top 8 legal rings for the seed strategy
+		// Pick top legal rings (up to the unlocked ring slots) for the seed strategy
 		const sortedRingIndices = rings
 			.map((c, idx) => ({ idx, c, s: scoreCandidateForSeed(c.vec, strategy) }))
 			.sort((a, b) => b.s - a.s);
@@ -1533,14 +1542,14 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 		const usedUnique = new Set<string>();
 		let slotCursor = 0;
 		for (const entry of sortedRingIndices) {
-			if (slotCursor >= MAX_RING_SLOTS) break;
+			if (slotCursor >= ringSlotCount) break;
 			if (entry.c.isUnique) {
 				if (usedUnique.has(entry.c.item.id)) continue;
 				usedUnique.add(entry.c.item.id);
 				ringIdx[slotCursor++] = entry.idx;
 			} else {
 				// Fill remaining slots with best stackable ring if still open, after allowing better unique rings too
-				while (slotCursor < MAX_RING_SLOTS) {
+				while (slotCursor < ringSlotCount) {
 					ringIdx[slotCursor++] = entry.idx;
 				}
 				break;
@@ -1750,7 +1759,7 @@ export function optimizeBuildAndMuseum(rawOptions: OptimizerOptions): OptimizerR
 			// 5. Rings (2 inner sweeps for unique-ring interactions)
 			for (let ringPass = 0; ringPass < 2; ringPass++) {
 				let ringImproved = false;
-				for (let slotIdx = 0; slotIdx < MAX_RING_SLOTS; slotIdx++) {
+				for (let slotIdx = 0; slotIdx < ringSlotCount; slotIdx++) {
 					const origIdx = state.ringIdx[slotIdx];
 					let bestIdx = origIdx;
 					let bestScore = currentScore;
