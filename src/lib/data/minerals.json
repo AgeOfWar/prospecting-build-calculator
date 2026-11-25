@@ -1,0 +1,4057 @@
+{
+	"meta": {
+		"game": "Prospecting",
+		"version": "1.0.0",
+		"lastUpdated": "2026-11-25",
+		"source": "Official Prospecting Miraheze Wiki (sync-wiki-data.mjs)"
+	},
+	"locations": [
+		{
+			"id": "rubble_creek_sands",
+			"name": "Rubble Creek Sands",
+			"region": "Starter"
+		},
+		{
+			"id": "rubble_creek_deposits",
+			"name": "Rubble Creek Deposits",
+			"region": "Starter"
+		},
+		{
+			"id": "frostbite_waterfall",
+			"name": "Frostbite Waterfall",
+			"region": "Frost"
+		},
+		{
+			"id": "the_magma_furnace",
+			"name": "The Magma Furnace",
+			"region": "Volcanic"
+		},
+		{
+			"id": "infernal_heart",
+			"name": "Infernal Heart",
+			"region": "Volcanic"
+		},
+		{
+			"id": "overgrown_grotto",
+			"name": "Overgrown Grotto",
+			"region": "Nature"
+		},
+		{
+			"id": "fungal_marsh",
+			"name": "Fungal Marsh",
+			"region": "Nature"
+		},
+		{
+			"id": "timelocked_sanctuary",
+			"name": "Timelocked Sanctuary",
+			"region": "Nature"
+		},
+		{
+			"id": "fortune_river",
+			"name": "Fortune River",
+			"region": "Riverlands"
+		},
+		{
+			"id": "fortune_river_delta",
+			"name": "Fortune River Delta",
+			"region": "Riverlands"
+		},
+		{
+			"id": "meteor_falls",
+			"name": "Meteor Falls",
+			"region": "Meteoric"
+		},
+		{
+			"id": "starfall_river",
+			"name": "Starfall River",
+			"region": "Meteoric"
+		},
+		{
+			"id": "astral_caverns",
+			"name": "Astral Caverns",
+			"region": "Meteoric"
+		},
+		{
+			"id": "sandstone_stream",
+			"name": "Sandstone Stream",
+			"region": "Desert"
+		},
+		{
+			"id": "mystic_floodplains",
+			"name": "Mystic Floodplains",
+			"region": "Desert"
+		},
+		{
+			"id": "lifespring_oasis",
+			"name": "Lifespring Oasis",
+			"region": "Desert"
+		},
+		{
+			"id": "sunset_beach",
+			"name": "Sunset Beach",
+			"region": "Coastal"
+		},
+		{
+			"id": "seashell_beach",
+			"name": "Seashell Beach",
+			"region": "Limited"
+		},
+		{
+			"id": "pyramid_tomb_vein_1",
+			"name": "Pyramid - Tomb Vein 1",
+			"region": "Desert"
+		},
+		{
+			"id": "pyramid_tomb_vein_2",
+			"name": "Pyramid - Tomb Vein 2",
+			"region": "Desert"
+		},
+		{
+			"id": "pyramid_tomb_vein_3",
+			"name": "Pyramid - Tomb Vein 3",
+			"region": "Desert"
+		},
+		{
+			"id": "frozen_peak",
+			"name": "Frozen Peak",
+			"region": "Frost"
+		},
+		{
+			"id": "frostbite_river",
+			"name": "Frostbite River",
+			"region": "Frost"
+		},
+		{
+			"id": "north_pole",
+			"name": "North Pole",
+			"region": "Limited"
+		},
+		{
+			"id": "the_void",
+			"name": "The Void",
+			"region": "Special"
+		},
+		{
+			"id": "azuralite_oasis",
+			"name": "Azuralite Oasis",
+			"region": "Crystal"
+		},
+		{
+			"id": "crystal_cavern_river",
+			"name": "Crystal Cavern River",
+			"region": "Crystal"
+		},
+		{
+			"id": "abyssal_depths",
+			"name": "Abyssal Depths",
+			"region": "Dark"
+		},
+		{
+			"id": "deeproot_spring",
+			"name": "Deeproot Spring",
+			"region": "Nature"
+		},
+		{
+			"id": "rotwood_swamp",
+			"name": "Rotwood Swamp",
+			"region": "Nature"
+		},
+		{
+			"id": "haunted_creek",
+			"name": "Haunted Creek",
+			"region": "Nature"
+		},
+		{
+			"id": "volcanic_springs",
+			"name": "Volcanic Springs",
+			"region": "Volcanic"
+		},
+		{
+			"id": "volcanic_sands",
+			"name": "Volcanic Sands",
+			"region": "Volcanic"
+		},
+		{
+			"id": "enchanted_ruins",
+			"name": "Enchanted Ruins",
+			"region": "Nature"
+		},
+		{
+			"id": "windswept_beach",
+			"name": "Windswept Beach",
+			"region": "Coastal"
+		}
+	],
+	"minerals": [
+		{
+			"mineral": "Amethyst",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 3.5681
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 3.1287
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 2.8339
+				}
+			]
+		},
+		{
+			"mineral": "Blue Ice",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 51.501
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 51.501
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 51.501
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 27.9264
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				}
+			]
+		},
+		{
+			"mineral": "Copper",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 36.9786
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 33.8491
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 27.1237
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 27.1237
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 24.2347
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 23.3408
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 22.592
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 22.1047
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 21.613
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 19.1974
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 17.0732
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 17.073
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 10.1946
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 9.38622
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 8.5018
+				}
+			]
+		},
+		{
+			"mineral": "Gold",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 70.3167
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 58.3704
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 57.2323
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 54.716
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 54.2536
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 54.2536
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 54.2526
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 54.2473
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 54.2473
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 52.1996
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 52.1295
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 51.7301
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 51.6447
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 51.6446
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 48.4694
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 46.6816
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 45.184
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 43.2261
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 42.3118
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 38.3949
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 36.9786
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 34.8248
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 34.1464
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 34.1459
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 27.9264
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 26.6829
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 20.4212
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				}
+			]
+		},
+		{
+			"mineral": "Obsidian",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 73.6822
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 45.5279
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 25.8651
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 25.8224
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 25.8223
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 19.8154
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 19.3698
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 19.2707
+				}
+			]
+		},
+		{
+			"mineral": "Pearl",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 18.0702
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 16.9993
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 16.9983
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 10.9432
+				}
+			]
+		},
+		{
+			"mineral": "Platinum",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Fortune River",
+					"chance_percent": 28.6161
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 14.7364
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 12.9325
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 12.9112
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 12.9112
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 12.515
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 10.1946
+				}
+			]
+		},
+		{
+			"mineral": "Pyrite",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 54.2535
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 54.2535
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 15.6389
+				}
+			]
+		},
+		{
+			"mineral": "Seashell",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 48.1872
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 45.3314
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 45.3288
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				}
+			]
+		},
+		{
+			"mineral": "Silver",
+			"rarity": "common",
+			"locations": [
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 32.1882
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 32.1882
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 32.1881
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 29.1852
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 28.3321
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 28.3305
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 27.9264
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 27.358
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 27.1263
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 25.9984
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 24.2347
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 23.3408
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 22.592
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 21.613
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 18.4893
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 18.1132
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 16.9246
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 7.646
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 7.3004
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 6.8014
+				}
+			]
+		},
+		{
+			"mineral": "Coral",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 6.0234
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 5.6664
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 5.6661
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 3.283
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				}
+			]
+		},
+		{
+			"mineral": "Electrum",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 5.6678
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 4.1717
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 2.7127
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 2.7127
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 2.7127
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 2.7124
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 2.7123
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 2.5998
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 2.5865
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 2.5822
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 2.5822
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 2.5487
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				}
+			]
+		},
+		{
+			"mineral": "Glowberry",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 8.7556
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 3.7345
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 1.3553
+				}
+			]
+		},
+		{
+			"mineral": "Malachite",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 1.2047
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 1.1336
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 1.0429
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.7646
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.5425
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.5425
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.5425
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.1167
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.09694
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.09336
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.09245
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.09037
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.08645
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.08462
+				}
+			]
+		},
+		{
+			"mineral": "Neodymium",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 2.2666
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 2.2664
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 1.7511
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 1.6415
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 1.4541
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 1.4004
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 1.3867
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 1.3555
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 1.2693
+				}
+			]
+		},
+		{
+			"mineral": "Nickel",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 10.8507
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 10.8507
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 10.3993
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				}
+			]
+		},
+		{
+			"mineral": "Rock Candy",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 1.2967
+				}
+			]
+		},
+		{
+			"mineral": "Sapphire",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 4.3403
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 4.3403
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 4.1597
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 3.3512
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 1.9313
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 1.9313
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 1.9313
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.5723
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.5213
+				}
+			]
+		},
+		{
+			"mineral": "Smoky Quartz",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 4.3402
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 4.3398
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 4.3397
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 3.4581
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 2.8339
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 2.6073
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 2.0389
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 1.1674
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 1.1333
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 1.1332
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 1.0943
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.9694
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.9336
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.9245
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.9037
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.8462
+				}
+			]
+		},
+		{
+			"mineral": "Titanium",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 12.8753
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 12.8753
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 12.8753
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 11.4465
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 11.1706
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 10.8495
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 10.8495
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 8.6452
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 4.1704
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 2.3439
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				}
+			]
+		},
+		{
+			"mineral": "Topaz",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 10.8505
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 10.2021
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 7.8219
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 5.173
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 5.1645
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 5.1645
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 5.0973
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 2.2105
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 2.194
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 1.807
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 1.7073
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 1.7073
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 1.4308
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 1.1719
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 1.0426
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.5472
+				}
+			]
+		},
+		{
+			"mineral": "Zircon",
+			"rarity": "uncommon",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 1.8113
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 1.4736
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 1.3712
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 1.1382
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 1.1382
+				}
+			]
+		},
+		{
+			"mineral": "Amber",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.05837
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.04847
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.04518
+				}
+			]
+		},
+		{
+			"mineral": "Azuralite",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.5837
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.5101
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.4847
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.4668
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.4622
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.4518
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.4231
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.4172
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.2549
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				}
+			]
+		},
+		{
+			"mineral": "Candy Cane",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.05586
+				}
+			]
+		},
+		{
+			"mineral": "Diopside",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.05425
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.05425
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.05425
+				}
+			]
+		},
+		{
+			"mineral": "Glacial Quartz",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "North Pole",
+					"chance_percent": 0.2234
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.1288
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.1287
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.1287
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				}
+			]
+		},
+		{
+			"mineral": "Gloomberry",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.0004846
+				}
+			]
+		},
+		{
+			"mineral": "Jade",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "North Pole",
+					"chance_percent": 1.3963
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 1.2875
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 1.2875
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 1.2875
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.2862
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.2189
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.1085
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.1085
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.104
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				}
+			]
+		},
+		{
+			"mineral": "Lapis Lazuli",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.5425
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.5425
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.52
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.5101
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.4693
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.3058
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.1303
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.103
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.09376
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.06487
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.06438
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.06438
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.04323
+				}
+			]
+		},
+		{
+			"mineral": "Meteoric Iron",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 4.1597
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.2468
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.2409
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.2276
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.06256
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.05723
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.03281
+				}
+			]
+		},
+		{
+			"mineral": "Natron Salt",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 1.0195
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.7822
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.5668
+				}
+			]
+		},
+		{
+			"mineral": "Onyx",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.2834
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.1825
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.1474
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.1371
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.1205
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.1138
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.1138
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.1085
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.1085
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.1085
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.1033
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.1033
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.1019
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.05666
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.05666
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.05472
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.04622
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.04231
+				}
+			]
+		},
+		{
+			"mineral": "Peridot",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 1.417
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.9386
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.5173
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.5164
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.5164
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.5097
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.07368
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.05691
+				}
+			]
+		},
+		{
+			"mineral": "Pyrelith",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.2947
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.2276
+				}
+			]
+		},
+		{
+			"mineral": "Ruby",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 2.8339
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 1.8251
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 1.0346
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 1.0329
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 1.0329
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 1.0195
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.2289
+				}
+			]
+		},
+		{
+			"mineral": "Sandsteel",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.4534
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.2607
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.1549
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.1549
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.1529
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.1035
+				}
+			]
+		},
+		{
+			"mineral": "Silver Clamshell",
+			"rarity": "rare",
+			"locations": [
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.1808
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.17
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.17
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.1094
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.09057
+				}
+			]
+		},
+		{
+			"mineral": "Ammonite Fossil",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.006023
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.005666
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				}
+			]
+		},
+		{
+			"mineral": "Ashvein",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.01133
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.01133
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.009245
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.008462
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				}
+			]
+		},
+		{
+			"mineral": "Aurorite",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.008585
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.007819
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.005625
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.005472
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.00217
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.002161
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.00208
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.001931
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.001931
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.001751
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.001676
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.001454
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.0014
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.001356
+				}
+			]
+		},
+		{
+			"mineral": "Blue Faience",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.4534
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.3129
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.2039
+				}
+			]
+		},
+		{
+			"mineral": "Bone",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.01417
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.007822
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.005097
+				}
+			]
+		},
+		{
+			"mineral": "Borealite",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.00515
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.00515
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.00515
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.004622
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.004468
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.004231
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				}
+			]
+		},
+		{
+			"mineral": "Cobalt",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.002575
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.002575
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.002575
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.002335
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.002234
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.00217
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.00217
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.00217
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.00217
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.001939
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.001867
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.001807
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.001729
+				}
+			]
+		},
+		{
+			"mineral": "Emerald",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.01134
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.005215
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.004579
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.00434
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.00434
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.00434
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.00417
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.003502
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.003458
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.003058
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.002908
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.002801
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.002773
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.002711
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.002539
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.002344
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.001931
+				}
+			]
+		},
+		{
+			"mineral": "Glowmoss",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.0005837
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.0005425
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.0004668
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.0004517
+				}
+			]
+		},
+		{
+			"mineral": "Golden Pearl",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.02267
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.02266
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.01641
+				}
+			]
+		},
+		{
+			"mineral": "Iridium",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.01564
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.01406
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.01396
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.01288
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.01287
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.01287
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.008585
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.005472
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.00434
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.00434
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.004159
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				}
+			]
+		},
+		{
+			"mineral": "Lightshard",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.0008645
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.0005837
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.0005425
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.000484
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.0004668
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.0004518
+				}
+			]
+		},
+		{
+			"mineral": "Mercury",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.008502
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.005215
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.003621
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.003615
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.003615
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.003568
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.001085
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.001085
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.001085
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.001084
+				}
+			]
+		},
+		{
+			"mineral": "Meteoric Gold",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.002834
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.001564
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.001035
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.001033
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.001033
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.001019
+				}
+			]
+		},
+		{
+			"mineral": "Moonstone",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.005666
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.005666
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.005472
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.002713
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.002713
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.0026
+				}
+			]
+		},
+		{
+			"mineral": "Opal",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.05425
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.05425
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.052
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.002289
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.002267
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.002266
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.00221
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.001807
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.001707
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.001707
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.001645
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.001564
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.0009376
+				}
+			]
+		},
+		{
+			"mineral": "Osmium",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.05173
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.04534
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.04172
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.02549
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.002713
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.002712
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.002712
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.00221
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.001807
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.001707
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.001707
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.001645
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.001431
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.001386
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.001269
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.001043
+				}
+			]
+		},
+		{
+			"mineral": "Pyronium",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.004421
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.003839
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.003623
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.003415
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.003415
+				}
+			]
+		},
+		{
+			"mineral": "Scarab Amber",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.2834
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.1564
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.07646
+				}
+			]
+		},
+		{
+			"mineral": "Selenite",
+			"rarity": "epic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.17
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.1043
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.06197
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.06197
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.06117
+				}
+			]
+		},
+		{
+			"mineral": "Aetherite",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.0002919
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.0002713
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.0002575
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.0002575
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.0002423
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.0002334
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.0002259
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.0002234
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.0001368
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.0001297
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.0001269
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.0001156
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.0001133
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.0001133
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.00009376
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.00007819
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.00005723
+				}
+			]
+		},
+		{
+			"mineral": "Aquamarine",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.0002713
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.00026
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.0002234
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.0001288
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.0001288
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.00001288
+				}
+			]
+		},
+		{
+			"mineral": "Bismuth",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.0001628
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.0001627
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.0001627
+				}
+			]
+		},
+		{
+			"mineral": "Canopic Gold",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.006801
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.003129
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.001529
+				}
+			]
+		},
+		{
+			"mineral": "Catseye",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.0003012
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.0002846
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.0002845
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.0002742
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.0001417
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.0001145
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.0001043
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.00007822
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.00005164
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.00005164
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.00005097
+				}
+			]
+		},
+		{
+			"mineral": "Cinnabar",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.007368
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.00365
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.001784
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.000221
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.0001138
+				}
+			]
+		},
+		{
+			"mineral": "Depleted Shard",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.00001039
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.00001033
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.000005425
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.000005425
+				}
+			]
+		},
+		{
+			"mineral": "Diamond",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.0005666
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.0005472
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.0005425
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.0005425
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.0005425
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.000515
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.000515
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.000515
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.0004468
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.0004323
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.0002713
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.0002289
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.0002085
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.0001406
+				}
+			]
+		},
+		{
+			"mineral": "Dragon Bone",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.001474
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.0008536
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.0004819
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				}
+			]
+		},
+		{
+			"mineral": "Fire Opal",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.007935
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.004172
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.002039
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.0002947
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.0001423
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.00005173
+				}
+			]
+		},
+		{
+			"mineral": "Firefly Stone",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.00002259
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.000005837
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.000005425
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.000004668
+				}
+			]
+		},
+		{
+			"mineral": "Gloomcap",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				}
+			]
+		},
+		{
+			"mineral": "Jasper",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.001417
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.0007822
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.0005173
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.0005164
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.0005164
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.0005097
+				}
+			]
+		},
+		{
+			"mineral": "Lost Soul",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.0004322
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				}
+			]
+		},
+		{
+			"mineral": "Luminum",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.0017
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.0017
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.001269
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.0007004
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.0005602
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.0005547
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.0005422
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				}
+			]
+		},
+		{
+			"mineral": "Nautilus Shell",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.0005666
+				}
+			]
+		},
+		{
+			"mineral": "Palladium",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.0002575
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.00009245
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.00008462
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.00008207
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.00005425
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.000052
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.00002289
+				}
+			]
+		},
+		{
+			"mineral": "Peppermint Prism",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.0001117
+				}
+			]
+		},
+		{
+			"mineral": "Radium",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.0002194
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.0002069
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.0002066
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.00005425
+				}
+			]
+		},
+		{
+			"mineral": "Rose Gold",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.009069
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.004693
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.002549
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.001459
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.0009035
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.0005723
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.0005691
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.0005691
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.0005485
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.0005213
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.0004688
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.0004421
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				}
+			]
+		},
+		{
+			"mineral": "Specterite",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.0002712
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.0002161
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.0001751
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.0001454
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.00014
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.0001356
+				}
+			]
+		},
+		{
+			"mineral": "Starshine",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.0006801
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.0004172
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.0002587
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.0002582
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.0002582
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.0002549
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.00009245
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.00008462
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.00005837
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.00005425
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.00004846
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.00004668
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.00004518
+				}
+			]
+		},
+		{
+			"mineral": "Tourmaline",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.0001609
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.0001609
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.0001609
+				}
+			]
+		},
+		{
+			"mineral": "Uranium",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.0004421
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.0002736
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.0002311
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.0001811
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.0001717
+				}
+			]
+		},
+		{
+			"mineral": "Volcanic Key",
+			"rarity": "legendary",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.001474
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.0005691
+				}
+			]
+		},
+		{
+			"mineral": "Aetherium",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.0000017
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 9.386e-7
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 5.69e-7
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 5.681e-7
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 5.681e-7
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 5.607e-7
+				}
+			]
+		},
+		{
+			"mineral": "Agate",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.000001247
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 7.3e-7
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 4.656e-7
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 4.648e-7
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 4.648e-7
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 4.588e-7
+				}
+			]
+		},
+		{
+			"mineral": "Chrysoberyl",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.000002169
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 0.000001807
+				},
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.0000014
+				}
+			]
+		},
+		{
+			"mineral": "Flarebloom",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.00001105
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.000008536
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.000002788
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.000002742
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				}
+			]
+		},
+		{
+			"mineral": "Frostshard",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.000002234
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.000001609
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.000001609
+				}
+			]
+		},
+		{
+			"mineral": "Inferlume",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.00001105
+				},
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.000009035
+				},
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.0000085
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.000008499
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.000007967
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.000007679
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.000007396
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.00000677
+				},
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.000004534
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.000002607
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 0.000001655
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 0.000001653
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 0.000001653
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.000001631
+				}
+			]
+		},
+		{
+			"mineral": "Mythril",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.000003797
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.000003797
+				},
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 0.000003218
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.000002919
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.000002575
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.000002575
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				}
+			]
+		},
+		{
+			"mineral": "Painite",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Sunset Beach",
+					"chance_percent": 0.00002267
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 0.00002266
+				},
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.0000221
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.00002189
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.00001717
+				},
+				{
+					"location": "Volcanic Springs",
+					"chance_percent": 0.00001645
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.000003458
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.000002908
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				}
+			]
+		},
+		{
+			"mineral": "Pink Diamond",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.00004377
+				},
+				{
+					"location": "Fortune River",
+					"chance_percent": 0.00002862
+				},
+				{
+					"location": "Volcanic Sands",
+					"chance_percent": 0.00002276
+				},
+				{
+					"location": "Rubble Creek Deposits",
+					"chance_percent": 0.00002085
+				},
+				{
+					"location": "Rubble Creek Sands",
+					"chance_percent": 0.00001875
+				},
+				{
+					"location": "North Pole",
+					"chance_percent": 0.00001117
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				}
+			]
+		},
+		{
+			"mineral": "Prismara",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Overgrown Grotto",
+					"chance_percent": 0.000002801
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.000002773
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 7.296e-7
+				}
+			]
+		},
+		{
+			"mineral": "Radiant Gold",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 0.000001454
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.000001297
+				},
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 0.000001167
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.000001085
+				},
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 9.037e-7
+				}
+			]
+		},
+		{
+			"mineral": "Red Beryl",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 9.359e-7
+				},
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 8.499e-7
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 8.138e-7
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 8.137e-7
+				}
+			]
+		},
+		{
+			"mineral": "Sky Iron",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.000017
+				}
+			]
+		},
+		{
+			"mineral": "Star Garnet",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 0.000001356
+				},
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 0.000001356
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.000001085
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.000001085
+				},
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 0.000001084
+				}
+			]
+		},
+		{
+			"mineral": "Sunstone",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 5.425e-7
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 5.425e-7
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 5.2e-7
+				}
+			]
+		},
+		{
+			"mineral": "Ushabti",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 0.00002834
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 0.00001043
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 0.000002549
+				}
+			]
+		},
+		{
+			"mineral": "Vortessence",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Windswept Beach",
+					"chance_percent": 0.000009035
+				},
+				{
+					"location": "Frostbite Waterfall",
+					"chance_percent": 0.000008369
+				},
+				{
+					"location": "Frostbite River",
+					"chance_percent": 0.000008369
+				},
+				{
+					"location": "Fortune River Delta",
+					"chance_percent": 0.000008207
+				},
+				{
+					"location": "Azuralite Oasis",
+					"chance_percent": 0.000007396
+				},
+				{
+					"location": "Crystal Cavern River",
+					"chance_percent": 0.00000677
+				},
+				{
+					"location": "The Void",
+					"chance_percent": 0.000002536
+				},
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 0.000002161
+				},
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 0.000001628
+				},
+				{
+					"location": "Starfall River",
+					"chance_percent": 0.000001628
+				},
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 0.00000156
+				}
+			]
+		},
+		{
+			"mineral": "Volcanic Core",
+			"rarity": "mythic",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.000007368
+				},
+				{
+					"location": "The Magma Furnace",
+					"chance_percent": 0.000004553
+				}
+			]
+		},
+		{
+			"mineral": "Adamantine",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Enchanted Ruins",
+					"chance_percent": 1.167e-7
+				}
+			]
+		},
+		{
+			"mineral": "Astral Spore",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Fungal Marsh",
+					"chance_percent": 6.51e-8
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 4.34e-8
+				}
+			]
+		},
+		{
+			"mineral": "Bloodstone",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Rotwood Swamp",
+					"chance_percent": 8.68e-8
+				},
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 5.425e-8
+				}
+			]
+		},
+		{
+			"mineral": "Celestium",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Astral Caverns",
+					"chance_percent": 5.1997e-9
+				}
+			]
+		},
+		{
+			"mineral": "Cryonic Artifact",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Frozen Peak",
+					"chance_percent": 6.438e-7
+				}
+			]
+		},
+		{
+			"mineral": "Dinosaur Skull",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Infernal Heart",
+					"chance_percent": 0.000001842
+				}
+			]
+		},
+		{
+			"mineral": "Eternal Lotus",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 1.134e-7
+				}
+			]
+		},
+		{
+			"mineral": "Eternium",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Timelocked Sanctuary",
+					"chance_percent": 2.713e-8
+				}
+			]
+		},
+		{
+			"mineral": "Eye of the Sands",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 1.474e-8
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 8.343e-9
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 5.097e-9
+				},
+				{
+					"location": "Mystic Floodplains",
+					"chance_percent": 3.615e-9
+				}
+			]
+		},
+		{
+			"mineral": "Feather of Ma'at",
+			"rarity": "exotic",
+			"locations": [],
+			"chests": [
+				{
+					"name": "Sarcophagus Chest",
+					"location": "Pharaoh's Tomb",
+					"chance_percent": 0.1334
+				}
+			]
+		},
+		{
+			"mineral": "Forgotten Totem",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Seashell Beach",
+					"chance_percent": 2.833e-7
+				}
+			]
+		},
+		{
+			"mineral": "Key of Life",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 7.368e-9
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 4.172e-9
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 2.549e-9
+				},
+				{
+					"location": "Lifespring Oasis",
+					"chance_percent": 1.549e-9
+				}
+			]
+		},
+		{
+			"mineral": "Moonspire",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 2.161e-8
+				}
+			]
+		},
+		{
+			"mineral": "North Star",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "North Pole",
+					"chance_percent": 2.792e-7
+				}
+			]
+		},
+		{
+			"mineral": "Pumpkin Soul",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Haunted Creek",
+					"chance_percent": 4.322e-7
+				}
+			]
+		},
+		{
+			"mineral": "Singularium",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Starfall River",
+					"chance_percent": 1.085e-8
+				}
+			]
+		},
+		{
+			"mineral": "Solarium",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Pyramid - Tomb Vein 3",
+					"chance_percent": 4.534e-8
+				},
+				{
+					"location": "Pyramid - Tomb Vein 2",
+					"chance_percent": 2.607e-8
+				},
+				{
+					"location": "Pyramid - Tomb Vein 1",
+					"chance_percent": 1.529e-8
+				},
+				{
+					"location": "Sandstone Stream",
+					"chance_percent": 8.277e-9
+				}
+			]
+		},
+		{
+			"mineral": "Starpiercer",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Meteor Falls",
+					"chance_percent": 2.17e-8
+				}
+			]
+		},
+		{
+			"mineral": "Umbrite",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Abyssal Depths",
+					"chance_percent": 1.454e-7
+				}
+			]
+		},
+		{
+			"mineral": "Vineheart",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "Deeproot Spring",
+					"chance_percent": 1.807e-7
+				}
+			]
+		},
+		{
+			"mineral": "Voidstone",
+			"rarity": "exotic",
+			"locations": [
+				{
+					"location": "The Void",
+					"chance_percent": 7.245e-7
+				}
+			]
+		}
+	]
+}

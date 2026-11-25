@@ -1,0 +1,6043 @@
+[
+	{
+		"id": "ring-gold-ring",
+		"name": "Gold Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 0.8
+			}
+		},
+		"rarity": "Common",
+		"minModifiers": {
+			"base": {
+				"luck": 0.3
+			}
+		},
+		"statRanges": {
+			"luck": [
+				0.3,
+				0.8
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 0.9
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 0.3
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				0.3,
+				0.9
+			]
+		},
+		"rawStats": "Luck 0.3 – 0.8",
+		"price": "$500"
+	},
+	{
+		"id": "charm-garden-glove",
+		"name": "Garden Glove",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"digStrength": 1,
+				"capacity": 5,
+				"inventorySize": 50
+			}
+		},
+		"rarity": "Common",
+		"minModifiers": {
+			"base": {
+				"digStrength": 0.2,
+				"capacity": 0,
+				"inventorySize": 10
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				0.2,
+				1
+			],
+			"capacity": [
+				0,
+				5
+			],
+			"inventorySize": [
+				10,
+				50
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 1.1,
+				"capacity": 5.5,
+				"inventorySize": 55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 0.2,
+				"capacity": 0,
+				"inventorySize": 10
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				0.2,
+				1.1
+			],
+			"capacity": [
+				0,
+				5.5
+			],
+			"inventorySize": [
+				10,
+				55
+			]
+		},
+		"rawStats": "Dig Strength 0.2 – 1\nCapacity 0 – 5\nInventory Size 10 – 50",
+		"price": "$4,000"
+	},
+	{
+		"id": "necklace-amethyst-pendant",
+		"name": "Amethyst Pendant",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 2.5
+			},
+			"boosts": {
+				"sellBoost": 0.15
+			}
+		},
+		"rarity": "Common",
+		"minModifiers": {
+			"base": {
+				"luck": 1
+			},
+			"boosts": {
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				1,
+				2.5
+			],
+			"sellBoost": [
+				0,
+				0.15
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 2.8
+			},
+			"boosts": {
+				"sellBoost": 0.18
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 1
+			},
+			"boosts": {
+				"sellBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				1,
+				2.8
+			],
+			"sellBoost": [
+				0,
+				0.18
+			]
+		},
+		"rawStats": "Luck 1 – 2.5\nSell Boost 0 – 15%",
+		"price": "$5,000"
+	},
+	{
+		"id": "ring-titanium-ring",
+		"name": "Titanium Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"capacity": 13
+			}
+		},
+		"rarity": "Common",
+		"minModifiers": {
+			"base": {
+				"capacity": 1
+			}
+		},
+		"statRanges": {
+			"capacity": [
+				1,
+				13
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"capacity": 15
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"capacity": 1
+			}
+		},
+		"sixStarStatRanges": {
+			"capacity": [
+				1,
+				15
+			]
+		},
+		"rawStats": "Capacity 1 – 13",
+		"price": "$10,000"
+	},
+	{
+		"id": "ring-smoke-ring",
+		"name": "Smoke Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"inventorySize": 40
+			},
+			"boosts": {
+				"modifierBoost": 0.15
+			}
+		},
+		"rarity": "Uncommon",
+		"minModifiers": {
+			"base": {
+				"inventorySize": 10
+			},
+			"boosts": {
+				"modifierBoost": 0.05
+			}
+		},
+		"statRanges": {
+			"inventorySize": [
+				10,
+				40
+			],
+			"modifierBoost": [
+				0.05,
+				0.15
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"inventorySize": 45
+			},
+			"boosts": {
+				"modifierBoost": 0.16
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"inventorySize": 10
+			},
+			"boosts": {
+				"modifierBoost": 0.05
+			}
+		},
+		"sixStarStatRanges": {
+			"inventorySize": [
+				10,
+				45
+			],
+			"modifierBoost": [
+				0.05,
+				0.16
+			]
+		},
+		"rawStats": "Inventory Size 10 – 40\nModifier Boost 5 – 15%",
+		"price": "$20,000"
+	},
+	{
+		"id": "necklace-pearl-necklace",
+		"name": "Pearl Necklace",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 5,
+				"digStrength": 4
+			}
+		},
+		"rarity": "Uncommon",
+		"minModifiers": {
+			"base": {
+				"luck": 2,
+				"digStrength": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				2,
+				5
+			],
+			"digStrength": [
+				0,
+				4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 5.5,
+				"digStrength": 4.5
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 2,
+				"digStrength": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				2,
+				5.5
+			],
+			"digStrength": [
+				0,
+				4.5
+			]
+		},
+		"rawStats": "Luck 2 – 5\nDig Strength 0 – 4",
+		"price": "$22,000"
+	},
+	{
+		"id": "charm-jade-armband",
+		"name": "Jade Armband",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 9,
+				"capacity": 10,
+				"inventorySize": 70
+			}
+		},
+		"rarity": "Uncommon",
+		"minModifiers": {
+			"base": {
+				"luck": 2,
+				"capacity": 1,
+				"inventorySize": 10
+			}
+		},
+		"statRanges": {
+			"luck": [
+				2,
+				9
+			],
+			"capacity": [
+				1,
+				10
+			],
+			"inventorySize": [
+				10,
+				70
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 10,
+				"capacity": 11,
+				"inventorySize": 80
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 2,
+				"capacity": 1,
+				"inventorySize": 10
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				2,
+				10
+			],
+			"capacity": [
+				1,
+				11
+			],
+			"inventorySize": [
+				10,
+				80
+			]
+		},
+		"rawStats": "Luck 2 – 9\nCapacity 1 – 10\nInventory Size 10 – 70",
+		"price": "$50,000"
+	},
+	{
+		"id": "necklace-topaz-necklace",
+		"name": "Topaz Necklace",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 5,
+				"digStrength": 4,
+				"shakeStrength": 1
+			}
+		},
+		"rarity": "Uncommon",
+		"minModifiers": {
+			"base": {
+				"luck": 1,
+				"digStrength": 1,
+				"shakeStrength": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				1,
+				5
+			],
+			"digStrength": [
+				1,
+				4
+			],
+			"shakeStrength": [
+				0.2,
+				1
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 5.5,
+				"digStrength": 4.5,
+				"shakeStrength": 1.1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 1,
+				"digStrength": 1,
+				"shakeStrength": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				1,
+				5.5
+			],
+			"digStrength": [
+				1,
+				4.5
+			],
+			"shakeStrength": [
+				0.2,
+				1.1
+			]
+		},
+		"rawStats": "Luck 1 – 5\nDig Strength 1 – 4\nShake Strength 0.2 – 1",
+		"price": "$60,000"
+	},
+	{
+		"id": "ring-ruby-ring",
+		"name": "Ruby Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 6
+			},
+			"boosts": {
+				"sizeBoost": 0.18
+			}
+		},
+		"rarity": "Rare",
+		"minModifiers": {
+			"base": {
+				"luck": 2
+			},
+			"boosts": {
+				"sizeBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				2,
+				6
+			],
+			"sizeBoost": [
+				0,
+				0.18
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 6.4
+			},
+			"boosts": {
+				"sizeBoost": 0.2
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 2
+			},
+			"boosts": {
+				"sizeBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				2,
+				6.4
+			],
+			"sizeBoost": [
+				0,
+				0.2
+			]
+		},
+		"rawStats": "Luck 2 – 6\nSize Boost 0 – 18%",
+		"price": "$45,000"
+	},
+	{
+		"id": "charm-lapis-armband",
+		"name": "Lapis Armband",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 11,
+				"inventorySize": 70
+			},
+			"boosts": {
+				"digSpeed": 0.4,
+				"shakeSpeed": 0.4
+			}
+		},
+		"rarity": "Rare",
+		"minModifiers": {
+			"base": {
+				"luck": 4,
+				"inventorySize": 10
+			},
+			"boosts": {
+				"digSpeed": 0,
+				"shakeSpeed": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				4,
+				11
+			],
+			"digSpeed": [
+				0,
+				0.4
+			],
+			"shakeSpeed": [
+				0,
+				0.4
+			],
+			"inventorySize": [
+				10,
+				70
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 12,
+				"inventorySize": 80
+			},
+			"boosts": {
+				"digSpeed": 0.45,
+				"shakeSpeed": 0.45
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 4,
+				"inventorySize": 10
+			},
+			"boosts": {
+				"digSpeed": 0,
+				"shakeSpeed": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				4,
+				12
+			],
+			"digSpeed": [
+				0,
+				0.45
+			],
+			"shakeSpeed": [
+				0,
+				0.45
+			],
+			"inventorySize": [
+				10,
+				80
+			]
+		},
+		"rawStats": "Luck 4 – 11\nDig Speed 0 – 40%\nShake Speed 0 – 40%\nInventory Size 10 – 70",
+		"price": "$111,000"
+	},
+	{
+		"id": "charm-speed-coil",
+		"name": "Speed Coil",
+		"slot": "charm",
+		"modifiers": {
+			"boosts": {
+				"digSpeed": 0.7,
+				"shakeSpeed": 0.7
+			}
+		},
+		"rarity": "Rare",
+		"minModifiers": {
+			"boosts": {
+				"digSpeed": 0,
+				"shakeSpeed": 0
+			}
+		},
+		"statRanges": {
+			"digSpeed": [
+				0,
+				0.7
+			],
+			"shakeSpeed": [
+				0,
+				0.7
+			]
+		},
+		"sixStarModifiers": {
+			"boosts": {
+				"digSpeed": 0.8,
+				"shakeSpeed": 0.8
+			}
+		},
+		"sixStarMinModifiers": {
+			"boosts": {
+				"digSpeed": 0,
+				"shakeSpeed": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"digSpeed": [
+				0,
+				0.8
+			],
+			"shakeSpeed": [
+				0,
+				0.8
+			]
+		},
+		"rawStats": "Dig Speed 0 – 70%\nShake Speed 0 – 70%",
+		"price": "$120,000"
+	},
+	{
+		"id": "ring-meteor-ring",
+		"name": "Meteor Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"digStrength": 3,
+				"shakeStrength": 1,
+				"inventorySize": 50
+			}
+		},
+		"rarity": "Rare",
+		"minModifiers": {
+			"base": {
+				"digStrength": 0.5,
+				"shakeStrength": 0,
+				"inventorySize": 10
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				0.5,
+				3
+			],
+			"shakeStrength": [
+				0,
+				1
+			],
+			"inventorySize": [
+				10,
+				50
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 3.2,
+				"shakeStrength": 1.1,
+				"inventorySize": 55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 0.5,
+				"shakeStrength": 0,
+				"inventorySize": 10
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				0.5,
+				3.2
+			],
+			"shakeStrength": [
+				0,
+				1.1
+			],
+			"inventorySize": [
+				10,
+				55
+			]
+		},
+		"rawStats": "Dig Strength 0.5 – 3\nShake Strength 0 – 1\nInventory Size 10 – 50",
+		"price": "$150,000"
+	},
+	{
+		"id": "necklace-opal-amulet",
+		"name": "Opal Amulet",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 16,
+				"inventorySize": 80
+			},
+			"boosts": {
+				"modifierBoost": 0.9
+			}
+		},
+		"rarity": "Epic",
+		"minModifiers": {
+			"base": {
+				"luck": 5,
+				"inventorySize": 10
+			},
+			"boosts": {
+				"modifierBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				16
+			],
+			"inventorySize": [
+				10,
+				80
+			],
+			"modifierBoost": [
+				0,
+				0.9
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 18,
+				"inventorySize": 90
+			},
+			"boosts": {
+				"modifierBoost": 1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 5,
+				"inventorySize": 10
+			},
+			"boosts": {
+				"modifierBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				5,
+				18
+			],
+			"inventorySize": [
+				10,
+				90
+			],
+			"modifierBoost": [
+				0,
+				1
+			]
+		},
+		"rawStats": "Luck 5 – 16\nInventory Size 10 – 80\nModifier Boost 0 – 90%",
+		"price": "$400,000"
+	},
+	{
+		"id": "ring-moon-ring",
+		"name": "Moon Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 8
+			},
+			"boosts": {
+				"digSpeed": 0.4,
+				"shakeSpeed": 0.4
+			}
+		},
+		"rarity": "Epic",
+		"minModifiers": {
+			"base": {
+				"luck": 2
+			},
+			"boosts": {
+				"digSpeed": 0.1,
+				"shakeSpeed": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				2,
+				8
+			],
+			"digSpeed": [
+				0.1,
+				0.4
+			],
+			"shakeSpeed": [
+				0.1,
+				0.4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 9
+			},
+			"boosts": {
+				"digSpeed": 0.45,
+				"shakeSpeed": 0.45
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 2
+			},
+			"boosts": {
+				"digSpeed": 0.1,
+				"shakeSpeed": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				2,
+				9
+			],
+			"digSpeed": [
+				0.1,
+				0.45
+			],
+			"shakeSpeed": [
+				0.1,
+				0.45
+			]
+		},
+		"rawStats": "Luck 2 – 8\nDig Speed 10 – 40%\nShake Speed 10 – 40%",
+		"price": "$500,000"
+	},
+	{
+		"id": "charm-gravity-coil",
+		"name": "Gravity Coil",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"capacity": 140,
+				"inventorySize": 250
+			}
+		},
+		"rarity": "Epic",
+		"minModifiers": {
+			"base": {
+				"capacity": 10,
+				"inventorySize": 100
+			}
+		},
+		"statRanges": {
+			"capacity": [
+				10,
+				140
+			],
+			"inventorySize": [
+				100,
+				250
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"capacity": 160,
+				"inventorySize": 275
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"capacity": 10,
+				"inventorySize": 100
+			}
+		},
+		"sixStarStatRanges": {
+			"capacity": [
+				10,
+				160
+			],
+			"inventorySize": [
+				100,
+				275
+			]
+		},
+		"rawStats": "Capacity 10 – 140\nInventory Size 100 – 250",
+		"price": "$1,000,000"
+	},
+	{
+		"id": "ring-heart-of-the-ocean",
+		"name": "Heart of the Ocean",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 10
+			},
+			"boosts": {
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.2
+			}
+		},
+		"rarity": "Epic",
+		"minModifiers": {
+			"base": {
+				"luck": 3
+			},
+			"boosts": {
+				"shakeSpeed": 0,
+				"sellBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				3,
+				10
+			],
+			"shakeSpeed": [
+				0,
+				0.2
+			],
+			"sellBoost": [
+				0.1,
+				0.2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 11
+			},
+			"boosts": {
+				"shakeSpeed": 0.22,
+				"sellBoost": 0.22
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 3
+			},
+			"boosts": {
+				"shakeSpeed": 0,
+				"sellBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				3,
+				11
+			],
+			"shakeSpeed": [
+				0,
+				0.22
+			],
+			"sellBoost": [
+				0.1,
+				0.22
+			]
+		},
+		"rawStats": "Luck 3 – 10\nShake Speed 0 – 20%\nSell Boost 10 – 20%",
+		"price": "$1,000,000"
+	},
+	{
+		"id": "charm-lava-lantern",
+		"name": "Lava Lantern",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 22,
+				"capacity": 40
+			}
+		},
+		"rarity": "Epic",
+		"minModifiers": {
+			"base": {
+				"luck": 5,
+				"capacity": 10
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				22
+			],
+			"capacity": [
+				10,
+				40
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 25,
+				"capacity": 45
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 5,
+				"capacity": 10
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				5,
+				25
+			],
+			"capacity": [
+				10,
+				45
+			]
+		},
+		"rawStats": "Luck 5 – 22\nCapacity 10 – 40",
+		"price": "$1,500,000"
+	},
+	{
+		"id": "charm-guiding-light",
+		"name": "Guiding Light",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 25,
+				"capacity": 40,
+				"inventorySize": 200
+			},
+			"boosts": {
+				"modifierBoost": 0.45
+			}
+		},
+		"rarity": "Legendary",
+		"minModifiers": {
+			"base": {
+				"luck": 10,
+				"capacity": 10,
+				"inventorySize": 50
+			},
+			"boosts": {
+				"modifierBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				10,
+				25
+			],
+			"capacity": [
+				10,
+				40
+			],
+			"inventorySize": [
+				50,
+				200
+			],
+			"modifierBoost": [
+				0,
+				0.45
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 27,
+				"capacity": 45,
+				"inventorySize": 225
+			},
+			"boosts": {
+				"modifierBoost": 0.5
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 10,
+				"capacity": 10,
+				"inventorySize": 50
+			},
+			"boosts": {
+				"modifierBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				10,
+				27
+			],
+			"capacity": [
+				10,
+				45
+			],
+			"inventorySize": [
+				50,
+				225
+			],
+			"modifierBoost": [
+				0,
+				0.5
+			]
+		},
+		"rawStats": "Luck 10 – 25\nCapacity 10 – 40\nInventory Size 50 – 200\nModifier Boost 0 – 45%",
+		"price": "$1,500,000"
+	},
+	{
+		"id": "ring-lightkeepers-ring",
+		"name": "Lightkeeper's Ring",
+		"slot": "ring",
+		"modifiers": {
+			"boosts": {
+				"digSpeed": 0.25,
+				"sellBoost": 0.25,
+				"modifierBoost": 0.25
+			},
+			"base": {
+				"inventorySize": 100
+			}
+		},
+		"rarity": "Legendary",
+		"minModifiers": {
+			"boosts": {
+				"digSpeed": 0.05,
+				"sellBoost": 0.05,
+				"modifierBoost": 0.05
+			},
+			"base": {
+				"inventorySize": 30
+			}
+		},
+		"statRanges": {
+			"digSpeed": [
+				0.05,
+				0.25
+			],
+			"inventorySize": [
+				30,
+				100
+			],
+			"sellBoost": [
+				0.05,
+				0.25
+			],
+			"modifierBoost": [
+				0.05,
+				0.25
+			]
+		},
+		"sixStarModifiers": {
+			"boosts": {
+				"digSpeed": 0.27,
+				"sellBoost": 0.27,
+				"modifierBoost": 0.27
+			},
+			"base": {
+				"inventorySize": 110
+			}
+		},
+		"sixStarMinModifiers": {
+			"boosts": {
+				"digSpeed": 0.05,
+				"sellBoost": 0.05,
+				"modifierBoost": 0.05
+			},
+			"base": {
+				"inventorySize": 30
+			}
+		},
+		"sixStarStatRanges": {
+			"digSpeed": [
+				0.05,
+				0.27
+			],
+			"inventorySize": [
+				30,
+				110
+			],
+			"sellBoost": [
+				0.05,
+				0.27
+			],
+			"modifierBoost": [
+				0.05,
+				0.27
+			]
+		},
+		"rawStats": "Dig Speed 5 – 25%\nInventory Size 30 – 100\nSell Boost 5 – 25%\nModifier Boost 5 – 25%",
+		"price": "$2,000,000"
+	},
+	{
+		"id": "necklace-mass-accumulator",
+		"name": "Mass Accumulator",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"capacity": 60,
+				"inventorySize": 400
+			},
+			"boosts": {
+				"sizeBoost": 0.8
+			}
+		},
+		"rarity": "Legendary",
+		"minModifiers": {
+			"base": {
+				"capacity": 20,
+				"inventorySize": 150
+			},
+			"boosts": {
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"capacity": [
+				20,
+				60
+			],
+			"inventorySize": [
+				150,
+				400
+			],
+			"sizeBoost": [
+				0.1,
+				0.8
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"capacity": 65,
+				"inventorySize": 450
+			},
+			"boosts": {
+				"sizeBoost": 0.9
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"capacity": 20,
+				"inventorySize": 150
+			},
+			"boosts": {
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"capacity": [
+				20,
+				65
+			],
+			"inventorySize": [
+				150,
+				450
+			],
+			"sizeBoost": [
+				0.1,
+				0.9
+			]
+		},
+		"rawStats": "Capacity 20 – 60\nInventory Size 150 – 400\nSize Boost 10 – 80%",
+		"price": "$3,000,000"
+	},
+	{
+		"id": "ring-eye-of-fire",
+		"name": "Eye of Fire",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 24
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"sizeBoost": 0.2
+			}
+		},
+		"rarity": "Legendary",
+		"minModifiers": {
+			"base": {
+				"luck": 4
+			},
+			"boosts": {
+				"digSpeed": 0,
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				4,
+				24
+			],
+			"digSpeed": [
+				0,
+				0.2
+			],
+			"sizeBoost": [
+				0.1,
+				0.2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 28
+			},
+			"boosts": {
+				"digSpeed": 0.22,
+				"sizeBoost": 0.22
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 4
+			},
+			"boosts": {
+				"digSpeed": 0,
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				4,
+				28
+			],
+			"digSpeed": [
+				0,
+				0.22
+			],
+			"sizeBoost": [
+				0.1,
+				0.22
+			]
+		},
+		"rawStats": "Luck 4 – 24\nDig Speed 0 – 20%\nSize Boost 10 – 20%",
+		"price": "$4,000,000"
+	},
+	{
+		"id": "charm-crown",
+		"name": "Crown",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 30
+			},
+			"boosts": {
+				"sizeBoost": 0.45,
+				"sellBoost": 0.9
+			}
+		},
+		"rarity": "Legendary",
+		"minModifiers": {
+			"base": {
+				"luck": 5
+			},
+			"boosts": {
+				"sizeBoost": 0,
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				30
+			],
+			"sizeBoost": [
+				0,
+				0.45
+			],
+			"sellBoost": [
+				0,
+				0.9
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 35
+			},
+			"boosts": {
+				"sizeBoost": 0.5,
+				"sellBoost": 1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 5
+			},
+			"boosts": {
+				"sizeBoost": 0,
+				"sellBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				5,
+				35
+			],
+			"sizeBoost": [
+				0,
+				0.5
+			],
+			"sellBoost": [
+				0,
+				1
+			]
+		},
+		"rawStats": "Luck 5 – 30\nSize Boost 0 – 45%\nSell Boost 0 – 90%",
+		"price": "$5,000,000"
+	},
+	{
+		"id": "charm-dragon-claw",
+		"name": "Dragon Claw",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"digStrength": 35,
+				"shakeStrength": 9,
+				"inventorySize": 400
+			}
+		},
+		"rarity": "Legendary",
+		"minModifiers": {
+			"base": {
+				"digStrength": 15,
+				"shakeStrength": 2,
+				"inventorySize": 100
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				15,
+				35
+			],
+			"shakeStrength": [
+				2,
+				9
+			],
+			"inventorySize": [
+				100,
+				400
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 40,
+				"shakeStrength": 10,
+				"inventorySize": 450
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 15,
+				"shakeStrength": 2,
+				"inventorySize": 100
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				15,
+				40
+			],
+			"shakeStrength": [
+				2,
+				10
+			],
+			"inventorySize": [
+				100,
+				450
+			]
+		},
+		"rawStats": "Dig Strength 15 – 35\nShake Strength 2 – 9\nInventory Size 100 – 400",
+		"price": "$10,000,000"
+	},
+	{
+		"id": "charm-helm-of-the-round",
+		"name": "Helm of the Round",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 90,
+				"capacity": 90,
+				"walkSpeed": -0.75
+			},
+			"boosts": {
+				"sizeBoost": 1.5
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 15,
+				"capacity": 15,
+				"walkSpeed": -4
+			},
+			"boosts": {
+				"sizeBoost": 0.5
+			}
+		},
+		"statRanges": {
+			"luck": [
+				15,
+				90
+			],
+			"capacity": [
+				15,
+				90
+			],
+			"sizeBoost": [
+				0.5,
+				1.5
+			],
+			"walkSpeed": [
+				-4,
+				-0.75
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": 100,
+				"walkSpeed": -0.75
+			},
+			"boosts": {
+				"sizeBoost": 1.6
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 15,
+				"capacity": 15,
+				"walkSpeed": -4
+			},
+			"boosts": {
+				"sizeBoost": 0.5
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				15,
+				100
+			],
+			"capacity": [
+				15,
+				100
+			],
+			"sizeBoost": [
+				0.5,
+				1.6
+			],
+			"walkSpeed": [
+				-4,
+				-0.75
+			]
+		},
+		"rawStats": "Luck 15 – 90\nCapacity 15 – 90\nSize Boost 50 – 150%\nWalkSpeed -4 – -0.75",
+		"price": "$15,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Helm_of_the_Round_Blueprint",
+		"passive": "Worn by an order of Chivalric Knights who vanished long ago. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-royal-federation-crown",
+		"name": "Royal Federation Crown",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 90
+			},
+			"boosts": {
+				"sizeBoost": 0.9,
+				"sellBoost": 1.8
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 10
+			},
+			"boosts": {
+				"sizeBoost": 0,
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				10,
+				90
+			],
+			"sizeBoost": [
+				0,
+				0.9
+			],
+			"sellBoost": [
+				0,
+				1.8
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 100
+			},
+			"boosts": {
+				"sizeBoost": 1,
+				"sellBoost": 2
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 10
+			},
+			"boosts": {
+				"sizeBoost": 0,
+				"sellBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				10,
+				100
+			],
+			"sizeBoost": [
+				0,
+				1
+			],
+			"sellBoost": [
+				0,
+				2
+			]
+		},
+		"rawStats": "Luck 10 – 90\nSize Boost 0 – 90%\nSell Boost 0 – 180%",
+		"price": "$30,000,000"
+	},
+	{
+		"id": "necklace-phoenix-heart",
+		"name": "Phoenix Heart",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 300,
+				"inventorySize": 400
+			},
+			"boosts": {
+				"sizeBoost": -0.4
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"sizeBoost": -0.7
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				300
+			],
+			"inventorySize": [
+				100,
+				400
+			],
+			"sizeBoost": [
+				-0.7,
+				-0.4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 325,
+				"inventorySize": 450
+			},
+			"boosts": {
+				"sizeBoost": -0.35
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"sizeBoost": -0.7
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				325
+			],
+			"inventorySize": [
+				100,
+				450
+			],
+			"sizeBoost": [
+				-0.7,
+				-0.35
+			]
+		},
+		"rawStats": "Luck 100 – 300\nInventory Size 100 – 400\nSize Boost −70 – −40%",
+		"price": "$40,000,000"
+	},
+	{
+		"id": "necklace-celestial-rings",
+		"name": "Celestial Rings",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 90,
+				"capacity": 250
+			},
+			"boosts": {
+				"sizeBoost": 0.45,
+				"modifierBoost": 1.4
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 30,
+				"capacity": 50
+			},
+			"boosts": {
+				"sizeBoost": 0,
+				"modifierBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				30,
+				90
+			],
+			"capacity": [
+				50,
+				250
+			],
+			"sizeBoost": [
+				0,
+				0.45
+			],
+			"modifierBoost": [
+				0.2,
+				1.4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": 275
+			},
+			"boosts": {
+				"sizeBoost": 0.5,
+				"modifierBoost": 1.5
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 30,
+				"capacity": 50
+			},
+			"boosts": {
+				"sizeBoost": 0,
+				"modifierBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				30,
+				100
+			],
+			"capacity": [
+				50,
+				275
+			],
+			"sizeBoost": [
+				0,
+				0.5
+			],
+			"modifierBoost": [
+				0.2,
+				1.5
+			]
+		},
+		"rawStats": "Luck 30 – 90\nCapacity 50 – 250\nSize Boost 0 – 45%\nModifier Boost 20 – 140%",
+		"price": "$50,000,000"
+	},
+	{
+		"id": "ring-apocalypse-bringer",
+		"name": "Apocalypse Bringer",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"digStrength": 20,
+				"luck": 40,
+				"shakeStrength": 5
+			},
+			"boosts": {
+				"sellBoost": 0.4
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"digStrength": 5,
+				"luck": 10,
+				"shakeStrength": 2
+			},
+			"boosts": {
+				"sellBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				5,
+				20
+			],
+			"luck": [
+				10,
+				40
+			],
+			"shakeStrength": [
+				2,
+				5
+			],
+			"sellBoost": [
+				0.1,
+				0.4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 22,
+				"luck": 45,
+				"shakeStrength": 5.5
+			},
+			"boosts": {
+				"sellBoost": 0.45
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 5,
+				"luck": 10,
+				"shakeStrength": 2
+			},
+			"boosts": {
+				"sellBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				5,
+				22
+			],
+			"luck": [
+				10,
+				45
+			],
+			"shakeStrength": [
+				2,
+				5.5
+			],
+			"sellBoost": [
+				0.1,
+				0.45
+			]
+		},
+		"rawStats": "Dig Strength 5 – 20\nLuck 10 – 40\nShake Strength 2 – 5\nSell Boost 10 – 40%",
+		"price": "$50,000,000"
+	},
+	{
+		"id": "ring-mythril-ring",
+		"name": "Mythril Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 80
+			},
+			"boosts": {
+				"digSpeed": 0.4,
+				"shakeSpeed": 0.4,
+				"sellBoost": 0.24
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 20
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.05
+			}
+		},
+		"statRanges": {
+			"luck": [
+				20,
+				80
+			],
+			"digSpeed": [
+				0.2,
+				0.4
+			],
+			"shakeSpeed": [
+				0.2,
+				0.4
+			],
+			"sellBoost": [
+				0.05,
+				0.24
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 90
+			},
+			"boosts": {
+				"digSpeed": 0.42,
+				"shakeSpeed": 0.42,
+				"sellBoost": 0.26
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 20
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.05
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				20,
+				90
+			],
+			"digSpeed": [
+				0.2,
+				0.42
+			],
+			"shakeSpeed": [
+				0.2,
+				0.42
+			],
+			"sellBoost": [
+				0.05,
+				0.26
+			]
+		},
+		"rawStats": "Luck 20 – 80\nDig Speed 20 – 40%\nShake Speed 20 – 40%\nSell Boost 5 – 24%",
+		"price": "$60,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Mythril_Ring_Blueprint",
+		"passive": "A legendary mythril ring. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-phoenix-wings",
+		"name": "Phoenix Wings",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 300,
+				"capacity": -40,
+				"inventorySize": 400
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": -80,
+				"inventorySize": 100
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				300
+			],
+			"capacity": [
+				-80,
+				-40
+			],
+			"inventorySize": [
+				100,
+				400
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 325,
+				"capacity": -35,
+				"inventorySize": 450
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": -80,
+				"inventorySize": 100
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				325
+			],
+			"capacity": [
+				-80,
+				-35
+			],
+			"inventorySize": [
+				100,
+				450
+			]
+		},
+		"rawStats": "Luck 100 – 300\nCapacity −80 – −40\nInventory Size 100 – 400",
+		"price": "$65,000,000"
+	},
+	{
+		"id": "ring-prismatic-star",
+		"name": "Prismatic Star",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 10,
+				"capacity": 40,
+				"shakeStrength": 3,
+				"inventorySize": 50
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.2,
+				"sizeBoost": 0.2,
+				"modifierBoost": 0.2
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 5,
+				"digStrength": 2,
+				"capacity": 10,
+				"shakeStrength": 1,
+				"inventorySize": 15
+			},
+			"boosts": {
+				"digSpeed": 0.05,
+				"shakeSpeed": 0.05,
+				"sellBoost": 0.1,
+				"sizeBoost": 0.05,
+				"modifierBoost": 0.05
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				20
+			],
+			"digStrength": [
+				2,
+				10
+			],
+			"capacity": [
+				10,
+				40
+			],
+			"digSpeed": [
+				0.05,
+				0.2
+			],
+			"shakeStrength": [
+				1,
+				3
+			],
+			"inventorySize": [
+				15,
+				50
+			],
+			"shakeSpeed": [
+				0.05,
+				0.2
+			],
+			"sellBoost": [
+				0.1,
+				0.2
+			],
+			"sizeBoost": [
+				0.05,
+				0.2
+			],
+			"modifierBoost": [
+				0.05,
+				0.2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 22,
+				"digStrength": 11,
+				"capacity": 45,
+				"shakeStrength": 3.2,
+				"inventorySize": 55
+			},
+			"boosts": {
+				"digSpeed": 0.22,
+				"shakeSpeed": 0.22,
+				"sellBoost": 0.22,
+				"sizeBoost": 0.22,
+				"modifierBoost": 0.22
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 5,
+				"digStrength": 2,
+				"capacity": 10,
+				"shakeStrength": 1,
+				"inventorySize": 15
+			},
+			"boosts": {
+				"digSpeed": 0.05,
+				"shakeSpeed": 0.05,
+				"sellBoost": 0.1,
+				"sizeBoost": 0.05,
+				"modifierBoost": 0.05
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				5,
+				22
+			],
+			"digStrength": [
+				2,
+				11
+			],
+			"capacity": [
+				10,
+				45
+			],
+			"digSpeed": [
+				0.05,
+				0.22
+			],
+			"shakeStrength": [
+				1,
+				3.2
+			],
+			"inventorySize": [
+				15,
+				55
+			],
+			"shakeSpeed": [
+				0.05,
+				0.22
+			],
+			"sellBoost": [
+				0.1,
+				0.22
+			],
+			"sizeBoost": [
+				0.05,
+				0.22
+			],
+			"modifierBoost": [
+				0.05,
+				0.22
+			]
+		},
+		"rawStats": "Luck 5 – 20\nDig Strength 2 – 10\nCapacity 10 – 40\nDig Speed 5 – 20%\nShake Strength 1 – 3\nInventory Size 15 – 50\nShake Speed 5 – 20%\nSell Boost 10 – 20%\nSize Boost 5 – 20%\nModifier Boost 5 – 20%",
+		"price": "$75,000,000"
+	},
+	{
+		"id": "charm-cryogenic-preserver",
+		"name": "Cryogenic Preserver",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 250,
+				"shakeStrength": 40
+			},
+			"boosts": {
+				"shakeSpeed": -0.2,
+				"sellBoost": 0.5
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"shakeSpeed": -0.4,
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				250
+			],
+			"shakeStrength": [
+				10,
+				40
+			],
+			"shakeSpeed": [
+				-0.4,
+				-0.2
+			],
+			"sellBoost": [
+				0,
+				0.5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 275,
+				"shakeStrength": 45
+			},
+			"boosts": {
+				"shakeSpeed": -0.18,
+				"sellBoost": 0.55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"shakeSpeed": -0.4,
+				"sellBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				275
+			],
+			"shakeStrength": [
+				10,
+				45
+			],
+			"shakeSpeed": [
+				-0.4,
+				-0.18
+			],
+			"sellBoost": [
+				0,
+				0.55
+			]
+		},
+		"rawStats": "Luck 100 – 250\nShake Strength 10 – 40\nShake Speed −40 – −20%\nSell Boost 0 – 50%",
+		"price": "$75,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Cryogenic_Preserver_Blueprint",
+		"passive": "A device that freezes the body of the user, improving their strength... and maybe their lifespan. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-ring-of-thorns",
+		"name": "Ring of Thorns",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 40,
+				"inventorySize": 150
+			},
+			"boosts": {
+				"sizeBoost": 0.3,
+				"modifierBoost": 0.6
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 5,
+				"inventorySize": 40
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"modifierBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				20,
+				100
+			],
+			"digStrength": [
+				5,
+				40
+			],
+			"inventorySize": [
+				40,
+				150
+			],
+			"sizeBoost": [
+				0.1,
+				0.3
+			],
+			"modifierBoost": [
+				0.2,
+				0.6
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 110,
+				"digStrength": 45,
+				"inventorySize": 170
+			},
+			"boosts": {
+				"sizeBoost": 0.32,
+				"modifierBoost": 0.65
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 5,
+				"inventorySize": 40
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"modifierBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				20,
+				110
+			],
+			"digStrength": [
+				5,
+				45
+			],
+			"inventorySize": [
+				40,
+				170
+			],
+			"sizeBoost": [
+				0.1,
+				0.32
+			],
+			"modifierBoost": [
+				0.2,
+				0.65
+			]
+		},
+		"rawStats": "Luck 20 – 100\nDig Strength 5 – 40\nInventory Size 40 – 150\nSize Boost 10 – 30%\nModifier Boost 20 – 60%",
+		"price": "$75,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Ring_of_Thorns_Blueprint",
+		"passive": "A thorny ring made from vines. Requires the Blueprint before it can be crafted.."
+	},
+	{
+		"id": "ring-purifying-ring",
+		"name": "Purifying Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 80,
+				"digStrength": 80,
+				"capacity": 100,
+				"shakeStrength": 27,
+				"inventorySize": 80
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 10,
+				"capacity": 20,
+				"shakeStrength": 5,
+				"inventorySize": 20
+			}
+		},
+		"statRanges": {
+			"luck": [
+				20,
+				80
+			],
+			"digStrength": [
+				10,
+				80
+			],
+			"capacity": [
+				20,
+				100
+			],
+			"shakeStrength": [
+				5,
+				27
+			],
+			"inventorySize": [
+				20,
+				80
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 90,
+				"digStrength": 90,
+				"capacity": 110,
+				"shakeStrength": 30,
+				"inventorySize": 90
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 10,
+				"capacity": 20,
+				"shakeStrength": 5,
+				"inventorySize": 20
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				20,
+				90
+			],
+			"digStrength": [
+				10,
+				90
+			],
+			"capacity": [
+				20,
+				110
+			],
+			"shakeStrength": [
+				5,
+				30
+			],
+			"inventorySize": [
+				20,
+				90
+			]
+		},
+		"rawStats": "Luck 20 – 80\nDig Strength 10 – 80\nCapacity 20 – 100\nShake Strength 5 – 27\nInventory Size 20 – 80",
+		"price": "$80,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Purifying_Ring_Blueprint",
+		"passive": "A ring that protects the wearer from toxins. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-solar-ring",
+		"name": "Solar Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 8,
+				"shakeStrength": 2
+			},
+			"boosts": {
+				"digSpeed": -0.1,
+				"shakeSpeed": -0.1,
+				"modifierBoost": 0.2
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 2,
+				"shakeStrength": 0
+			},
+			"boosts": {
+				"digSpeed": -0.3,
+				"shakeSpeed": -0.3,
+				"modifierBoost": 0.05
+			}
+		},
+		"statRanges": {
+			"luck": [
+				20,
+				100
+			],
+			"digStrength": [
+				2,
+				8
+			],
+			"digSpeed": [
+				-0.3,
+				-0.1
+			],
+			"shakeStrength": [
+				0,
+				2
+			],
+			"shakeSpeed": [
+				-0.3,
+				-0.1
+			],
+			"modifierBoost": [
+				0.05,
+				0.2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 110,
+				"digStrength": 9,
+				"shakeStrength": 2.2
+			},
+			"boosts": {
+				"digSpeed": -0.08,
+				"shakeSpeed": -0.08,
+				"modifierBoost": 0.22
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 20,
+				"digStrength": 2,
+				"shakeStrength": 0
+			},
+			"boosts": {
+				"digSpeed": -0.3,
+				"shakeSpeed": -0.3,
+				"modifierBoost": 0.05
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				20,
+				110
+			],
+			"digStrength": [
+				2,
+				9
+			],
+			"digSpeed": [
+				-0.3,
+				-0.08
+			],
+			"shakeStrength": [
+				0,
+				2.2
+			],
+			"shakeSpeed": [
+				-0.3,
+				-0.08
+			],
+			"modifierBoost": [
+				0.05,
+				0.22
+			]
+		},
+		"rawStats": "Luck 20 – 100\nDig Strength 2 – 8\nDig Speed −30 – −10%\nShake Strength 0 – 2\nShake Speed −30 – −10%\nModifier Boost 5 – 20%",
+		"price": "$90,000,000"
+	},
+	{
+		"id": "necklace-amulet-of-life",
+		"name": "Amulet of Life",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 400
+			},
+			"boosts": {
+				"modifierBoost": 1.5
+			}
+		},
+		"rarity": "Mythic",
+		"minModifiers": {
+			"base": {
+				"luck": 200
+			},
+			"boosts": {
+				"modifierBoost": 0.5
+			}
+		},
+		"statRanges": {
+			"luck": [
+				200,
+				400
+			],
+			"modifierBoost": [
+				0.5,
+				1.5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 425
+			},
+			"boosts": {
+				"modifierBoost": 1.6
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100
+			},
+			"boosts": {
+				"modifierBoost": 0.5
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				425
+			],
+			"modifierBoost": [
+				0.5,
+				1.6
+			]
+		},
+		"rawStats": "Luck 200 – 400\nModifier Boost 50 – 150%",
+		"price": "$150,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Amulet_of_Life_Blueprint",
+		"passive": "An ancient amulet infused with the power of life. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-fossilized-crown",
+		"name": "Fossilized Crown",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 250,
+				"capacity": 200
+			},
+			"boosts": {
+				"shakeSpeed": 0.3,
+				"sizeBoost": 0.5,
+				"sellBoost": 1
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": 50
+			},
+			"boosts": {
+				"shakeSpeed": 0.1,
+				"sizeBoost": 0,
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				250
+			],
+			"capacity": [
+				50,
+				200
+			],
+			"shakeSpeed": [
+				0.1,
+				0.3
+			],
+			"sizeBoost": [
+				0,
+				0.5
+			],
+			"sellBoost": [
+				0,
+				1
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 260,
+				"capacity": 225
+			},
+			"boosts": {
+				"shakeSpeed": 0.32,
+				"sizeBoost": 0.55,
+				"sellBoost": 1.1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": 50
+			},
+			"boosts": {
+				"shakeSpeed": 0.1,
+				"sizeBoost": 0,
+				"sellBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				260
+			],
+			"capacity": [
+				50,
+				225
+			],
+			"shakeSpeed": [
+				0.1,
+				0.32
+			],
+			"sizeBoost": [
+				0,
+				0.55
+			],
+			"sellBoost": [
+				0,
+				1.1
+			]
+		},
+		"rawStats": "Luck 100 – 250\nCapacity 50 – 200\nShake Speed 10 – 30%\nSize Boost 0 – 50%\nSell Boost 0 – 100%",
+		"price": "$100,000,000"
+	},
+	{
+		"id": "necklace-frostthorn-pendant",
+		"name": "Frostthorn Pendant",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 400,
+				"digStrength": 200,
+				"capacity": 200
+			},
+			"boosts": {
+				"digSpeed": -0.3,
+				"sizeBoost": 1
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 100,
+				"capacity": 50
+			},
+			"boosts": {
+				"digSpeed": -0.5,
+				"sizeBoost": 0.3
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				400
+			],
+			"digStrength": [
+				100,
+				200
+			],
+			"capacity": [
+				50,
+				200
+			],
+			"digSpeed": [
+				-0.5,
+				-0.3
+			],
+			"sizeBoost": [
+				0.3,
+				1
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 450,
+				"digStrength": 215,
+				"capacity": 225
+			},
+			"boosts": {
+				"digSpeed": -0.28,
+				"sizeBoost": 1.1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 100,
+				"capacity": 50
+			},
+			"boosts": {
+				"digSpeed": -0.5,
+				"sizeBoost": 0.3
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				450
+			],
+			"digStrength": [
+				100,
+				215
+			],
+			"capacity": [
+				50,
+				225
+			],
+			"digSpeed": [
+				-0.5,
+				-0.28
+			],
+			"sizeBoost": [
+				0.3,
+				1.1
+			]
+		},
+		"rawStats": "Luck 100 – 400\nDig Strength 100 – 200\nCapacity 50 – 200\nDig Speed −50 – −30%\nSize Boost 30 – 100%",
+		"price": "$200,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Frostthorn_Pendant_Blueprint",
+		"passive": "An icy pendant. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-antlers-of-life",
+		"name": "Antlers of Life",
+		"slot": "charm",
+		"modifiers": {
+			"boosts": {
+				"digSpeed": 0.4,
+				"sizeBoost": 0.6,
+				"modifierBoost": 2
+			},
+			"base": {
+				"luck": 580
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"boosts": {
+				"digSpeed": 0.1,
+				"sizeBoost": 0.2,
+				"modifierBoost": 0.5
+			},
+			"base": {
+				"luck": 100
+			}
+		},
+		"statRanges": {
+			"digSpeed": [
+				0.1,
+				0.4
+			],
+			"luck": [
+				100,
+				580
+			],
+			"sizeBoost": [
+				0.2,
+				0.6
+			],
+			"modifierBoost": [
+				0.5,
+				2
+			]
+		},
+		"sixStarModifiers": {
+			"boosts": {
+				"digSpeed": 0.44,
+				"sizeBoost": 0.65,
+				"modifierBoost": 2.2
+			},
+			"base": {
+				"luck": 640
+			}
+		},
+		"sixStarMinModifiers": {
+			"boosts": {
+				"digSpeed": 0.1,
+				"sizeBoost": 0.2,
+				"modifierBoost": 0.5
+			},
+			"base": {
+				"luck": 100
+			}
+		},
+		"sixStarStatRanges": {
+			"digSpeed": [
+				0.1,
+				0.44
+			],
+			"luck": [
+				100,
+				640
+			],
+			"sizeBoost": [
+				0.2,
+				0.65
+			],
+			"modifierBoost": [
+				0.5,
+				2.2
+			]
+		},
+		"rawStats": "Dig Speed 10 – 40%\nLuck 100 – 580\nSize Boost 20 – 60%\nModifier Boost 50 – 200%",
+		"price": "$300,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Antlers_of_Life_Blueprint",
+		"passive": "A massive pair of antlers resembling those of a mythical beast. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-vortex-ring",
+		"name": "Vortex Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"digStrength": 80,
+				"luck": 140,
+				"capacity": 300,
+				"shakeStrength": 10
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"digStrength": 20,
+				"luck": 50,
+				"capacity": 100,
+				"shakeStrength": 3
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				20,
+				80
+			],
+			"luck": [
+				50,
+				140
+			],
+			"capacity": [
+				100,
+				300
+			],
+			"shakeStrength": [
+				3,
+				10
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 90,
+				"luck": 155,
+				"capacity": 325,
+				"shakeStrength": 11
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 20,
+				"luck": 50,
+				"capacity": 100,
+				"shakeStrength": 3
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				20,
+				90
+			],
+			"luck": [
+				50,
+				155
+			],
+			"capacity": [
+				100,
+				325
+			],
+			"shakeStrength": [
+				3,
+				11
+			]
+		},
+		"rawStats": "Dig Strength 20 – 80\nLuck 50 – 140\nCapacity 100 – 300\nShake Strength 3 – 10",
+		"price": "$333,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Vortex_Ring_Blueprint"
+	},
+	{
+		"id": "ring-umbrite-ring",
+		"name": "Umbrite Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 220,
+				"digStrength": 45,
+				"capacity": 200,
+				"shakeStrength": 20
+			},
+			"boosts": {
+				"sizeBoost": 0.15
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 50,
+				"digStrength": 5,
+				"capacity": 20,
+				"shakeStrength": 5
+			},
+			"boosts": {
+				"sizeBoost": 0.05
+			}
+		},
+		"statRanges": {
+			"luck": [
+				50,
+				220
+			],
+			"digStrength": [
+				5,
+				45
+			],
+			"capacity": [
+				20,
+				200
+			],
+			"shakeStrength": [
+				5,
+				20
+			],
+			"sizeBoost": [
+				0.05,
+				0.15
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 245,
+				"digStrength": 50,
+				"capacity": 220,
+				"shakeStrength": 22
+			},
+			"boosts": {
+				"sizeBoost": 0.16
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 50,
+				"digStrength": 5,
+				"capacity": 20,
+				"shakeStrength": 5
+			},
+			"boosts": {
+				"sizeBoost": 0.05
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				50,
+				245
+			],
+			"digStrength": [
+				5,
+				50
+			],
+			"capacity": [
+				20,
+				220
+			],
+			"shakeStrength": [
+				5,
+				22
+			],
+			"sizeBoost": [
+				0.05,
+				0.16
+			]
+		},
+		"rawStats": "Luck 50 – 220\nDig Strength 5 – 45\nCapacity 20 – 200\nShake Strength 5 – 20\nSize Boost 5 – 15%",
+		"price": "$400,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Umbrite_Ring_Blueprint",
+		"passive": "A cursed umbrite ring. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-otherworldly-ring",
+		"name": "Otherworldly Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 350
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sizeBoost": 0.25,
+				"sellBoost": 0.3
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 150
+			},
+			"boosts": {
+				"digSpeed": 0,
+				"shakeSpeed": 0,
+				"sizeBoost": 0.1,
+				"sellBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				150,
+				350
+			],
+			"digSpeed": [
+				0,
+				0.2
+			],
+			"shakeSpeed": [
+				0,
+				0.2
+			],
+			"sizeBoost": [
+				0.1,
+				0.25
+			],
+			"sellBoost": [
+				0.1,
+				0.3
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 375
+			},
+			"boosts": {
+				"digSpeed": 0.22,
+				"shakeSpeed": 0.22,
+				"sizeBoost": 0.26,
+				"sellBoost": 0.32
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 150
+			},
+			"boosts": {
+				"digSpeed": 0,
+				"shakeSpeed": 0,
+				"sizeBoost": 0.1,
+				"sellBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				150,
+				375
+			],
+			"digSpeed": [
+				0,
+				0.22
+			],
+			"shakeSpeed": [
+				0,
+				0.22
+			],
+			"sizeBoost": [
+				0.1,
+				0.26
+			],
+			"sellBoost": [
+				0.1,
+				0.32
+			]
+		},
+		"rawStats": "Luck 150 – 350\nDig Speed 0 – 20%\nShake Speed 0 – 20%\nSize Boost 10 – 25%\nSell Boost 10 – 30%",
+		"price": "$400,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Otherworldly_Ring_Blueprint",
+		"passive": "Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "necklace-venomshank",
+		"name": "Venomshank",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 1200,
+				"digStrength": -50,
+				"inventorySize": 300
+			},
+			"boosts": {
+				"digSpeed": -0.4,
+				"sizeBoost": 0.5,
+				"sellBoost": 0.5
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 600,
+				"digStrength": -100,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"digSpeed": -0.6,
+				"sizeBoost": 0.2,
+				"sellBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				600,
+				1200
+			],
+			"digStrength": [
+				-100,
+				-50
+			],
+			"digSpeed": [
+				-0.6,
+				-0.4
+			],
+			"inventorySize": [
+				100,
+				300
+			],
+			"sizeBoost": [
+				0.2,
+				0.5
+			],
+			"sellBoost": [
+				0.2,
+				0.5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 1300,
+				"digStrength": -45,
+				"inventorySize": 325
+			},
+			"boosts": {
+				"digSpeed": -0.38,
+				"sizeBoost": 0.55,
+				"sellBoost": 0.55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 600,
+				"digStrength": -100,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"digSpeed": -0.6,
+				"sizeBoost": 0.2,
+				"sellBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				600,
+				1300
+			],
+			"digStrength": [
+				-100,
+				-45
+			],
+			"digSpeed": [
+				-0.6,
+				-0.38
+			],
+			"inventorySize": [
+				100,
+				325
+			],
+			"sizeBoost": [
+				0.2,
+				0.55
+			],
+			"sellBoost": [
+				0.2,
+				0.55
+			]
+		},
+		"rawStats": "Luck 600 – 1200\nDig Strength −100 – −50\nDig Speed −60 – −40%\nInventory Size 100 – 300\nSize Boost 20 – 50%\nSell Boost 20 – 50%",
+		"price": "$500,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Venomshank_Blueprint",
+		"passive": "A lethal curse that drains the wearer's strength in exchange for immense luck. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-excalibur",
+		"name": "Excalibur",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 500,
+				"digStrength": 300,
+				"walkSpeed": 5
+			},
+			"boosts": {
+				"modifierBoost": 1.5
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 75,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"modifierBoost": 0.5
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				500
+			],
+			"digStrength": [
+				75,
+				300
+			],
+			"modifierBoost": [
+				0.5,
+				1.5
+			],
+			"walkSpeed": [
+				1,
+				5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 550,
+				"digStrength": 325,
+				"walkSpeed": 5.5
+			},
+			"boosts": {
+				"modifierBoost": 1.6
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 75,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"modifierBoost": 0.5
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				550
+			],
+			"digStrength": [
+				75,
+				325
+			],
+			"modifierBoost": [
+				0.5,
+				1.6
+			],
+			"walkSpeed": [
+				1,
+				5.5
+			]
+		},
+		"rawStats": "Luck 100 – 500\nDig Strength 75 – 300\nTreasure Map Chance 50 – 160%\nModifier Boost 50 – 150%\nWalkSpeed 1 – 5",
+		"price": "$650,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Excalibur_Blueprint",
+		"passive": "A legend made manifest. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-timelocked-soul",
+		"name": "Timelocked Soul",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 888,
+				"inventorySize": 450
+			},
+			"boosts": {
+				"digSpeed": 1,
+				"shakeSpeed": 1,
+				"sizeBoost": 0.5
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 222,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"digSpeed": 0.3,
+				"shakeSpeed": 0.3,
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				222,
+				888
+			],
+			"digSpeed": [
+				0.3,
+				1
+			],
+			"inventorySize": [
+				100,
+				450
+			],
+			"shakeSpeed": [
+				0.3,
+				1
+			],
+			"sizeBoost": [
+				0.1,
+				0.5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 999,
+				"inventorySize": 500
+			},
+			"boosts": {
+				"digSpeed": 1.1,
+				"shakeSpeed": 1.1,
+				"sizeBoost": 0.55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 222,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"digSpeed": 0.3,
+				"shakeSpeed": 0.3,
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				222,
+				999
+			],
+			"digSpeed": [
+				0.3,
+				1.1
+			],
+			"inventorySize": [
+				100,
+				500
+			],
+			"shakeSpeed": [
+				0.3,
+				1.1
+			],
+			"sizeBoost": [
+				0.1,
+				0.55
+			]
+		},
+		"rawStats": "Luck 222 – 888\nDig Speed 30 – 100%\nInventory Size 100 – 450\nShake Speed 30 – 100%\nSize Boost 10 – 50%",
+		"price": "$1,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Timelocked_Soul_Blueprint",
+		"passive": "A charm that harnesses the power of time. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-suns-gift",
+		"name": "Sun's Gift",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 450,
+				"digStrength": 50,
+				"capacity": 120
+			},
+			"boosts": {
+				"sizeBoost": 0.45,
+				"sellBoost": 0.6
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 125,
+				"digStrength": 5,
+				"capacity": 40
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"sellBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				125,
+				450
+			],
+			"digStrength": [
+				5,
+				50
+			],
+			"capacity": [
+				40,
+				120
+			],
+			"sizeBoost": [
+				0.1,
+				0.45
+			],
+			"sellBoost": [
+				0.2,
+				0.6
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 500,
+				"digStrength": 55,
+				"capacity": 135
+			},
+			"boosts": {
+				"sizeBoost": 0.5,
+				"sellBoost": 0.65
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 125,
+				"digStrength": 5,
+				"capacity": 40
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"sellBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				125,
+				500
+			],
+			"digStrength": [
+				5,
+				55
+			],
+			"capacity": [
+				40,
+				135
+			],
+			"sizeBoost": [
+				0.1,
+				0.5
+			],
+			"sellBoost": [
+				0.2,
+				0.65
+			]
+		},
+		"rawStats": "Luck 125 – 450\nDig Strength 5 – 50\nCapacity 40 – 120\nSize Boost 10 – 45%\nSell Boost 20 – 60%",
+		"price": "$1,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Sun&#39;s_Gift_Blueprint",
+		"passive": "A sun-shaped ring carved from Solarium. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-starlight-wings",
+		"name": "Starlight Wings",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 780,
+				"digStrength": 500,
+				"shakeStrength": 180,
+				"walkSpeed": 2
+			},
+			"boosts": {
+				"sizeBoost": 0.4
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 300,
+				"digStrength": 200,
+				"shakeStrength": 60,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				300,
+				780
+			],
+			"digStrength": [
+				200,
+				500
+			],
+			"shakeStrength": [
+				60,
+				180
+			],
+			"sizeBoost": [
+				0.1,
+				0.4
+			],
+			"walkSpeed": [
+				1,
+				2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 850,
+				"digStrength": 550,
+				"shakeStrength": 200,
+				"walkSpeed": 2
+			},
+			"boosts": {
+				"sizeBoost": 0.45
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 300,
+				"digStrength": 200,
+				"shakeStrength": 60,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				300,
+				850
+			],
+			"digStrength": [
+				200,
+				550
+			],
+			"shakeStrength": [
+				60,
+				200
+			],
+			"sizeBoost": [
+				0.1,
+				0.45
+			],
+			"walkSpeed": [
+				1,
+				2
+			]
+		},
+		"rawStats": "Luck 300 – 780\nDig Strength 200 – 500\nShake Strength 60 – 180\nSize Boost 10 – 40%\nWalkSpeed 1 – 2",
+		"price": "$1,250,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Starlight_Wings_Blueprint",
+		"passive": "A futuristic piece of alien technology that boosts the wearer's strength. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "necklace-meteor-core",
+		"name": "Meteor Core",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 800,
+				"capacity": 600,
+				"inventorySize": 400
+			},
+			"boosts": {
+				"sizeBoost": 1,
+				"modifierBoost": 0.4
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 200,
+				"capacity": 200,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"sizeBoost": 0.2,
+				"modifierBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				200,
+				800
+			],
+			"capacity": [
+				200,
+				600
+			],
+			"inventorySize": [
+				100,
+				400
+			],
+			"sizeBoost": [
+				0.2,
+				1
+			],
+			"modifierBoost": [
+				0.1,
+				0.4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 900,
+				"capacity": 650,
+				"inventorySize": 450
+			},
+			"boosts": {
+				"sizeBoost": 1.15,
+				"modifierBoost": 0.45
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 200,
+				"capacity": 200,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"sizeBoost": 0.2,
+				"modifierBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				200,
+				900
+			],
+			"capacity": [
+				200,
+				650
+			],
+			"inventorySize": [
+				100,
+				450
+			],
+			"sizeBoost": [
+				0.2,
+				1.15
+			],
+			"modifierBoost": [
+				0.1,
+				0.45
+			]
+		},
+		"rawStats": "Luck 200 – 800\nCapacity 200 – 600\nInventory Size 100 – 400\nSize Boost 20 – 100%\nStatus Timer Speed -30 - -30%\nModifier Boost 10 – 40%",
+		"price": "$2,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Meteor_Core_Blueprint",
+		"passive": "A core held together by extreme gravity. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-dredge-masters-ring",
+		"name": "Dredge Master's Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"digStrength": 120,
+				"capacity": 500,
+				"shakeStrength": 28
+			},
+			"boosts": {
+				"sizeBoost": 0.5,
+				"modifierBoost": 0.7
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"digStrength": 20,
+				"capacity": 100,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"modifierBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				20,
+				120
+			],
+			"capacity": [
+				100,
+				500
+			],
+			"shakeStrength": [
+				10,
+				28
+			],
+			"sizeBoost": [
+				0.1,
+				0.5
+			],
+			"modifierBoost": [
+				0.1,
+				0.7
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 135,
+				"capacity": 550,
+				"shakeStrength": 30
+			},
+			"boosts": {
+				"sizeBoost": 0.55,
+				"modifierBoost": 0.75
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 20,
+				"capacity": 100,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"modifierBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				20,
+				135
+			],
+			"capacity": [
+				100,
+				550
+			],
+			"shakeStrength": [
+				10,
+				30
+			],
+			"sizeBoost": [
+				0.1,
+				0.55
+			],
+			"modifierBoost": [
+				0.1,
+				0.75
+			]
+		},
+		"rawStats": "Dig Strength 20 – 120\nCapacity 100 – 500\nShake Strength 10 – 28\nSize Boost 10 – 50%\nModifier Boost 10 – 70%",
+		"price": "$2,500,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Dredge_Master&#39;s_Ring_Blueprint",
+		"passive": "The powerful ring of the Dredge Master. ONLY ONE CAN BE WORN AT THE SAME TIME. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-embalmers-ring",
+		"name": "Embalmer's Ring",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 250,
+				"digStrength": 140,
+				"shakeStrength": 45
+			},
+			"boosts": {
+				"digSpeed": 0.41,
+				"shakeSpeed": 0.41
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 80,
+				"digStrength": 40,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"digSpeed": 0.15,
+				"shakeSpeed": 0.15
+			}
+		},
+		"statRanges": {
+			"luck": [
+				80,
+				250
+			],
+			"digStrength": [
+				40,
+				140
+			],
+			"digSpeed": [
+				0.15,
+				0.41
+			],
+			"shakeStrength": [
+				10,
+				45
+			],
+			"shakeSpeed": [
+				0.15,
+				0.41
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 250,
+				"digStrength": 140,
+				"shakeStrength": 45
+			},
+			"boosts": {
+				"digSpeed": 0.41,
+				"shakeSpeed": 0.41
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 80,
+				"digStrength": 40,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"digSpeed": 0.15,
+				"shakeSpeed": 0.15
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				80,
+				250
+			],
+			"digStrength": [
+				40,
+				140
+			],
+			"digSpeed": [
+				0.15,
+				0.41
+			],
+			"shakeStrength": [
+				10,
+				45
+			],
+			"shakeSpeed": [
+				0.15,
+				0.41
+			]
+		},
+		"rawStats": "Luck 80 – 250\nDig Strength 40 – 140\nDig Speed 15 – 41%\nShake Strength 10 – 45\nShake Speed 15 – 41%\nTomb Jar Finds 1 – 1",
+		"price": "$2,500,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint",
+		"passive": "A bronze ring wrapped in linen and set with a natron crystal. ONLY ONE CAN BE WORN AT THE SAME TIME. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-accretion-disk",
+		"name": "Accretion Disk",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 360,
+				"inventorySize": 90
+			},
+			"boosts": {
+				"digSpeed": 0.46,
+				"shakeSpeed": 0.46,
+				"modifierBoost": 0.15,
+				"sizeBoost": 0.15
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 125,
+				"inventorySize": 25
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.05,
+				"sizeBoost": 0.05
+			}
+		},
+		"statRanges": {
+			"luck": [
+				125,
+				360
+			],
+			"digSpeed": [
+				0.2,
+				0.46
+			],
+			"shakeSpeed": [
+				0.2,
+				0.46
+			],
+			"inventorySize": [
+				25,
+				90
+			],
+			"modifierBoost": [
+				0.05,
+				0.15
+			],
+			"sizeBoost": [
+				0.05,
+				0.15
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 400,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"digSpeed": 0.5,
+				"shakeSpeed": 0.5,
+				"modifierBoost": 0.16,
+				"sizeBoost": 0.16
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 125,
+				"inventorySize": 25
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.05,
+				"sizeBoost": 0.05
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				125,
+				400
+			],
+			"digSpeed": [
+				0.2,
+				0.5
+			],
+			"shakeSpeed": [
+				0.2,
+				0.5
+			],
+			"inventorySize": [
+				25,
+				100
+			],
+			"modifierBoost": [
+				0.05,
+				0.16
+			],
+			"sizeBoost": [
+				0.05,
+				0.16
+			]
+		},
+		"rawStats": "Luck 125 – 360\nDig Speed 20 – 46%\nShake Speed 20 – 46%\nInventory Size 25 – 90\nModifier Boost 5 – 15%\nSize Boost 5 – 15%",
+		"price": "$2,800,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Accretion_Disk_Blueprint",
+		"passive": "A ring formed from orbiting debris. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-scarab-signet",
+		"name": "Scarab Signet",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 410
+			},
+			"boosts": {
+				"modifierBoost": 0.64,
+				"sizeBoost": 0.64
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 150
+			},
+			"boosts": {
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				150,
+				410
+			],
+			"modifierBoost": [
+				0.2,
+				0.64
+			],
+			"sizeBoost": [
+				0.2,
+				0.64
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 410
+			},
+			"boosts": {
+				"modifierBoost": 0.64,
+				"sizeBoost": 0.64
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 150
+			},
+			"boosts": {
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				150,
+				410
+			],
+			"modifierBoost": [
+				0.2,
+				0.64
+			],
+			"sizeBoost": [
+				0.2,
+				0.64
+			]
+		},
+		"rawStats": "Luck 150 – 410\nTreasure Map Chance 20 – 56%\nModifier Boost 20 – 64%\nSize Boost 20 – 64%\nLockpick Zone 10 – 28%",
+		"price": "$3,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint",
+		"passive": "A gold signet ring set with a lapis scarab. Favored by tomb robbers. ONLY ONE CAN BE WORN AT THE SAME TIME Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-lunar-mask",
+		"name": "Lunar Mask",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 1250,
+				"walkSpeed": 4,
+				"jumpPower": 9
+			},
+			"boosts": {
+				"digSpeed": 0.8,
+				"shakeSpeed": 0.8,
+				"modifierBoost": 1.45,
+				"sizeBoost": 0.9
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 300
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.4
+			}
+		},
+		"statRanges": {
+			"luck": [
+				300,
+				1250
+			],
+			"digSpeed": [
+				0.2,
+				0.8
+			],
+			"shakeSpeed": [
+				0.2,
+				0.8
+			],
+			"modifierBoost": [
+				0.2,
+				1.45
+			],
+			"sizeBoost": [
+				0.4,
+				0.9
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 1400,
+				"walkSpeed": 4.5,
+				"jumpPower": 10
+			},
+			"boosts": {
+				"digSpeed": 0.85,
+				"shakeSpeed": 0.85,
+				"modifierBoost": 1.7,
+				"sizeBoost": 1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 300
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.4
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				300,
+				1400
+			],
+			"digSpeed": [
+				0.2,
+				0.85
+			],
+			"shakeSpeed": [
+				0.2,
+				0.85
+			],
+			"modifierBoost": [
+				0.2,
+				1.7
+			],
+			"sizeBoost": [
+				0.4,
+				1
+			]
+		},
+		"rawStats": "Luck 300 - 1,250\nDig Speed 20 - 80%\nShake Speed 20 - 80%\nModifier Boost 20 - 145%\nSize Boost 40 - 90%\nWalkSpeed 4\nJump Power 9",
+		"price": "$4,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Lunar_Mask_Blueprint",
+		"passive": "A mask used in rituals, often during a full moon. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "necklace-guardian-pendant",
+		"name": "Guardian Pendant",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 2700
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 1000
+			}
+		},
+		"statRanges": {
+			"luck": [
+				1000,
+				2700
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 3000
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 1000
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				1000,
+				3000
+			]
+		},
+		"rawStats": "Luck 1,000 - 2,700",
+		"price": "$6,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Guardian_Pendant_Blueprint",
+		"passive": "An ancient artifact used to purify waters and preserve life. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "necklace-heart-scarab",
+		"name": "Heart Scarab",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 1100,
+				"capacity": 460
+			},
+			"boosts": {
+				"modifierBoost": 0.72,
+				"sizeBoost": 0.9
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 500,
+				"capacity": 150
+			},
+			"boosts": {
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.3
+			}
+		},
+		"statRanges": {
+			"luck": [
+				500,
+				1100
+			],
+			"capacity": [
+				150,
+				460
+			],
+			"modifierBoost": [
+				0.2,
+				0.72
+			],
+			"sizeBoost": [
+				0.3,
+				0.9
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 1100,
+				"capacity": 460
+			},
+			"boosts": {
+				"modifierBoost": 0.72,
+				"sizeBoost": 0.9
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 500,
+				"capacity": 150
+			},
+			"boosts": {
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.3
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				500,
+				1100
+			],
+			"capacity": [
+				150,
+				460
+			],
+			"modifierBoost": [
+				0.2,
+				0.72
+			],
+			"sizeBoost": [
+				0.3,
+				0.9
+			]
+		},
+		"rawStats": "Luck 500 – 1,100\nCapacity 150 – 460\nModifier Boost 20 – 72%\nSize Boost 30 – 90%\nTrap Ward 20 – 47%",
+		"price": "$6,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint",
+		"passive": "A winged scarab laid over the heart of the dead to protect it. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-nemes-of-the-pharaoh",
+		"name": "Nemes of the Pharaoh",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 1000,
+				"walkSpeed": 4
+			},
+			"boosts": {
+				"sellBoost": 1.8,
+				"sizeBoost": 1
+			}
+		},
+		"rarity": "Exotic",
+		"minModifiers": {
+			"base": {
+				"luck": 400,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"sellBoost": 0.5,
+				"sizeBoost": 0.3
+			}
+		},
+		"statRanges": {
+			"luck": [
+				400,
+				1000
+			],
+			"sellBoost": [
+				0.5,
+				1.8
+			],
+			"sizeBoost": [
+				0.3,
+				1
+			],
+			"walkSpeed": [
+				1,
+				4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 1000,
+				"walkSpeed": 4
+			},
+			"boosts": {
+				"sellBoost": 1.8,
+				"sizeBoost": 1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 400,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"sellBoost": 0.5,
+				"sizeBoost": 0.3
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				400,
+				1000
+			],
+			"sellBoost": [
+				0.5,
+				1.8
+			],
+			"sizeBoost": [
+				0.3,
+				1
+			],
+			"walkSpeed": [
+				1,
+				4
+			]
+		},
+		"rawStats": "Luck 400 – 1,000\nSell Boost 50 – 180%\nSize Boost 30 – 100%\nWalkSpeed 1 – 4\nTomb Time 15 – 42",
+		"price": "$8,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint",
+		"passive": "The striped headcloth of a pharaoh. Worn only by royalty. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-ring-of-champions",
+		"name": "Ring of Champions",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 500,
+				"digStrength": 160,
+				"capacity": 400,
+				"shakeStrength": 50
+			},
+			"boosts": {
+				"digSpeed": 0.9,
+				"shakeSpeed": 0.9,
+				"sellBoost": 1.5,
+				"sizeBoost": 1.5,
+				"modifierBoost": 1.5
+			}
+		},
+		"rarity": "Ascended",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 20,
+				"capacity": 100,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.5,
+				"sizeBoost": 0.5,
+				"modifierBoost": 0.5
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				500
+			],
+			"digStrength": [
+				20,
+				160
+			],
+			"capacity": [
+				100,
+				400
+			],
+			"digSpeed": [
+				0.2,
+				0.9
+			],
+			"shakeStrength": [
+				10,
+				50
+			],
+			"shakeSpeed": [
+				0.2,
+				0.9
+			],
+			"sellBoost": [
+				0.5,
+				1.5
+			],
+			"sizeBoost": [
+				0.5,
+				1.5
+			],
+			"modifierBoost": [
+				0.5,
+				1.5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 550,
+				"digStrength": 180,
+				"capacity": 450,
+				"shakeStrength": 55
+			},
+			"boosts": {
+				"digSpeed": 1,
+				"shakeSpeed": 1,
+				"sellBoost": 1.6,
+				"sizeBoost": 1.6,
+				"modifierBoost": 1.6
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 20,
+				"capacity": 100,
+				"shakeStrength": 10
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.5,
+				"sizeBoost": 0.5,
+				"modifierBoost": 0.5
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				550
+			],
+			"digStrength": [
+				20,
+				180
+			],
+			"capacity": [
+				100,
+				450
+			],
+			"digSpeed": [
+				0.2,
+				1
+			],
+			"shakeStrength": [
+				10,
+				55
+			],
+			"shakeSpeed": [
+				0.2,
+				1
+			],
+			"sellBoost": [
+				0.5,
+				1.6
+			],
+			"sizeBoost": [
+				0.5,
+				1.6
+			],
+			"modifierBoost": [
+				0.5,
+				1.6
+			]
+		},
+		"rawStats": "Luck 100 – 500\nDig Strength 20 – 160\nCapacity 100 – 400\nDig Speed 20 – 90%\nShake Strength 10 – 50\nShake Speed 20 – 90%\nSell Boost 50 – 150%\nSize Boost 50 – 150%\nModifier Boost 50 – 150%",
+		"price": "$5,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Ring_of_Champions_Blueprint",
+		"passive": "A legendary ring only worn by the greatest of prospectors. ONLY ONE CAN BE WORN AT THE SAME TIME. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-clockwork",
+		"name": "Clockwork",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 200,
+				"capacity": 250,
+				"inventorySize": 300
+			},
+			"boosts": {
+				"shakeSpeed": 0.9,
+				"sizeBoost": 1.9,
+				"sellBoost": 1
+			}
+		},
+		"rarity": "Ascended",
+		"minModifiers": {
+			"base": {
+				"luck": 50,
+				"capacity": 100,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"shakeSpeed": 0.4,
+				"sizeBoost": 0.3,
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				50,
+				200
+			],
+			"capacity": [
+				100,
+				250
+			],
+			"inventorySize": [
+				100,
+				300
+			],
+			"shakeSpeed": [
+				0.4,
+				0.9
+			],
+			"sizeBoost": [
+				0.3,
+				1.9
+			],
+			"sellBoost": [
+				0,
+				1
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 225,
+				"capacity": 275,
+				"inventorySize": 325
+			},
+			"boosts": {
+				"shakeSpeed": 1,
+				"sizeBoost": 2.1,
+				"sellBoost": 1.1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 50,
+				"capacity": 100,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"shakeSpeed": 0.4,
+				"sizeBoost": 0.3,
+				"sellBoost": 0
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				50,
+				225
+			],
+			"capacity": [
+				100,
+				275
+			],
+			"inventorySize": [
+				100,
+				325
+			],
+			"shakeSpeed": [
+				0.4,
+				1
+			],
+			"sizeBoost": [
+				0.3,
+				2.1
+			],
+			"sellBoost": [
+				0,
+				1.1
+			]
+		},
+		"rawStats": "Luck 50 - 200\nCapacity 100 - 250\nInventory Size 100 - 300\nShake Speed 40 - 90%\nSize Boost 30 - 190%\nSell Boost 0 - 100%",
+		"price": "$9,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#tabber-Clockwork_Blueprint",
+		"passive": "An impossibly complicated mechanical device. Requires the blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-ring-of-the-stars",
+		"name": "Ring of the Stars",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 700,
+				"walkSpeed": 3.8,
+				"jumpPower": 5
+			},
+			"boosts": {
+				"digSpeed": 0.28,
+				"shakeSpeed": 0.28,
+				"modifierBoost": 1,
+				"sizeBoost": 0.5
+			}
+		},
+		"rarity": "Ascended",
+		"minModifiers": {
+			"base": {
+				"luck": 400,
+				"walkSpeed": 1,
+				"jumpPower": 1
+			},
+			"boosts": {
+				"digSpeed": 0.1,
+				"shakeSpeed": 0.1,
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				400,
+				700
+			],
+			"digSpeed": [
+				0.1,
+				0.28
+			],
+			"shakeSpeed": [
+				0.1,
+				0.28
+			],
+			"modifierBoost": [
+				0.2,
+				1
+			],
+			"sizeBoost": [
+				0.1,
+				0.5
+			],
+			"walkSpeed": [
+				1,
+				3.8
+			],
+			"jumpPower": [
+				1,
+				5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 750,
+				"walkSpeed": 4,
+				"jumpPower": 5.5
+			},
+			"boosts": {
+				"digSpeed": 0.3,
+				"shakeSpeed": 0.3,
+				"modifierBoost": 1.1,
+				"sizeBoost": 0.55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 400,
+				"walkSpeed": 1,
+				"jumpPower": 1
+			},
+			"boosts": {
+				"digSpeed": 0.1,
+				"shakeSpeed": 0.1,
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				400,
+				750
+			],
+			"digSpeed": [
+				0.1,
+				0.3
+			],
+			"shakeSpeed": [
+				0.1,
+				0.3
+			],
+			"modifierBoost": [
+				0.2,
+				1.1
+			],
+			"sizeBoost": [
+				0.1,
+				0.55
+			],
+			"walkSpeed": [
+				1,
+				4
+			],
+			"jumpPower": [
+				1,
+				5.5
+			]
+		},
+		"rawStats": "Luck 400 – 700\nDig Speed 10 – 28%\nShake Speed 10 – 28%\nModifier Boost 20 – 100%\nSize Boost 10 – 50%\nWalkSpeed 1 – 3.8\nJump Power 1 – 5",
+		"price": "$10,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Ring_of_the_Stars_Blueprint",
+		"passive": "The ultimate invention of an alien civilization. ONLY ONE CAN BE WORN. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-ring-of-ra",
+		"name": "Ring of Ra",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 800
+			},
+			"boosts": {
+				"sellBoost": 1.7,
+				"sizeBoost": 0.8
+			}
+		},
+		"rarity": "Ascended",
+		"minModifiers": {
+			"base": {
+				"luck": 450
+			},
+			"boosts": {
+				"sellBoost": 0.8,
+				"sizeBoost": 0.3
+			}
+		},
+		"statRanges": {
+			"luck": [
+				450,
+				800
+			],
+			"sellBoost": [
+				0.8,
+				1.7
+			],
+			"sizeBoost": [
+				0.3,
+				0.8
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 800
+			},
+			"boosts": {
+				"sellBoost": 1.7,
+				"sizeBoost": 0.8
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 450
+			},
+			"boosts": {
+				"sellBoost": 0.8,
+				"sizeBoost": 0.3
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				450,
+				800
+			],
+			"sellBoost": [
+				0.8,
+				1.7
+			],
+			"sizeBoost": [
+				0.3,
+				0.8
+			]
+		},
+		"rawStats": "Luck 450 – 800\nSell Boost 80 – 170%\nSize Boost 30 – 80%\nTomb Time 10 – 28",
+		"price": "$250,000,000,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint",
+		"passive": "The signet of the sun god, taken from the hand of the Pharaoh. ONLY ONE CAN BE WORN AT THE SAME TIME. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "ring-ring-of-harvest",
+		"name": "Ring of Harvest",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 18,
+				"capacity": 30,
+				"inventorySize": 40,
+				"walkSpeed": 1
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 5,
+				"capacity": 10,
+				"inventorySize": 10,
+				"walkSpeed": 0.5
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				18
+			],
+			"capacity": [
+				10,
+				30
+			],
+			"inventorySize": [
+				10,
+				40
+			],
+			"walkSpeed": [
+				0.5,
+				1
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 20,
+				"capacity": 32,
+				"inventorySize": 45,
+				"walkSpeed": 1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 5,
+				"capacity": 10,
+				"inventorySize": 10,
+				"walkSpeed": 0.5
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				5,
+				20
+			],
+			"capacity": [
+				10,
+				32
+			],
+			"inventorySize": [
+				10,
+				45
+			],
+			"walkSpeed": [
+				0.5,
+				1
+			]
+		},
+		"rawStats": "Luck 5 – 18\nCapacity 10 – 30\nInventory Size 10 – 40\nWalkSpeed 0.5 – 1",
+		"price": "$5,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Ring_of_Harvest_Blueprint",
+		"passive": "A ring often worn during the Harvest Moon as a good luck charm. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "necklace-spider-bowtie",
+		"name": "Spider Bowtie",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 80,
+				"capacity": 100
+			},
+			"boosts": {
+				"sellBoost": 0.5,
+				"modifierBoost": 0.5
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 10,
+				"capacity": 40
+			},
+			"boosts": {
+				"sellBoost": 0.2,
+				"modifierBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				10,
+				80
+			],
+			"capacity": [
+				40,
+				100
+			],
+			"sellBoost": [
+				0.2,
+				0.5
+			],
+			"modifierBoost": [
+				0.2,
+				0.5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 85,
+				"capacity": 110
+			},
+			"boosts": {
+				"sellBoost": 0.55,
+				"modifierBoost": 0.55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 10,
+				"capacity": 40
+			},
+			"boosts": {
+				"sellBoost": 0.2,
+				"modifierBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				10,
+				85
+			],
+			"capacity": [
+				40,
+				110
+			],
+			"sellBoost": [
+				0.2,
+				0.55
+			],
+			"modifierBoost": [
+				0.2,
+				0.55
+			]
+		},
+		"rawStats": "Luck 10 – 80\nCapacity 40 – 100\nSell Boost 20 – 50%\nModifier Boost 20 – 50%",
+		"price": "300",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Halloween_Forge"
+	},
+	{
+		"id": "ring-5-gold-rings",
+		"name": "5 Gold Rings",
+		"slot": "ring",
+		"modifiers": {
+			"base": {
+				"luck": 20,
+				"capacity": 20
+			},
+			"boosts": {
+				"shakeSpeed": 0.2,
+				"sellBoost": 0.2
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 5,
+				"capacity": 5
+			},
+			"boosts": {
+				"shakeSpeed": 0,
+				"sellBoost": 0
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				20
+			],
+			"capacity": [
+				5,
+				20
+			],
+			"shakeSpeed": [
+				0,
+				0.2
+			],
+			"sellBoost": [
+				0,
+				0.2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 22,
+				"capacity": 45
+			},
+			"boosts": {
+				"shakeSpeed": 0.22,
+				"sellBoost": 0.22
+			}
+		},
+		"rawStats": "Luck 5 – 20\nCapacity 5 – 20\nShake Speed 0 – 20%\nSell Boost 0 – 20%",
+		"price": "500",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/North_Pole"
+	},
+	{
+		"id": "necklace-amulet-of-spirits",
+		"name": "Amulet of Spirits",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 140
+			},
+			"boosts": {
+				"digSpeed": 0.4,
+				"shakeSpeed": 0.4,
+				"sizeBoost": 0.3
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 50
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				50,
+				140
+			],
+			"digSpeed": [
+				0.2,
+				0.4
+			],
+			"shakeSpeed": [
+				0.2,
+				0.4
+			],
+			"sizeBoost": [
+				0.1,
+				0.3
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 150
+			},
+			"boosts": {
+				"digSpeed": 0.42,
+				"shakeSpeed": 0.42,
+				"sizeBoost": 0.32
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 50
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				50,
+				150
+			],
+			"digSpeed": [
+				0.2,
+				0.42
+			],
+			"shakeSpeed": [
+				0.2,
+				0.42
+			],
+			"sizeBoost": [
+				0.1,
+				0.32
+			]
+		},
+		"rawStats": "Luck 50 – 140\nDig Speed 20 – 40%\nShake Speed 20 – 40%\nSize Boost 10 – 30%",
+		"price": "$50,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Amulet_of_Spirits_Blueprint",
+		"passive": "A spooky amulet worn by those celebrating Halloween.. Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-candy-sack",
+		"name": "Candy Sack",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 100,
+				"capacity": 300,
+				"inventorySize": 1000
+			},
+			"boosts": {
+				"sizeBoost": 0.7
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 30,
+				"capacity": 100,
+				"inventorySize": 300
+			},
+			"boosts": {
+				"sizeBoost": 0.3
+			}
+		},
+		"statRanges": {
+			"luck": [
+				30,
+				100
+			],
+			"capacity": [
+				100,
+				300
+			],
+			"inventorySize": [
+				300,
+				1000
+			],
+			"sizeBoost": [
+				0.3,
+				0.7
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 110,
+				"capacity": 325,
+				"inventorySize": 1100
+			},
+			"boosts": {
+				"sizeBoost": 0.75
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 30,
+				"capacity": 100,
+				"inventorySize": 300
+			},
+			"boosts": {
+				"sizeBoost": 0.3
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				30,
+				110
+			],
+			"capacity": [
+				100,
+				325
+			],
+			"inventorySize": [
+				300,
+				1100
+			],
+			"sizeBoost": [
+				0.3,
+				0.75
+			]
+		},
+		"rawStats": "Luck 30 – 100\nCapacity 100 – 300\nInventory Size 300 – 1,000\nSize Boost 30 – 70%",
+		"price": "600",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Halloween_Forge"
+	},
+	{
+		"id": "charm-santa-hat",
+		"name": "Santa Hat",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 140,
+				"capacity": 200,
+				"shakeStrength": 8,
+				"walkSpeed": 2
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 5,
+				"capacity": 50,
+				"shakeStrength": 2,
+				"walkSpeed": 0.5
+			}
+		},
+		"statRanges": {
+			"luck": [
+				5,
+				140
+			],
+			"capacity": [
+				50,
+				200
+			],
+			"shakeStrength": [
+				2,
+				8
+			],
+			"walkSpeed": [
+				0.5,
+				2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 150,
+				"capacity": 225,
+				"shakeStrength": 9,
+				"walkSpeed": 2.2
+			}
+		},
+		"rawStats": "Luck 5 – 140\nCapacity 50 – 200\nShake Strength 2 – 8\nWalkSpeed 0.5 – 2",
+		"price": "1,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/North_Pole"
+	},
+	{
+		"id": "charm-bunny-ears",
+		"name": "Bunny Ears",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 180,
+				"inventorySize": 180,
+				"walkSpeed": 6,
+				"jumpPower": 10
+			},
+			"boosts": {
+				"modifierBoost": 0.5
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 50,
+				"inventorySize": 50,
+				"walkSpeed": 2,
+				"jumpPower": 2
+			},
+			"boosts": {
+				"modifierBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				50,
+				180
+			],
+			"inventorySize": [
+				50,
+				180
+			],
+			"modifierBoost": [
+				0.2,
+				0.5
+			],
+			"walkSpeed": [
+				2,
+				6
+			],
+			"jumpPower": [
+				2,
+				10
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 200,
+				"inventorySize": 200,
+				"walkSpeed": 6.5,
+				"jumpPower": 11
+			},
+			"boosts": {
+				"modifierBoost": 0.55
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 50,
+				"inventorySize": 50,
+				"walkSpeed": 2,
+				"jumpPower": 2
+			},
+			"boosts": {
+				"modifierBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				50,
+				200
+			],
+			"inventorySize": [
+				50,
+				200
+			],
+			"modifierBoost": [
+				0.2,
+				0.55
+			],
+			"walkSpeed": [
+				2,
+				6.5
+			],
+			"jumpPower": [
+				2,
+				11
+			]
+		},
+		"rawStats": "Luck 50 – 180\nInventory Size 50 – 180\nModifier Boost 20%-50%\nWalkSpeed 2 – 6\nJump Power 2 – 10",
+		"price": "$40,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#tabber-Bunny_Ears_Blueprint"
+	},
+	{
+		"id": "necklace-shell-necklace",
+		"name": "Shell Necklace",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 280,
+				"digStrength": 18,
+				"shakeStrength": 4.5,
+				"inventorySize": 180
+			},
+			"boosts": {
+				"modifierBoost": 0.9,
+				"sizeBoost": 0.45
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 5,
+				"shakeStrength": 1,
+				"inventorySize": 50
+			},
+			"boosts": {
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				100,
+				280
+			],
+			"digStrength": [
+				5,
+				18
+			],
+			"shakeStrength": [
+				1,
+				4.5
+			],
+			"inventorySize": [
+				50,
+				180
+			],
+			"modifierBoost": [
+				0.2,
+				0.9
+			],
+			"sizeBoost": [
+				0.1,
+				0.45
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 300,
+				"digStrength": 20,
+				"shakeStrength": 5,
+				"inventorySize": 200
+			},
+			"boosts": {
+				"modifierBoost": 1,
+				"sizeBoost": 0.5
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 100,
+				"digStrength": 5,
+				"shakeStrength": 1,
+				"inventorySize": 50
+			},
+			"boosts": {
+				"modifierBoost": 0.2,
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				100,
+				300
+			],
+			"digStrength": [
+				5,
+				20
+			],
+			"shakeStrength": [
+				1,
+				5
+			],
+			"inventorySize": [
+				50,
+				200
+			],
+			"modifierBoost": [
+				0.2,
+				1
+			],
+			"sizeBoost": [
+				0.1,
+				0.5
+			]
+		},
+		"rawStats": "Luck 100 – 280\nDig Strength 5 – 18\nShake Strength 1 – 4.5\nInventory Size 50 – 180\nModifier Boost 20 – 90%\nSize Boost 10 – 45%",
+		"price": "$140,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#tabber-Shell_Necklace_Blueprint",
+		"passive": "A necklace of exotic shells. Requires the blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-pumpkin-lord",
+		"name": "Pumpkin Lord",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"digStrength": 200,
+				"shakeStrength": 50,
+				"inventorySize": 500,
+				"walkSpeed": 4
+			},
+			"boosts": {
+				"sizeBoost": 1.8
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"digStrength": 80,
+				"shakeStrength": 20,
+				"inventorySize": 200,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"sizeBoost": 0.3
+			}
+		},
+		"statRanges": {
+			"digStrength": [
+				80,
+				200
+			],
+			"shakeStrength": [
+				20,
+				50
+			],
+			"inventorySize": [
+				200,
+				500
+			],
+			"sizeBoost": [
+				0.3,
+				1.8
+			],
+			"walkSpeed": [
+				1,
+				4
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"digStrength": 220,
+				"shakeStrength": 54,
+				"inventorySize": 550,
+				"walkSpeed": 4.5
+			},
+			"boosts": {
+				"sizeBoost": 2
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"digStrength": 80,
+				"shakeStrength": 20,
+				"inventorySize": 200,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"sizeBoost": 0.5
+			}
+		},
+		"sixStarStatRanges": {
+			"digStrength": [
+				80,
+				220
+			],
+			"shakeStrength": [
+				20,
+				54
+			],
+			"inventorySize": [
+				200,
+				550
+			],
+			"sizeBoost": [
+				0.5,
+				2
+			],
+			"walkSpeed": [
+				1,
+				4.5
+			]
+		},
+		"rawStats": "Dig Strength 80 – 200\nShake Strength 20 – 50\nInventory Size 200 – 500\nSize Boost 30 – 180%\nWalkSpeed 1 – 4",
+		"price": "$220,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#Pumpkin_Lord_Blueprint",
+		"passive": "Who doesn't want to wear a pumpkin on their head? Requires the Blueprint before it can be crafted."
+	},
+	{
+		"id": "charm-witch-hat",
+		"name": "Witch Hat",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 1000,
+				"inventorySize": 400,
+				"walkSpeed": 5
+			},
+			"boosts": {
+				"modifierBoost": 1
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 400,
+				"inventorySize": 100,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"modifierBoost": 0.4
+			}
+		},
+		"statRanges": {
+			"luck": [
+				400,
+				1000
+			],
+			"inventorySize": [
+				100,
+				400
+			],
+			"modifierBoost": [
+				0.4,
+				1
+			],
+			"walkSpeed": [
+				1,
+				5
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 1100,
+				"inventorySize": 450,
+				"walkSpeed": 5.5
+			},
+			"boosts": {
+				"modifierBoost": 1.1
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 400,
+				"inventorySize": 100,
+				"walkSpeed": 1
+			},
+			"boosts": {
+				"modifierBoost": 0.4
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				400,
+				1100
+			],
+			"inventorySize": [
+				100,
+				450
+			],
+			"modifierBoost": [
+				0.4,
+				1.1
+			],
+			"walkSpeed": [
+				1,
+				5.5
+			]
+		},
+		"rawStats": "Luck 400 – 1,000\nInventory Size 100 – 400\nModifier Boost 40 – 100%\nWalkSpeed 1 – 5",
+		"price": "1,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Halloween_Forge"
+	},
+	{
+		"id": "charm-dullahans-curse",
+		"name": "Dullahan's Curse",
+		"slot": "charm",
+		"modifiers": {
+			"base": {
+				"luck": 500,
+				"nightLuck": 1500,
+				"digStrength": 410,
+				"walkSpeed": -2
+			},
+			"boosts": {
+				"shakeSpeed": 0.6,
+				"modifierBoost": 1.1,
+				"sizeBoost": 0.7
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 200,
+				"nightLuck": 400,
+				"digStrength": 150,
+				"walkSpeed": -8
+			},
+			"boosts": {
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.1,
+				"sizeBoost": 0.1
+			}
+		},
+		"statRanges": {
+			"luck": [
+				200,
+				500
+			],
+			"nightLuck": [
+				400,
+				1500
+			],
+			"digStrength": [
+				150,
+				410
+			],
+			"shakeSpeed": [
+				0.2,
+				0.6
+			],
+			"modifierBoost": [
+				0.1,
+				1.1
+			],
+			"sizeBoost": [
+				0.1,
+				0.7
+			],
+			"walkSpeed": [
+				-8,
+				-2
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 550,
+				"nightLuck": 1700,
+				"digStrength": 450,
+				"walkSpeed": -1.7
+			},
+			"boosts": {
+				"shakeSpeed": 0.65,
+				"modifierBoost": 1.3,
+				"sizeBoost": 0.8
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 200,
+				"nightLuck": 400,
+				"digStrength": 150,
+				"walkSpeed": -8
+			},
+			"boosts": {
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.1,
+				"sizeBoost": 0.1
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				200,
+				550
+			],
+			"nightLuck": [
+				400,
+				1700
+			],
+			"digStrength": [
+				150,
+				450
+			],
+			"shakeSpeed": [
+				0.2,
+				0.65
+			],
+			"modifierBoost": [
+				0.1,
+				1.3
+			],
+			"sizeBoost": [
+				0.1,
+				0.8
+			],
+			"walkSpeed": [
+				-8,
+				-1.7
+			]
+		},
+		"rawStats": "Luck 200 – 500\nNight Luck 400 – 1,500\nDig Strength 150 – 410\nShake Speed 20 – 60%\nModifier Boost 10 – 110%\nSize Boost 10 – 70%\nWalkSpeed -8 – -2",
+		"price": "1,500",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Halloween_Forge"
+	},
+	{
+		"id": "necklace-santas-bag",
+		"name": "Santa's Bag",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 600,
+				"capacity": 500,
+				"inventorySize": 500
+			},
+			"boosts": {
+				"sizeBoost": 0.8
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 200,
+				"capacity": 200,
+				"inventorySize": 100
+			},
+			"boosts": {
+				"sizeBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				200,
+				600
+			],
+			"capacity": [
+				200,
+				500
+			],
+			"inventorySize": [
+				100,
+				500
+			],
+			"sizeBoost": [
+				0.2,
+				0.8
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 675,
+				"capacity": 550,
+				"inventorySize": 550
+			},
+			"boosts": {
+				"sizeBoost": 0.9
+			}
+		},
+		"rawStats": "Luck 200 – 600\nCapacity 200 – 500\nInventory Size 100 – 500\nSize Boost 20 – 80%\nStatus Timer Speed -50 - -50%",
+		"price": "2,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/North_Pole"
+	},
+	{
+		"id": "necklace-waverider",
+		"name": "Waverider",
+		"slot": "necklace",
+		"modifiers": {
+			"base": {
+				"luck": 180,
+				"walkSpeed": 5,
+				"jumpPower": 10
+			},
+			"boosts": {
+				"digSpeed": 0.6,
+				"shakeSpeed": 0.6,
+				"modifierBoost": 1.4,
+				"sizeBoost": 1.1
+			}
+		},
+		"rarity": "Limited-Time",
+		"minModifiers": {
+			"base": {
+				"luck": 50,
+				"walkSpeed": 1,
+				"jumpPower": 2
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.3,
+				"sizeBoost": 0.2
+			}
+		},
+		"statRanges": {
+			"luck": [
+				50,
+				180
+			],
+			"digSpeed": [
+				0.2,
+				0.6
+			],
+			"shakeSpeed": [
+				0.2,
+				0.6
+			],
+			"modifierBoost": [
+				0.3,
+				1.4
+			],
+			"sizeBoost": [
+				0.2,
+				1.1
+			],
+			"walkSpeed": [
+				1,
+				5
+			],
+			"jumpPower": [
+				2,
+				10
+			]
+		},
+		"sixStarModifiers": {
+			"base": {
+				"luck": 200,
+				"walkSpeed": 5.5,
+				"jumpPower": 11
+			},
+			"boosts": {
+				"digSpeed": 0.65,
+				"shakeSpeed": 0.65,
+				"modifierBoost": 1.5,
+				"sizeBoost": 1.2
+			}
+		},
+		"sixStarMinModifiers": {
+			"base": {
+				"luck": 50,
+				"walkSpeed": 1,
+				"jumpPower": 2
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2,
+				"modifierBoost": 0.3,
+				"sizeBoost": 0.2
+			}
+		},
+		"sixStarStatRanges": {
+			"luck": [
+				50,
+				200
+			],
+			"digSpeed": [
+				0.2,
+				0.65
+			],
+			"shakeSpeed": [
+				0.2,
+				0.65
+			],
+			"modifierBoost": [
+				0.3,
+				1.5
+			],
+			"sizeBoost": [
+				0.2,
+				1.2
+			],
+			"walkSpeed": [
+				1,
+				5.5
+			],
+			"jumpPower": [
+				2,
+				11
+			]
+		},
+		"rawStats": "Luck 50 – 180\nDig Speed 20 – 60%\nShake Speed 20 – 60%\nModifier Boost 30 – 140%\nSize Boost 20 – 110%\nWalkSpeed 1 – 5\nJump Power 2 – 10",
+		"price": "$300,000,000",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blueprint#tabber-Waverider_Blueprint",
+		"passive": "A custom-made surfboard. Requires the Blueprint before it can be crafted."
+	}
+]

@@ -1,0 +1,319 @@
+[
+	{
+		"id": "rusty-pan",
+		"name": "Rusty Pan",
+		"stats": {
+			"luck": 1,
+			"capacity": 5,
+			"shakeStrength": 0.2,
+			"shakeSpeed": 0.8
+		},
+		"price": "Free",
+		"location": "Given to the player upon joining.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Rusty_Pan"
+	},
+	{
+		"id": "plastic-pan",
+		"name": "Plastic Pan",
+		"stats": {
+			"luck": 1.25,
+			"capacity": 10,
+			"shakeStrength": 0.6,
+			"shakeSpeed": 1
+		},
+		"price": "$501",
+		"location": "Rubble Creek",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Plastic_Pan"
+	},
+	{
+		"id": "metal-pan",
+		"name": "Metal Pan",
+		"stats": {
+			"luck": 2,
+			"capacity": 20,
+			"shakeStrength": 0.8,
+			"shakeSpeed": 0.8
+		},
+		"price": "$12,000",
+		"location": "Rubble Creek",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Metal_Pan"
+	},
+	{
+		"id": "silver-pan",
+		"name": "Silver Pan",
+		"stats": {
+			"luck": 4,
+			"capacity": 30,
+			"shakeStrength": 0.8,
+			"shakeSpeed": 1
+		},
+		"price": "$55,000",
+		"location": "Rubble Creek",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Silver_Pan"
+	},
+	{
+		"id": "golden-pan",
+		"name": "Golden Pan",
+		"stats": {
+			"luck": 10,
+			"capacity": 35,
+			"shakeStrength": 1,
+			"shakeSpeed": 0.8
+		},
+		"price": "$333,000",
+		"location": "Fortune River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Golden_Pan"
+	},
+	{
+		"id": "magnetic-pan",
+		"name": "Magnetic Pan",
+		"stats": {
+			"luck": 15,
+			"capacity": 50,
+			"shakeStrength": 1,
+			"shakeSpeed": 0.75
+		},
+		"price": "$1,000,000",
+		"location": "Fortune River",
+		"passive": "+25% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Magnetic_Pan"
+	},
+	{
+		"id": "meteoric-pan",
+		"name": "Meteoric Pan",
+		"stats": {
+			"luck": 22,
+			"capacity": 70,
+			"shakeStrength": 2,
+			"shakeSpeed": 1
+		},
+		"price": "$3,500,000",
+		"location": "Fortune River",
+		"passive": "+25% Modifier Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Meteoric_Pan"
+	},
+	{
+		"id": "diamond-pan",
+		"name": "Diamond Pan",
+		"stats": {
+			"luck": 40,
+			"capacity": 100,
+			"shakeStrength": 3,
+			"shakeSpeed": 1
+		},
+		"price": "$10,000,000",
+		"location": "Fortune River",
+		"passive": "+10% Modifier Boost , +10% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Diamond_Pan"
+	},
+	{
+		"id": "aurora-pan",
+		"name": "Aurora Pan",
+		"stats": {
+			"luck": 60,
+			"capacity": 130,
+			"shakeStrength": 3,
+			"shakeSpeed": 1.25
+		},
+		"price": "$35,000,000",
+		"location": "Crystal Cavern River",
+		"passive": "+25% Modifier Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Aurora_Pan"
+	},
+	{
+		"id": "obsidian-pan",
+		"name": "Obsidian Pan",
+		"stats": {
+			"luck": 80,
+			"capacity": 140,
+			"shakeStrength": 3,
+			"shakeSpeed": 1.25
+		},
+		"price": "$90,000,000",
+		"location": "Caldera Park",
+		"passive": "+10% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Obsidian_Pan"
+	},
+	{
+		"id": "worldshaker",
+		"name": "Worldshaker",
+		"stats": {
+			"luck": 125,
+			"capacity": 160,
+			"shakeStrength": 5,
+			"shakeSpeed": 1
+		},
+		"price": "$125,000,000",
+		"location": "Waterfall Temple",
+		"passive": "+25% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Worldshaker"
+	},
+	{
+		"id": "dragonflame-pan",
+		"name": "Dragonflame Pan",
+		"stats": {
+			"luck": 160,
+			"capacity": 180,
+			"shakeStrength": 10,
+			"shakeSpeed": 1.1
+		},
+		"price": "$400,000,000",
+		"location": "The Magma Furnace",
+		"passive": "-10% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Dragonflame_Pan"
+	},
+	{
+		"id": "fossilized-pan",
+		"name": "Fossilized Pan",
+		"stats": {
+			"luck": 250,
+			"capacity": 225,
+			"shakeStrength": 8,
+			"shakeSpeed": 1
+		},
+		"price": "$1,000,000,000",
+		"location": "Ancient Ruins",
+		"passive": "+50% Modifier Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Fossilized_Pan"
+	},
+	{
+		"id": "frostbite-pan",
+		"name": "Frostbite Pan",
+		"stats": {
+			"luck": 300,
+			"capacity": 250,
+			"shakeStrength": 15,
+			"shakeSpeed": 0.8
+		},
+		"price": "$10,000,000,000",
+		"location": "Frozen Peak",
+		"passive": "+25% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Frostbite_Pan"
+	},
+	{
+		"id": "lifetouched-pan",
+		"name": "Lifetouched Pan",
+		"stats": {
+			"luck": 400,
+			"capacity": 300,
+			"shakeStrength": 8,
+			"shakeSpeed": 1.1
+		},
+		"price": "$100,000,000,000",
+		"location": "Deeproot Spring",
+		"passive": "+50% Modifier Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Lifetouched_Pan"
+	},
+	{
+		"id": "abyssal-pan",
+		"name": "Abyssal Pan",
+		"stats": {
+			"luck": 700,
+			"capacity": 250,
+			"shakeStrength": 8,
+			"shakeSpeed": 1.1
+		},
+		"price": "$200,000,000,000",
+		"location": "Abyssal Depths",
+		"passive": "+20% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Abyssal_Pan"
+	},
+	{
+		"id": "blightflow-pan",
+		"name": "Blightflow Pan",
+		"stats": {
+			"luck": 500,
+			"capacity": 400,
+			"shakeStrength": 30,
+			"shakeSpeed": 2
+		},
+		"price": "$500,000,000,000",
+		"location": "Fungal Marsh",
+		"passive": "+25% Size Boost",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Blightflow_Pan"
+	},
+	{
+		"id": "nebula-pan",
+		"name": "Nebula Pan",
+		"stats": {
+			"luck": 800,
+			"capacity": 500,
+			"shakeStrength": 80,
+			"shakeSpeed": 1.25
+		},
+		"price": "$10,000,000,000,000",
+		"location": "Starfall River",
+		"passive": "+25% Modifier Boost , +33% Size Boost , Increased buffs from Totems, 1.1× additional Luck",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Nebula_Pan"
+	},
+	{
+		"id": "pharaohs-pan",
+		"name": "Pharaoh's Pan",
+		"stats": {
+			"luck": 1000,
+			"capacity": 700,
+			"shakeStrength": 150,
+			"shakeSpeed": 1
+		},
+		"price": "$100,000,000,000,000",
+		"location": "Lifespring Oasis",
+		"passive": "+20% Modifier Boost , +40% Sell Boost , +40% Size Boost , Sun Blessing",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Pharaoh%27s_Pan"
+	},
+	{
+		"id": "galactic-pan",
+		"name": "Galactic Pan",
+		"stats": {
+			"luck": 100,
+			"capacity": 500,
+			"shakeStrength": 25,
+			"shakeSpeed": 1
+		},
+		"price": "$2,000,000,000",
+		"location": "The Void",
+		"passive": "+25% Size Boost, and has a chance to give Voidtorn items",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Galactic_Pan"
+	},
+	{
+		"id": "pumpkin-pan",
+		"name": "Pumpkin Pan",
+		"stats": {
+			"luck": 350,
+			"capacity": 350,
+			"shakeStrength": 20,
+			"shakeSpeed": 1
+		},
+		"price": "1,000",
+		"location": "Haunted Creek",
+		"passive": "Summons a ghostly spirit.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Pumpkin_Pan"
+	},
+	{
+		"id": "gingerbread-pan",
+		"name": "Gingerbread Pan",
+		"stats": {
+			"luck": 400,
+			"capacity": 400,
+			"shakeStrength": 25,
+			"shakeSpeed": 1.2
+		},
+		"price": "2,000",
+		"location": "North Pole",
+		"passive": "Chance to give XP cookie effects",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Gingerbread_Pan"
+	},
+	{
+		"id": "rose-pan",
+		"name": "Rose Pan",
+		"stats": {
+			"luck": 300,
+			"capacity": 350,
+			"shakeStrength": 20,
+			"shakeSpeed": 1.2
+		},
+		"price": "❤️ 2,000",
+		"location": "Fortune River",
+		"passive": "25% Luck Boost from nearby player",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Rose_Pan"
+	}
+]

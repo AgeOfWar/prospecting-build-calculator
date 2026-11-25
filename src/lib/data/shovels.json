@@ -1,0 +1,290 @@
+[
+	{
+		"id": "rusty-shovel",
+		"name": "Rusty Shovel",
+		"stats": {
+			"digStrength": 1,
+			"digSpeed": 0.8,
+			"toughness": 1
+		},
+		"price": "Free",
+		"location": "Given to the player upon joining.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Rusty_Shovel"
+	},
+	{
+		"id": "iron-shovel",
+		"name": "Iron Shovel",
+		"stats": {
+			"digStrength": 2,
+			"digSpeed": 0.8,
+			"toughness": 2
+		},
+		"price": "$2,000",
+		"location": "Rubble Creek Sands",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Iron_Shovel"
+	},
+	{
+		"id": "steel-shovel",
+		"name": "Steel Shovel",
+		"stats": {
+			"digStrength": 3,
+			"digSpeed": 0.8,
+			"toughness": 2
+		},
+		"price": "$20,000",
+		"location": "Rubble Creek Sands",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Steel_Shovel"
+	},
+	{
+		"id": "silver-shovel",
+		"name": "Silver Shovel",
+		"stats": {
+			"digStrength": 4,
+			"digSpeed": 1.1,
+			"toughness": 2
+		},
+		"price": "$75,000",
+		"location": "Rubble Creek Sands",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Silver_Shovel"
+	},
+	{
+		"id": "reinforced-shovel",
+		"name": "Reinforced Shovel",
+		"stats": {
+			"digStrength": 5,
+			"digSpeed": 0.9,
+			"toughness": 3
+		},
+		"price": "$135,000",
+		"location": "Rubble Creek Sands",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Reinforced_Shovel"
+	},
+	{
+		"id": "the-excavator",
+		"name": "The Excavator",
+		"stats": {
+			"digStrength": 7,
+			"digSpeed": 0.7,
+			"toughness": 3
+		},
+		"price": "$320,000",
+		"location": "Fortune River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/The_Excavator"
+	},
+	{
+		"id": "golden-shovel",
+		"name": "Golden Shovel",
+		"stats": {
+			"digStrength": 8,
+			"digSpeed": 1,
+			"toughness": 3
+		},
+		"price": "$1,333,000",
+		"location": "Fortune River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Golden_Shovel"
+	},
+	{
+		"id": "meteoric-shovel",
+		"name": "Meteoric Shovel",
+		"stats": {
+			"digStrength": 7,
+			"digSpeed": 1.5,
+			"toughness": 4
+		},
+		"price": "$4,000,000",
+		"location": "Fortune River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Meteoric_Shovel"
+	},
+	{
+		"id": "diamond-shovel",
+		"name": "Diamond Shovel",
+		"stats": {
+			"digStrength": 12,
+			"digSpeed": 1,
+			"toughness": 4
+		},
+		"price": "$12,500,000",
+		"location": "Fortune River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Diamond_Shovel"
+	},
+	{
+		"id": "divine-shovel",
+		"name": "Divine Shovel",
+		"stats": {
+			"digStrength": 16,
+			"digSpeed": 1.1,
+			"toughness": 5
+		},
+		"price": "$40,000,000",
+		"location": "Crystal Cavern River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Divine_Shovel"
+	},
+	{
+		"id": "obsidian-shovel",
+		"name": "Obsidian Shovel",
+		"stats": {
+			"digStrength": 20,
+			"digSpeed": 1.2,
+			"toughness": 5
+		},
+		"price": "$80,000,000",
+		"location": "Caldera Park",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Obsidian_Shovel"
+	},
+	{
+		"id": "earthbreaker",
+		"name": "Earthbreaker",
+		"stats": {
+			"digStrength": 30,
+			"digSpeed": 1,
+			"toughness": 5
+		},
+		"price": "$125,000,000",
+		"location": "Waterfall Temple",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Earthbreaker"
+	},
+	{
+		"id": "dragonflame-shovel",
+		"name": "Dragonflame Shovel",
+		"stats": {
+			"digStrength": 50,
+			"digSpeed": 0.65,
+			"toughness": 6
+		},
+		"price": "$400,000,000",
+		"location": "The Magma Furnace",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Dragonflame_Shovel"
+	},
+	{
+		"id": "fossilized-shovel",
+		"name": "Fossilized Shovel",
+		"stats": {
+			"digStrength": 40,
+			"digSpeed": 1,
+			"toughness": 6
+		},
+		"price": "$1,000,000,000",
+		"location": "Ancient Ruins",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Fossilized_Shovel"
+	},
+	{
+		"id": "icebreaker",
+		"name": "Icebreaker",
+		"stats": {
+			"digStrength": 60,
+			"digSpeed": 1.1,
+			"toughness": 6
+		},
+		"price": "$10,000,000,000",
+		"location": "Frozen Peak",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Icebreaker"
+	},
+	{
+		"id": "lifetouched-shovel",
+		"name": "Lifetouched Shovel",
+		"stats": {
+			"digStrength": 100,
+			"digSpeed": 1,
+			"toughness": 7
+		},
+		"price": "$80,000,000,000",
+		"location": "Deeproot Spring",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Lifetouched_Shovel"
+	},
+	{
+		"id": "abyssal-shovel",
+		"name": "Abyssal Shovel",
+		"stats": {
+			"digStrength": 125,
+			"digSpeed": 1.1,
+			"toughness": 8
+		},
+		"price": "$200,000,000,000",
+		"location": "Abyssal Depths",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Abyssal_Shovel"
+	},
+	{
+		"id": "venomspade-shovel",
+		"name": "Venomspade Shovel",
+		"stats": {
+			"digStrength": 200,
+			"digSpeed": 0.8,
+			"toughness": 9
+		},
+		"price": "$500,000,000,000",
+		"location": "Fungal Marsh",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Venomspade_Shovel"
+	},
+	{
+		"id": "starcrusher",
+		"name": "Starcrusher",
+		"stats": {
+			"digStrength": 300,
+			"digSpeed": 1,
+			"toughness": 10
+		},
+		"price": "$10,000,000,000,000",
+		"location": "Starfall River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Starcrusher"
+	},
+	{
+		"id": "pharaohs-shovel",
+		"name": "Pharaoh's Shovel",
+		"stats": {
+			"digStrength": 500,
+			"digSpeed": 0.8,
+			"toughness": 11
+		},
+		"price": "$100,000,000,000,000",
+		"location": "Lifespring Oasis",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Pharaoh%27s_Shovel"
+	},
+	{
+		"id": "galactic-shovel",
+		"name": "Galactic Shovel",
+		"stats": {
+			"digStrength": 60,
+			"digSpeed": 0.8,
+			"toughness": 6
+		},
+		"price": "$2,000,000,000",
+		"location": "The Void",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Galactic_Shovel"
+	},
+	{
+		"id": "pumpkin-shovel",
+		"name": "Pumpkin Shovel",
+		"stats": {
+			"digStrength": 100,
+			"digSpeed": 1.25,
+			"toughness": 8
+		},
+		"price": "1,000",
+		"location": "Haunted Creek",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Pumpkin_Shovel"
+	},
+	{
+		"id": "candy-cane-shovel",
+		"name": "Candy Cane Shovel",
+		"stats": {
+			"digStrength": 140,
+			"digSpeed": 1,
+			"toughness": 9
+		},
+		"price": "2,000",
+		"location": "North Pole",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Candy_Cane_Shovel"
+	},
+	{
+		"id": "cupids-arrow",
+		"name": "Cupid's Arrow",
+		"stats": {
+			"digStrength": 150,
+			"digSpeed": 1,
+			"toughness": 9
+		},
+		"price": "❤️ 2,000",
+		"location": "Fortune River",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Cupid%27s_Arrow"
+	}
+]

@@ -1,0 +1,224 @@
+[
+	{
+		"id": "abyssal",
+		"name": "Abyssal",
+		"modifiers": {},
+		"rawEffects": [
+			"Gain 20% more luck during the night. Darkness increases 50% slower."
+		],
+		"location": "In the Abyssal Depths Maze, just after crossing the obby, head left, then right."
+	},
+	{
+		"id": "annihilation-i",
+		"name": "Annihilation I",
+		"modifiers": {},
+		"rawEffects": [
+			"Automatically destroy Common and Uncommon ores when panning."
+		],
+		"location": "In the tunnel from Deeproot Spring to Enchanted Ruins ."
+	},
+	{
+		"id": "annihilation-ii",
+		"name": "Annihilation II",
+		"modifiers": {},
+		"rawEffects": [
+			"Automatically destroy Rare and Epic ores when panning."
+		],
+		"location": "Located at the far back right of Fungal Marsh , surrounded by red crystals."
+	},
+	{
+		"id": "annihilation-iii",
+		"name": "Annihilation III",
+		"modifiers": {},
+		"rawEffects": [
+			"Automatically destroy Legendary ores when panning."
+		],
+		"location": "Located behind a tree at Starfall River , surrounded by red crystals."
+	},
+	{
+		"id": "bunny",
+		"name": "Bunny",
+		"modifiers": {},
+		"rawEffects": [
+			"Gain +5% modifier boost for every +1 bonus jump power."
+		],
+		"location": "Found on a cliff in Starfall River near the Meteor Golem NPC."
+	},
+	{
+		"id": "critical-i",
+		"name": "Critical I",
+		"modifiers": {},
+		"rawEffects": [
+			"Digging has a 20% chance to have 2x strength."
+		],
+		"location": "Inside the Merchant hut in Sunset Beach ."
+	},
+	{
+		"id": "critical-ii",
+		"name": "Critical II",
+		"modifiers": {},
+		"rawEffects": [
+			"Digging has a 20% chance to have 2x strength."
+		],
+		"location": "Inside one of the huts near the Ranger on Caldera Park ."
+	},
+	{
+		"id": "discovery",
+		"name": "Discovery",
+		"modifiers": {},
+		"rawEffects": [
+			"Chance of obtaining undiscovered ores is increased by 50%."
+		],
+		"location": "Inside the Maze under the Windswept Beach Lighthouse, just at the entrance past the podium/pedestal."
+	},
+	{
+		"id": "eternity",
+		"name": "Eternity",
+		"modifiers": {},
+		"rawEffects": [
+			"Your totem timers decrease 20% slower."
+		],
+		"location": "Found in the Timelocked Sanctuary ."
+	},
+	{
+		"id": "equalizer",
+		"name": "Equalizer",
+		"modifiers": {},
+		"rawEffects": [
+			"Your dig speed and shake speed are equalized to their average."
+		],
+		"location": "Inside the hut behind Old Prospector in Fortune River Delta ."
+	},
+	{
+		"id": "explorer",
+		"name": "Explorer",
+		"modifiers": {},
+		"rawEffects": [
+			"When collecting geodes, gain a 20% chance to collect another geode."
+		],
+		"location": "On top of the Stone Mountain in Fortune River Delta ."
+	},
+	{
+		"id": "mountain-climber",
+		"name": "Mountain Climber",
+		"modifiers": {
+			"base": {
+				"walkSpeed": 3
+			}
+		},
+		"rawEffects": [
+			"Gain 3 walkspeed."
+		],
+		"location": "Find the Freezing Prospector at Frostbitten Path and go towards where he's looking. You'll find the rune down below."
+	},
+	{
+		"id": "purity",
+		"name": "Purity",
+		"modifiers": {
+			"boosts": {
+				"luck": 1
+			}
+		},
+		"rawEffects": [
+			"+1x Luck multiplier, BUT MODIFIERS CAN NO LONGER BE OBTAINED."
+		],
+		"location": "Received upon completing the Botanist quest. (Rejoining might be required.)"
+	},
+	{
+		"id": "seekers-mark",
+		"name": "Seeker's Mark",
+		"modifiers": {},
+		"rawEffects": [
+			"Items needed for your active quests are 10% easier to obtain."
+		],
+		"location": "At the top of the pyramid in the Sunscorched Desert ."
+	},
+	{
+		"id": "singularity-i",
+		"name": "Singularity I",
+		"modifiers": {},
+		"rawEffects": [
+			"Status effect timers tick 10% slower. Does not apply if your status timer speed is already 0.5x lower before runes."
+		],
+		"location": "Found on top of the big meteor at Excavation Site E in Fungal Marsh ."
+	},
+	{
+		"id": "singularity-ii",
+		"name": "Singularity II",
+		"modifiers": {},
+		"rawEffects": [
+			"Status effect timers tick 10% slower. Does not apply if your status timer speed is already 0.5x lower before runes."
+		],
+		"location": "Found at the back of The Void (opposite side from the entrance)."
+	},
+	{
+		"id": "solitude",
+		"name": "Solitude",
+		"modifiers": {
+			"boosts": {
+				"luck": 0.2
+			}
+		},
+		"rawEffects": [
+			"+20% Luck, but lose 10% Luck for every other player within 50 studs."
+		],
+		"location": "Below the rocks near the Lighthouse in Windswept Beach ."
+	},
+	{
+		"id": "speed-i",
+		"name": "Speed I",
+		"modifiers": {
+			"base": {
+				"walkSpeed": 2
+			}
+		},
+		"rawEffects": [
+			"Gain 2 walkspeed."
+		],
+		"location": "In Rubble Creek , behind the rock (behind the statue)."
+	},
+	{
+		"id": "summit-seeker",
+		"name": "Summit Seeker",
+		"modifiers": {},
+		"rawEffects": [
+			"Gain 5% dig and shake speed for every +1 bonus walkspeed."
+		],
+		"location": "In front of the entrance in Frozen Peak ."
+	},
+	{
+		"id": "sunblessed",
+		"name": "Sunblessed",
+		"modifiers": {
+			"boosts": {
+				"luck": 0.2
+			}
+		},
+		"rawEffects": [
+			"Gain 20% more luck in the sunlight."
+		],
+		"location": "Inside the area behind the waterfall/locked door in Crystal Caverns ."
+	},
+	{
+		"id": "veteran",
+		"name": "Veteran",
+		"modifiers": {
+			"boosts": {
+				"luck": 0.25
+			}
+		},
+		"rawEffects": [
+			"Gain 25% more luck in regions you've fully mastered."
+		],
+		"location": "Next to the right-hand Sphinx guarding the Lifespring Oasis ."
+	},
+	{
+		"id": "volcanic",
+		"name": "Volcanic",
+		"modifiers": {},
+		"rawEffects": [
+			"Ores with the scorched modifier gain 25% size."
+		],
+		"location": "On top of the Volcano. (You need to spam jump, or complete the Flame Priest quest, as lava deals damage)"
+	}
+]

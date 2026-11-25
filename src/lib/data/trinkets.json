@@ -1,0 +1,94 @@
+[
+	{
+		"id": "alchemists-crucible",
+		"name": "Alchemist's Crucible",
+		"effect": "Modified items have a 10% chance to upgrade to the next modifier tier.",
+		"location": "Sunscorched Desert",
+		"obtainment": "Complete the Brewing Trouble quest for the Desert Alchemist.",
+		"modeled": true,
+		"modelNote": "Modellato: +10% probabilità di upgrade al tier successivo nel pool panning (aumenta i modifier rari come Perfect).",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "beach-umbrella",
+		"name": "Beach Umbrella",
+		"effect": "Every modified item panned increases your base luck by 25 for the next pan.",
+		"location": "Seashell Isle",
+		"obtainment": "Purchased from the Blueprint & Trinket Vendor.",
+		"price": "1,000 Sand Dollars",
+		"modeled": true,
+		"modelNote": "Modellato a regime: +25 × √Capacity × ChanceMod Base Luck (0 se Purity è attiva).",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "duplicator",
+		"name": "Duplicator",
+		"effect": "Mythic and Exotic ores have a 10% chance to be duplicated.",
+		"location": "Starfall River",
+		"obtainment": "Repair the Broken Device behind the house (requires Crafting Mastery 5).",
+		"modeled": false,
+		"modelNote": "Solo passivo: duplica i drop Mythic/Exotic (+10% quantità), non cambia il tempo per il primo drop.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "embalmers-salt",
+		"name": "Embalmer's Salt",
+		"effect": "Grants +0.25% sell value per item panned (max +100%).",
+		"location": "Pharaoh's Tomb (Sunscorched Desert)",
+		"obtainment": "Found inside the Pharaoh's Tomb.",
+		"modeled": true,
+		"modelNote": "Modellato a regime al cap: +100% Sell Boost.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "golden-chalice",
+		"name": "Golden Chalice",
+		"effect": "Digging up a treasure map gives a +100% luck boost for 2 minutes.",
+		"location": "Fortune River Delta",
+		"obtainment": "Dig at the red X in the Delta (requires Treasure Mastery 5).",
+		"modeled": false,
+		"modelNote": "Solo passivo: buff temporaneo condizionato allo scavo di una Treasure Map.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "mass-reactor",
+		"name": "Mass Reactor",
+		"effect": "Pans with more than 20 ores destroy the excess and give 25 base luck on the next pan per destroyed item.",
+		"location": "Rotwood Swamp",
+		"obtainment": "Complete the Going Nuclear quest for the Nuclear Scientist.",
+		"modeled": true,
+		"modelNote": "Modellato a regime: +25 × max(0, √Capacity − 20) Base Luck (funziona anche con Purity).",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "nomads-compass",
+		"name": "Nomad's Compass",
+		"effect": "Grants +15% luck for each deposit you filled 5 pans in this hour.",
+		"location": "Pharaoh's Tomb (Sunscorched Desert)",
+		"obtainment": "Found inside the Pharaoh's Tomb.",
+		"modeled": true,
+		"modelNote": "Modellato su 1 deposito attivo: +15% Luck (in gioco scala cambiando più depositi ogni ora).",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "senet-die",
+		"name": "Senet Die",
+		"effect": "Each full pan rolls a 6-sided die on final Luck: 1 -> ×0.5, 2 -> ×0.75, 3 -> ×1, 4 -> ×1.25, 5 -> ×1.5, 6 -> ×3 (mean ×4/3).",
+		"location": "Pharaoh's Tomb (Sunscorched Desert)",
+		"obtainment": "Found inside the Pharaoh's Tomb.",
+		"modeled": true,
+		"modelNote": "Modellato come moltiplicatore medio atteso sulla Luck finale: (0.5 + 0.75 + 1 + 1.25 + 1.5 + 3) / 6 = 4/3 (~1.3333x).",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	},
+	{
+		"id": "tombstone",
+		"name": "Tombstone",
+		"effect": "Summons the Halloween Spirit to pan items for you and empowers the Pumpkin Set.",
+		"location": "Haunted Creek",
+		"obtainment": "Purchased next to the Pumpkin Pan & Shovel during the Halloween event.",
+		"price": "1,500 Candy",
+		"modeled": false,
+		"modelNote": "Solo passivo: effetto evento speciale / potenziamento Pumpkin Set non quantificato.",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Trinkets"
+	}
+]

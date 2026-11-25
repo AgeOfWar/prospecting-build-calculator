@@ -1,0 +1,373 @@
+[
+	{
+		"id": "potion-basic-luck-potion",
+		"name": "Basic Luck Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 5
+			}
+		},
+		"rawEffects": [
+			"+5 Luck (10 min)"
+		],
+		"price": "$50,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-basic-capacity-potion",
+		"name": "Basic Capacity Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"capacity": 25
+			}
+		},
+		"rawEffects": [
+			"+25 Capacity (10 min)"
+		],
+		"price": "$40,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-greater-luck-potion",
+		"name": "Greater Luck Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 10
+			}
+		},
+		"rawEffects": [
+			"+10 Luck (20 min)"
+		],
+		"price": "30",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-greater-capacity-potion",
+		"name": "Greater Capacity Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"capacity": 50
+			}
+		},
+		"rawEffects": [
+			"+50 Capacity (20 min)"
+		],
+		"price": "20",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-volcanic-luck-potion",
+		"name": "Volcanic Luck Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 20
+			}
+		},
+		"rawEffects": [
+			"+20 Luck (10 min)"
+		],
+		"price": "$1,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-volcanic-strength-potion",
+		"name": "Volcanic Strength Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"digStrength": 5
+			}
+		},
+		"rawEffects": [
+			"+5 Dig Strength (10 min)"
+		],
+		"price": "$1,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-supreme-luck-potion",
+		"name": "Supreme Luck Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 50
+			}
+		},
+		"rawEffects": [
+			"+50 Luck (20 min)"
+		],
+		"price": "150",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-frozen-luck-potion",
+		"name": "Frozen Luck Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 100
+			}
+		},
+		"rawEffects": [
+			"+100 Luck (10 min)"
+		],
+		"price": "$25,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-frozen-speed-potion",
+		"name": "Frozen Speed Potion",
+		"category": "potion",
+		"modifiers": {
+			"boosts": {
+				"digSpeed": 0.2,
+				"shakeSpeed": 0.2
+			}
+		},
+		"rawEffects": [
+			"+20% Dig Speed , +20% Shake Speed (10 min)"
+		],
+		"price": "$50,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-cryonic-brew",
+		"name": "Cryonic Brew",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 300,
+				"capacity": 200,
+				"walkSpeed": 3
+			}
+		},
+		"rawEffects": [
+			"+300 Luck , +200 Capacity , +3 WalkSpeed (20 min)"
+		],
+		"price": "200",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-witches-brew",
+		"name": "Witches Brew",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 500,
+				"digStrength": 50
+			}
+		},
+		"rawEffects": [
+			"+500 Luck , +50 Dig Strength (10 min)"
+		],
+		"price": "$1,000,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-ambrosia",
+		"name": "Ambrosia",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 1111
+			}
+		},
+		"rawEffects": [
+			"+1111 Luck (10 min)"
+		],
+		"price": "500",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-cosmic-potion",
+		"name": "Cosmic Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 250,
+				"digStrength": 75
+			},
+			"boosts": {
+				"digSpeed": 0.2,
+				"modifierBoost": 0.2
+			}
+		},
+		"rawEffects": [
+			"+250 Luck , +75 Dig Strength , +20% Dig Speed , +20% Modifier Boost (10 min)"
+		],
+		"price": "$25,000,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-stardust-shake",
+		"name": "Stardust Shake",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 1500
+			},
+			"boosts": {
+				"sizeBoost": 0.3
+			}
+		},
+		"rawEffects": [
+			"+1500 Luck , +30% Size Boost (10 min)"
+		],
+		"price": "1,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-travelers-mix",
+		"name": "Traveler's Mix",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 300,
+				"shakeStrength": 25,
+				"inventorySize": 250
+			},
+			"boosts": {
+				"modifierBoost": 0.3
+			}
+		},
+		"rawEffects": [
+			"+300 Luck , +25 Shake Strength , +250 Inventory Size , +30% Modifier Boost (10 min)"
+		],
+		"price": "$200,000,000,000",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-water-of-life",
+		"name": "Water of Life",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"luck": 1500,
+				"walkSpeed": 2,
+				"jumpPower": 5
+			}
+		},
+		"rawEffects": [
+			"+1500 Luck , +2 WalkSpeed , +5 Jump Power (10 min)"
+		],
+		"price": "1,500",
+		"duration": "10 min"
+	},
+	{
+		"id": "potion-merchants-potion",
+		"name": "Merchant’s Potion",
+		"category": "potion",
+		"modifiers": {
+			"boosts": {
+				"sellBoost": 1
+			}
+		},
+		"rawEffects": [
+			"+100% Sell Boost (20 min)"
+		],
+		"price": "200",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-instability-potion",
+		"name": "Instability Potion",
+		"category": "potion",
+		"modifiers": {
+			"boosts": {
+				"modifierBoost": 1
+			}
+		},
+		"rawEffects": [
+			"+100% Modifier Boost (20 min)"
+		],
+		"price": "$200,000,000 / 150",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-quake-potion",
+		"name": "Quake Potion",
+		"category": "potion",
+		"modifiers": {
+			"flats": {
+				"digStrength": 30,
+				"shakeStrength": 5
+			}
+		},
+		"rawEffects": [
+			"+30 Dig Strength , +5 Shake Strength (20 min)"
+		],
+		"price": "$200,000,000 / 200",
+		"duration": "20 min"
+	},
+	{
+		"id": "potion-blitz-potion",
+		"name": "Blitz Potion",
+		"category": "potion",
+		"modifiers": {
+			"boosts": {
+				"digSpeed": 0.6,
+				"shakeSpeed": 0.6
+			}
+		},
+		"rawEffects": [
+			"+60% Dig Speed , +60% Shake Speed (20 min)"
+		],
+		"price": "$200,000,000 / 250",
+		"duration": "20 min"
+	},
+	{
+		"id": "totem-luck-totem",
+		"name": "Luck Totem",
+		"category": "totem",
+		"modifiers": {
+			"multipliers": {
+				"luck": 2
+			}
+		},
+		"rawEffects": [
+			"An enchanted totem that grants 2x Luck to nearby players for 30 minutes."
+		],
+		"price": "300 Shards",
+		"duration": "30 minutes"
+	},
+	{
+		"id": "totem-strength-totem",
+		"name": "Strength Totem",
+		"category": "totem",
+		"modifiers": {
+			"multipliers": {
+				"digStrength": 2,
+				"shakeStrength": 2
+			}
+		},
+		"rawEffects": [
+			"An enchanted totem that doubles dig and shake Strength of nearby players for 30 minutes."
+		],
+		"price": "180 Shards",
+		"duration": "30 minutes"
+	},
+	{
+		"id": "totem-luminant-totem",
+		"name": "Luminant Totem",
+		"category": "totem",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.5
+			},
+			"boosts": {
+				"digSpeed": 0.5,
+				"shakeSpeed": 0.5
+			}
+		},
+		"rawEffects": [
+			"Luminant Totems can be placed in a dig site to grant all players in the effect radius a boost of 1.5× Capacity , +50% Dig Speed , and +50% Shake Speed . In addition, Luminant totems give immunity from the darkness in the Abyssal Depths , and keep the swamp monsters away in Rotwood Swamp . Each totem lasts 30 minutes, but multiple totems can be stacked to extend the time. Obtainment [ edit ] Purchase in Rotwood Swamp for 600 Treasure Chest rewards: Rotwood Swamp Starfall River Purchase in Haunted Creek shop for 60 Forever Pack (Robux) Dredge Master random reward Usage [ edit ] Stand where you want to place the totem, select it from your backpack (or hotbar), and click once . To extend the time, stand in the effect radius of an already-placed totem (yours or someone else's), select the totem from your backpack/hotbar, and click once for each half-hour you want to add to the time. Totems cannot be moved once placed, so be careful when selecting one in your inventory, especially on mobile."
+		],
+		"duration": "30 minutes",
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Relics#Luminant_Totem"
+	}
+]

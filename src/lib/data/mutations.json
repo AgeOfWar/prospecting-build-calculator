@@ -1,0 +1,106 @@
+[
+	{
+		"id": "silver",
+		"name": "Silver",
+		"statMultiplier": 1.1,
+		"rawEffects": [
+			"1.1×"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations"
+	},
+	{
+		"id": "gold",
+		"name": "Gold",
+		"statMultiplier": 1.2,
+		"rawEffects": [
+			"1.2×"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations"
+	},
+	{
+		"id": "diamond",
+		"name": "Diamond",
+		"statMultiplier": 1.35,
+		"rawEffects": [
+			"1.35×"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations",
+		"notes": "Guaranteed via Diamond Catalyst"
+	},
+	{
+		"id": "granite",
+		"name": "Granite",
+		"statMultiplier": 1.36,
+		"rawEffects": [
+			"1.36×, +24 Dig Strength , +6 Shake Strength"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations",
+		"bonusModifiers": {
+			"flats": {
+				"digStrength": 24,
+				"shakeStrength": 6
+			}
+		}
+	},
+	{
+		"id": "overclocked",
+		"name": "Overclocked",
+		"statMultiplier": 1.36,
+		"rawEffects": [
+			"1.36×, +10% Dig Speed , +10% Shake Speed"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations",
+		"bonusModifiers": {
+			"boosts": {
+				"digSpeed": 0.1,
+				"shakeSpeed": 0.1
+			}
+		}
+	},
+	{
+		"id": "festive",
+		"name": "Festive",
+		"statMultiplier": 1.4,
+		"rawEffects": [
+			"1.4×, +50 Luck , +10% Size Boost"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations",
+		"bonusModifiers": {
+			"flats": {
+				"luck": 50
+			},
+			"boosts": {
+				"sizeBoost": 0.1
+			}
+		},
+		"notes": "Guaranteed via Festive Catalyst"
+	},
+	{
+		"id": "prismatic",
+		"name": "Prismatic",
+		"statMultiplier": 1.6,
+		"rawEffects": [
+			"1.6×"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations",
+		"notes": "Guaranteed via Prismatic Catalyst"
+	},
+	{
+		"id": "sunforged",
+		"name": "Sunforged",
+		"statMultiplier": 1.5,
+		"rawEffects": [
+			"1.5×, +300 Luck , +30% Sell Boost"
+		],
+		"wikiUrl": "https://prospecting.miraheze.org/wiki/Mutations",
+		"bonusModifiers": {
+			"flats": {
+				"luck": 300
+			},
+			"boosts": {
+				"sellBoost": 0.3
+			}
+		},
+		"notes": "Guaranteed via Scarab Catalyst"
+	}
+]

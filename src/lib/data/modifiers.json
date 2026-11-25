@@ -1,0 +1,123 @@
+[
+	{
+		"id": "perfect",
+		"name": "Perfect",
+		"sellMultiplier": 24,
+		"baseChancePercent": 0.003736,
+		"color": "#00ffe1",
+		"source": "panning",
+		"museumBonus": "Luck + Capacity + Size Boost"
+	},
+	{
+		"id": "lunar",
+		"name": "Lunar",
+		"sellMultiplier": 14,
+		"baseChancePercent": 0.009341,
+		"color": "#ffe99b",
+		"source": "night",
+		"museumBonus": "Dig Speed + Shake Speed + WalkSpeed",
+		"notes": "Solo di notte"
+	},
+	{
+		"id": "mutated",
+		"name": "Mutated",
+		"sellMultiplier": 9,
+		"baseChancePercent": 0.03736,
+		"color": "#7f43ff",
+		"source": "panning",
+		"museumBonus": "Luck + Dig Strength + Modifier Boost"
+	},
+	{
+		"id": "cosmic",
+		"name": "Cosmic",
+		"sellMultiplier": 6,
+		"baseChancePercent": 0.1868,
+		"color": "#ff478e",
+		"source": "panning",
+		"museumBonus": "Capacity + Shake Strength"
+	},
+	{
+		"id": "iridescent",
+		"name": "Iridescent",
+		"sellMultiplier": 3.5,
+		"baseChancePercent": 0.7473,
+		"color": "#f36bff",
+		"source": "panning",
+		"museumBonus": "Luck"
+	},
+	{
+		"id": "irradiated",
+		"name": "Irradiated",
+		"sellMultiplier": 2.5,
+		"baseChancePercent": 3.736,
+		"color": "#67ff20",
+		"source": "panning",
+		"museumBonus": "Modifier Boost"
+	},
+	{
+		"id": "scorching",
+		"name": "Scorching",
+		"sellMultiplier": 2,
+		"baseChancePercent": 9.341,
+		"color": "#ff861c",
+		"source": "panning",
+		"museumBonus": "Dig Strength"
+	},
+	{
+		"id": "glowing",
+		"name": "Glowing",
+		"sellMultiplier": 1.6,
+		"baseChancePercent": 18.68,
+		"color": "#fff292",
+		"source": "panning",
+		"museumBonus": "Shake Speed"
+	},
+	{
+		"id": "pure",
+		"name": "Pure",
+		"sellMultiplier": 1.35,
+		"baseChancePercent": 29.89,
+		"color": "#ffffff",
+		"source": "panning",
+		"museumBonus": "Dig Speed"
+	},
+	{
+		"id": "shiny",
+		"name": "Shiny",
+		"sellMultiplier": 1.2,
+		"baseChancePercent": 37.36,
+		"color": "#d4e7ff",
+		"source": "panning",
+		"museumBonus": "Shake Strength"
+	},
+	{
+		"id": "treasured",
+		"name": "Treasured",
+		"sellMultiplier": 15,
+		"baseChancePercent": 0,
+		"color": "#ffd849",
+		"source": "chest",
+		"museumBonus": "2× Luck",
+		"notes": "100% da Treasure Chests"
+	},
+	{
+		"id": "voidtorn",
+		"name": "Voidtorn",
+		"sellMultiplier": 11,
+		"baseChancePercent": 0,
+		"color": "#8307ff",
+		"source": "void_touched",
+		"museumBonus": "Luck + Capacity",
+		"notes": "5% con Void Touched enchant / Galactic tools / The Void"
+	},
+	{
+		"id": "crystalline",
+		"name": "Crystalline",
+		"sellMultiplier": 2,
+		"baseChancePercent": 0,
+		"color": "#b7e6ff",
+		"source": "crystal_touch",
+		"museumBonus": "Size Boost",
+		"notes": "10% con Crystal Touch shovel enchant"
+	}
+]

@@ -1,0 +1,560 @@
+[
+	{
+		"id": "pan-forceful",
+		"name": "Forceful",
+		"target": "pan",
+		"modifiers": {
+			"flats": {
+				"shakeStrength": 2
+			}
+		},
+		"rawEffects": [
+			"+2 Shake Strength"
+		]
+	},
+	{
+		"id": "pan-strong",
+		"name": "Strong",
+		"target": "pan",
+		"modifiers": {
+			"flats": {
+				"capacity": 20
+			}
+		},
+		"rawEffects": [
+			"+20 Capacity"
+		]
+	},
+	{
+		"id": "pan-swift",
+		"name": "Swift",
+		"target": "pan",
+		"modifiers": {
+			"boosts": {
+				"shakeSpeed": 0.1
+			}
+		},
+		"rawEffects": [
+			"+10% Shake Speed"
+		]
+	},
+	{
+		"id": "pan-lucky",
+		"name": "Lucky",
+		"target": "pan",
+		"modifiers": {
+			"flats": {
+				"luck": 5
+			}
+		},
+		"rawEffects": [
+			"+5 Luck"
+		]
+	},
+	{
+		"id": "pan-boosting",
+		"name": "Boosting",
+		"target": "pan",
+		"modifiers": {
+			"boosts": {
+				"sizeBoost": 0.1
+			}
+		},
+		"rawEffects": [
+			"+10% Size Boost"
+		]
+	},
+	{
+		"id": "pan-destructive",
+		"name": "Destructive",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"shakeStrength": 1.1
+			},
+			"flats": {
+				"shakeStrength": 5
+			}
+		},
+		"rawEffects": [
+			"1.1× Pan Shake Strength & +5 Shake Strength"
+		],
+		"notes": "Also via Destructive Enchant Book"
+	},
+	{
+		"id": "pan-gigantic",
+		"name": "Gigantic",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.15
+			},
+			"flats": {
+				"capacity": 40
+			}
+		},
+		"rawEffects": [
+			"1.15× Pan Capacity & +40 Capacity"
+		]
+	},
+	{
+		"id": "pan-glowing",
+		"name": "Glowing",
+		"target": "pan",
+		"modifiers": {
+			"boosts": {
+				"shakeSpeed": 0.25
+			}
+		},
+		"rawEffects": [
+			"+25% Shake Speed"
+		],
+		"notes": "Also via Glowing Enchant Book"
+	},
+	{
+		"id": "pan-greedy",
+		"name": "Greedy",
+		"target": "pan",
+		"modifiers": {
+			"boosts": {
+				"sellBoost": 0.2
+			}
+		},
+		"rawEffects": [
+			"+20% Sell Boost"
+		]
+	},
+	{
+		"id": "pan-unstable",
+		"name": "Unstable",
+		"target": "pan",
+		"modifiers": {
+			"boosts": {
+				"modifierBoost": 0.25
+			}
+		},
+		"rawEffects": [
+			"+25% Modifier Boost"
+		],
+		"notes": "Also via Unstable Enchant Book"
+	},
+	{
+		"id": "pan-blessed",
+		"name": "Blessed",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.1,
+				"luck": 1.1
+			},
+			"flats": {
+				"capacity": 25,
+				"luck": 10
+			}
+		},
+		"rawEffects": [
+			"1.1× Pan Capacity & +25 Capacity",
+			"1.1× Pan Luck & +10 Luck"
+		],
+		"notes": "Also via Blessed Enchant Book"
+	},
+	{
+		"id": "pan-midas",
+		"name": "Midas",
+		"target": "pan",
+		"modifiers": {
+			"boosts": {
+				"sellBoost": 0.5
+			}
+		},
+		"rawEffects": [
+			"+50% Sell Boost"
+		],
+		"notes": "Also via Midas Enchant Book"
+	},
+	{
+		"id": "pan-titanic",
+		"name": "Titanic",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.1
+			},
+			"flats": {
+				"capacity": 30
+			},
+			"boosts": {
+				"sizeBoost": 0.2
+			}
+		},
+		"rawEffects": [
+			"1.1× Pan Capacity & +30 Capacity",
+			"+20% Size Boost"
+		],
+		"notes": "Also via Titanic Enchant Book"
+	},
+	{
+		"id": "pan-cosmic",
+		"name": "Cosmic",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.3,
+				"shakeStrength": 1.15
+			},
+			"flats": {
+				"capacity": 50,
+				"shakeStrength": 3
+			},
+			"boosts": {
+				"sizeBoost": 0.25
+			}
+		},
+		"rawEffects": [
+			"1.3× Pan Capacity & +50 Capacity",
+			"1.15× Pan Shake Strength & +3 Shake Strength",
+			"+25% Size Boost"
+		],
+		"notes": "Also via Cosmic Enchant Book"
+	},
+	{
+		"id": "pan-divine",
+		"name": "Divine",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.2,
+				"luck": 1.2
+			},
+			"flats": {
+				"capacity": 40,
+				"luck": 20
+			}
+		},
+		"rawEffects": [
+			"1.2× Pan Capacity & +40 Capacity",
+			"1.2× Pan Luck & +20 Luck"
+		],
+		"notes": "Also via Divine Enchant Book"
+	},
+	{
+		"id": "pan-infernal",
+		"name": "Infernal",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"luck": 1.4,
+				"capacity": 0.75
+			},
+			"flats": {
+				"luck": 80
+			},
+			"base": {
+				"capacity": -20
+			},
+			"boosts": {
+				"sizeBoost": -0.1
+			}
+		},
+		"rawEffects": [
+			"1.4× Pan Luck & +80 Luck",
+			"0.75× Pan Capacity & −20 Capacity",
+			"−10% Size Boost"
+		],
+		"notes": "Also via Infernal Enchant Book"
+	},
+	{
+		"id": "pan-prismatic",
+		"name": "Prismatic",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"capacity": 1.15,
+				"shakeStrength": 1.15,
+				"luck": 1.15
+			},
+			"flats": {
+				"capacity": 20,
+				"shakeStrength": 2,
+				"luck": 10
+			},
+			"boosts": {
+				"sizeBoost": 0.1,
+				"shakeSpeed": 0.1,
+				"modifierBoost": 0.1
+			}
+		},
+		"rawEffects": [
+			"1.15× Pan Capacity & +20 Capacity",
+			"1.15× Pan Shake Strength & +2 Shake Strength",
+			"1.15× Pan Luck & +10 Luck",
+			"+10% Size Boost",
+			"+10% Shake Speed",
+			"+10% Modifier Boost"
+		],
+		"notes": "Also via Prismatic Enchant Book"
+	},
+	{
+		"id": "pan-cursed",
+		"name": "Cursed",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"luck": 0.7,
+				"capacity": 0.7
+			},
+			"base": {
+				"luck": -100,
+				"capacity": -100
+			},
+			"boosts": {
+				"modifierBoost": 0.5,
+				"sizeBoost": 0.5
+			}
+		},
+		"rawEffects": [
+			"0.7× Pan Luck & -100 Luck",
+			"0.7× Pan Capacity & -100 Capacity",
+			"+50% Modifier Boost",
+			"+50% Size Boost"
+		]
+	},
+	{
+		"id": "pan-devouring",
+		"name": "Devouring",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"luck": 1.5
+			},
+			"flats": {
+				"luck": 200
+			},
+			"boosts": {
+				"sizeBoost": -0.5
+			}
+		},
+		"rawEffects": [
+			"1.5× Pan Luck & +200 Luck",
+			"-50% Size Boost"
+		]
+	},
+	{
+		"id": "pan-hyperspeed",
+		"name": "Hyperspeed",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"shakeStrength": 1.3
+			},
+			"flats": {
+				"shakeStrength": 10,
+				"shakeSpeed": 0.4
+			}
+		},
+		"rawEffects": [
+			"1.3× Pan Shake Strength & +10 Shake Strength",
+			"+0.4 Shake Speed"
+		]
+	},
+	{
+		"id": "pan-irregular",
+		"name": "Irregular",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"luck": 1.25
+			},
+			"flats": {
+				"luck": 66
+			},
+			"boosts": {
+				"modifierBoost": 0.66
+			}
+		},
+		"rawEffects": [
+			"1.25× Pan Luck & +66 Luck",
+			"+66% Modifier Boost"
+		]
+	},
+	{
+		"id": "pan-mystical",
+		"name": "Mystical",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"luck": 1.4,
+				"capacity": 1.4
+			},
+			"flats": {
+				"luck": 100,
+				"capacity": 100
+			}
+		},
+		"rawEffects": [
+			"1.4× Pan Luck & +100 Luck",
+			"1.4× Pan Capacity & +100 Capacity"
+		]
+	},
+	{
+		"id": "pan-starstruck",
+		"name": "Starstruck",
+		"target": "pan",
+		"modifiers": {
+			"multipliers": {
+				"luck": 1.3
+			},
+			"flats": {
+				"luck": 75
+			},
+			"boosts": {
+				"sellBoost": 0.5,
+				"sizeBoost": 0.2
+			}
+		},
+		"rawEffects": [
+			"1.3× Pan Luck & +75 Luck",
+			"+50% Sell Boost",
+			"+20% Size Boost"
+		]
+	},
+	{
+		"id": "shovel-crystal-touch",
+		"name": "Crystal Touch",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"10% chance for materials to be crystalline."
+		]
+	},
+	{
+		"id": "shovel-excavating",
+		"name": "Excavating",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"25% chance to get 2-4 extra ores when they are Common to Rare ."
+		]
+	},
+	{
+		"id": "shovel-geothermal",
+		"name": "Geothermal",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"2% base chance of getting a Geode when digging. (higher dig speed = lower chance)"
+		]
+	},
+	{
+		"id": "shovel-mastered",
+		"name": "Mastered",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"Auto-Panning now has 100% quality."
+		]
+	},
+	{
+		"id": "shovel-mythical",
+		"name": "Mythical",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"10% Chance to get a duplicate Mythic or Exotic resource when found."
+		]
+	},
+	{
+		"id": "shovel-non-euclidean",
+		"name": "Non Euclidean",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"With each perfect dig streak, increase Capacity by .1× up to 2×."
+		]
+	},
+	{
+		"id": "shovel-overdrive",
+		"name": "Overdrive",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"60% chance to critically hit, giving 2× dig strength."
+		]
+	},
+	{
+		"id": "shovel-rhythmic",
+		"name": "Rhythmic",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"With each perfect dig streak, increase Luck by 0.2× up to 1.3×."
+		]
+	},
+	{
+		"id": "shovel-synergized",
+		"name": "Synergized",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"Perfect digging next to your sluice decreases its timer by 1s (0.25s cd)."
+		]
+	},
+	{
+		"id": "shovel-tempered",
+		"name": "Tempered",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"+5% items per pan for every toughness above the deposit's toughness (max 5)."
+		]
+	},
+	{
+		"id": "shovel-toughened",
+		"name": "Toughened",
+		"target": "shovel",
+		"modifiers": {
+			"base": {
+				"toughness": 2
+			}
+		},
+		"rawEffects": [
+			"Toughness increased by 2."
+		]
+	},
+	{
+		"id": "shovel-treasure-hunter",
+		"name": "Treasure Hunter",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"2× chance to find treasure map, and 2× map capacity"
+		]
+	},
+	{
+		"id": "shovel-void-touched",
+		"name": "Void Touched",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"5% chance for ores to be Voidtorn once panned."
+		]
+	},
+	{
+		"id": "shovel-well-balanced",
+		"name": "Well Balanced",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"Increase the perfect dig threshold by 3×."
+		]
+	},
+	{
+		"id": "shovel-wormhole",
+		"name": "Wormhole",
+		"target": "shovel",
+		"modifiers": {},
+		"rawEffects": [
+			"10% chance to obtain materials from a different deposit when panning"
+		]
+	}
+]

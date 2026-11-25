@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+	<defs>
+		<linearGradient id="bgGrad" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#1e293b" />
+			<stop offset="1" stop-color="#0f172a" />
+		</linearGradient>
+		<linearGradient id="panRim" x1="10" y1="30" x2="54" y2="48" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#fcd34d" />
+			<stop offset="0.5" stop-color="#f59e0b" />
+			<stop offset="1" stop-color="#b45309" />
+		</linearGradient>
+		<linearGradient id="panBowl" x1="16" y1="34" x2="48" y2="54" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#334155" />
+			<stop offset="1" stop-color="#0f172a" />
+		</linearGradient>
+		<linearGradient id="gemGrad" x1="26" y1="14" x2="38" y2="30" gradientUnits="userSpaceOnUse">
+			<stop offset="0" stop-color="#e0f2fe" />
+			<stop offset="0.45" stop-color="#38bdf8" />
+			<stop offset="1" stop-color="#0284c7" />
+		</linearGradient>
+	</defs>
+
+	<rect x="2" y="2" width="60" height="60" rx="14" fill="url(#bgGrad)" stroke="#f59e0b" stroke-opacity="0.45" stroke-width="2" />
+
+	<!-- Pan bowl -->
+	<path d="M10 34 C12 49, 21 54, 32 54 C43 54, 52 49, 54 34 Z" fill="url(#panBowl)" stroke="#d97706" stroke-width="2" stroke-linejoin="round" />
+
+	<!-- Pan inner basin -->
+	<ellipse cx="32" cy="34" rx="22" ry="7.5" fill="#1e293b" stroke="url(#panRim)" stroke-width="3" />
+	<ellipse cx="32" cy="34.5" rx="16.5" ry="4.5" fill="#0f172a" stroke="#475569" stroke-width="1" />
+
+	<!-- Gold nuggets -->
+	<circle cx="22.5" cy="34" r="3.4" fill="#fbbf24" />
+	<circle cx="21.7" cy="33.2" r="1.1" fill="#fef3c7" />
+	<circle cx="40.5" cy="34.5" r="3" fill="#f59e0b" />
+	<circle cx="27" cy="36.2" r="2.2" fill="#fcd34d" />
+
+	<!-- Cyan gem rising from pan -->
+	<polygon points="32,12 41,22 32,33 23,22" fill="url(#gemGrad)" stroke="#bae6fd" stroke-width="1.5" stroke-linejoin="round" />
+	<polyline points="23,22 32,20 41,22" stroke="#e0f2fe" stroke-width="1.2" stroke-linejoin="round" />
+	<line x1="32" y1="12" x2="32" y2="33" stroke="#bae6fd" stroke-opacity="0.7" stroke-width="1" />
+
+	<!-- Sparkles -->
+	<path d="M49 12 L50.3 15.7 L54 17 L50.3 18.3 L49 22 L47.7 18.3 L44 17 L47.7 15.7 Z" fill="#fde68a" />
+	<path d="M15 16 L15.8 18.2 L18 19 L15.8 19.8 L15 22 L14.2 19.8 L12 19 L14.2 18.2 Z" fill="#7dd3fc" />
+</svg>
