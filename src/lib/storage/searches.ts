@@ -99,9 +99,15 @@ function normalizePotionMode(val: unknown): OptimizerPotionMode {
 export function normalizeOptimizerSearchConfig(raw: unknown): OptimizerSearchConfig | null {
 	if (!raw || typeof raw !== 'object') return null;
 	const obj = raw as Record<string, unknown>;
+	const targetMode =
+		obj.targetMode === 'rare_generic' ||
+		obj.targetMode === 'money' ||
+		obj.targetMode === 'size_boost'
+			? obj.targetMode
+			: 'specific';
 
 	return {
-		targetMode: obj.targetMode === 'rare_generic' ? 'rare_generic' : 'specific',
+		targetMode,
 		mineralName: asStringOrNull(obj.mineralName) ?? DEFAULT_OPTIMIZER_OPTIONS.mineralName,
 		locationName: asStringOrNull(obj.locationName),
 		minWeightKg: asPositiveNumberOrNull(obj.minWeightKg),
@@ -134,11 +140,23 @@ export function normalizeOptimizerSearchConfig(raw: unknown): OptimizerSearchCon
 		allowPurityRune: asBoolean(obj.allowPurityRune, DEFAULT_OPTIMIZER_OPTIONS.allowPurityRune),
 		includeTotems: asBoolean(obj.includeTotems, DEFAULT_OPTIMIZER_OPTIONS.includeTotems),
 		potionMode: normalizePotionMode(obj.potionMode),
-		minToughness: Math.max(0, Math.floor(asFiniteNumber(obj.minToughness, DEFAULT_OPTIMIZER_OPTIONS.minToughness))),
+		minToughness: Math.max(
+			0,
+			Math.floor(
+				asFiniteNumber(
+					obj.minToughness,
+					targetMode === 'money' ? 0 : DEFAULT_OPTIMIZER_OPTIONS.minToughness
+				)
+			)
+		),
 		solarMagnifier: asBoolean(obj.solarMagnifier, DEFAULT_OPTIMIZER_OPTIONS.solarMagnifier),
 		volcanicEruption: asBoolean(obj.volcanicEruption, DEFAULT_OPTIMIZER_OPTIONS.volcanicEruption),
 		modifierSurge: asBoolean(obj.modifierSurge, DEFAULT_OPTIMIZER_OPTIONS.modifierSurge),
 		isNight: asBoolean(obj.isNight, DEFAULT_OPTIMIZER_OPTIONS.isNight),
+		includeSellBoost: asBoolean(
+			obj.includeSellBoost,
+			DEFAULT_OPTIMIZER_OPTIONS.includeSellBoost ?? true
+		),
 		selectedSavedMuseumId: asStringOrEmpty(obj.selectedSavedMuseumId),
 		compareBuildId: asStringOrEmpty(obj.compareBuildId),
 		rarityFilter: normalizeRarityFilter(obj.rarityFilter)

@@ -13,6 +13,7 @@
 		TRINKETS
 	} from '#lib/data/index.ts';
 	import {
+		BASE_MAX_KG,
 		calculateMineralChances,
 		extractChanceInputsFromBuild,
 		fmtDuration,
@@ -23,8 +24,15 @@
 		getDigQualityMultipliers
 	} from '#lib/engine/chance.ts';
 	import {
+		calculateMoneyAtLocation,
+		expectedWeightKg,
+		extractMoneyInputsFromBuild,
+		getLocationDropTableByName
+	} from '#lib/engine/money.ts';
+	import {
 		isUniqueOnlyEquipment,
-		resolveEquipmentModifiers
+		resolveEquipmentModifiers,
+		resolveSavedBuild
 	} from '#lib/engine/loadout.ts';
 	import {
 		MUSEUM_RARITIES_DESC,
@@ -35,11 +43,12 @@
 	import {
 		DEFAULT_OPTIMIZER_OPTIONS,
 		type OptimizerBans,
+		type OptimizerOptions,
+		type OptimizerTargetMode,
 		createEmptyOptimizerBans,
-		optimizeBuildAndMuseum,
-		type OptimizerOptions
+		optimizeBuildAndMuseum
 	} from '#lib/engine/optimizer.ts';
-	import { ALL_STAT_KEYS, STAT_LABELS, isBoostOnlyStat } from '#lib/engine/stats.ts';
+	import { ALL_STAT_KEYS, STAT_LABELS, calculateBuildStats, isBoostOnlyStat } from '#lib/engine/stats.ts';
 	import { loadSavedBuilds, upsertSavedBuild } from '#lib/storage/builds.ts';
 	import { loadSavedMuseums, upsertSavedMuseum } from '#lib/storage/museums.ts';
 	import {
@@ -180,6 +189,24 @@
 		museumId: string | null;
 	} | null>(null);
 
+	let standardMinToughness = $state(DEFAULT_OPTIMIZER_OPTIONS.minToughness);
+	let moneyMinToughness = $state(0);
+
+	function setTargetMode(nextMode: OptimizerTargetMode): void {
+		if (options.targetMode === nextMode) return;
+		const wasMoney = options.targetMode === 'money';
+		const isMoney = nextMode === 'money';
+		if (wasMoney) {
+			moneyMinToughness = options.minToughness;
+		} else {
+			standardMinToughness = options.minToughness;
+		}
+		options.targetMode = nextMode;
+		if (wasMoney !== isMoney) {
+			options.minToughness = isMoney ? moneyMinToughness : standardMinToughness;
+		}
+	}
+
 	function applySearchConfig(cfg: OptimizerSearchConfig, museumsList: SavedMuseum[], buildsList: SavedBuild[]): void {
 		const {
 			selectedSavedMuseumId: savedMId,
@@ -187,6 +214,9 @@
 			rarityFilter: rFilter,
 			...optRest
 		} = cfg;
+		moneyMinToughness = cfg.targetMode === 'money' ? cfg.minToughness : 0;
+		standardMinToughness =
+			cfg.targetMode === 'money' ? DEFAULT_OPTIMIZER_OPTIONS.minToughness : cfg.minToughness;
 		options = {
 			...DEFAULT_OPTIMIZER_OPTIONS,
 			...optRest,
@@ -314,6 +344,7 @@
 			bans.museumRiderIds,
 			(id) => MUSEUM_RIDERS_BY_ID.get(id)?.name
 		);
+		pushList('locationNames', 'Location', bans.locationNames, (id) => id);
 		return chips;
 	});
 
@@ -421,14 +452,42 @@
 						locations: [{ location: 'Generic', chance_percent: 1 }]
 					});
 		const compSummary = calculateMineralChances(compTarget, compInputs);
+		let compMoneyPerSecond: number | null = null;
+		if (options.targetMode === 'money' && result.money) {
+			const bestTable = getLocationDropTableByName(result.money.bestLocation);
+			if (bestTable) {
+				const compStats = calculateBuildStats(resolveSavedBuild(compBuild, compMuseum), {
+					isNight: options.isNight,
+					solarMagnifier: options.solarMagnifier,
+					modifierSurge: options.modifierSurge
+				});
+				const compMoneyInputs = extractMoneyInputsFromBuild(
+					compBuild,
+					compStats,
+					compInputs,
+					options.includeSellBoost !== false
+				);
+				compMoneyPerSecond = calculateMoneyAtLocation(bestTable, compMoneyInputs).perSecond;
+			}
+		}
 		const compRollsPerSec =
 			compSummary.rollsPerSecond *
 			compSummary.weightInfo.probability *
 			compSummary.modifierInfo.probability;
+		const compSizeBoostPct = compInputs.sizeBoostPct;
+		const compWeightMult = 1 + compSizeBoostPct / 100;
 		const speedup =
-			compRollsPerSec > 0 && result.effectiveRollsPerSecond > 0
-				? result.effectiveRollsPerSecond / compRollsPerSec
-				: null;
+			options.targetMode === 'size_boost'
+				? compWeightMult > 0
+					? (1 + result.chanceInputs.sizeBoostPct / 100) / compWeightMult
+					: null
+				: compMoneyPerSecond !== null && result.money
+					? compMoneyPerSecond > 0 && result.money.perSecond > 0
+						? result.money.perSecond / compMoneyPerSecond
+						: null
+					: compRollsPerSec > 0 && result.effectiveRollsPerSecond > 0
+						? result.effectiveRollsPerSecond / compRollsPerSec
+						: null;
 		const compExpected =
 			!compSummary.isChestOnly && compSummary.pAttempt > 0 && Number.isFinite(compSummary.cycleSeconds)
 				? compSummary.cycleSeconds / compSummary.pAttempt
@@ -437,10 +496,32 @@
 			name: compBuild.name,
 			summary: compSummary,
 			compRollsPerSec,
+			compMoneyPerSecond,
+			compSizeBoostPct,
 			compExpected,
 			speedup
 		};
 	});
+
+	const sizeModeWeights = $derived.by(() => {
+		const avgKg = expectedWeightKg(
+			result.chanceInputs.capacity,
+			result.chanceInputs.sizeBoostPct,
+			result.chanceInputs.solarMagnifier,
+			result.chanceInputs.volcanicEruption
+		);
+		const maxKg = BASE_MAX_KG * result.weightInfo.weightMultiplier;
+		return { avgKg, maxKg };
+	});
+
+	const moneyFormatter = new Intl.NumberFormat('en-US', {
+		notation: 'compact',
+		maximumFractionDigits: 2
+	});
+	function fmtMoney(val: number): string {
+		if (!Number.isFinite(val)) return '—';
+		return `$${moneyFormatter.format(val)}`;
+	}
 
 	interface EquipmentStatBadge {
 		text: string;
@@ -577,6 +658,12 @@
 	}
 
 	function buildDefaultSearchName(): string {
+		if (options.targetMode === 'money') {
+			return options.includeSellBoost === false ? 'Max Money / s • No Sell Boost' : 'Max Money / s';
+		}
+		if (options.targetMode === 'size_boost') {
+			return 'Max Size Boost';
+		}
 		const base =
 			options.targetMode === 'specific'
 				? (options.mineralName ?? 'Mineral')
@@ -597,10 +684,22 @@
 
 	function summarizeSavedSearch(cfg: OptimizerSearchConfig): string {
 		const bits: string[] = [];
-		bits.push(cfg.targetMode === 'specific' ? (cfg.mineralName ?? 'Mineral') : 'Rare');
-		if (cfg.minWeightKg) bits.push(`>=${cfg.minWeightKg}kg`);
-		if (cfg.targetModifierId === 'any') bits.push('Any Mod');
-		else if (cfg.targetModifierId) bits.push(cfg.targetModifierId);
+		bits.push(
+			cfg.targetMode === 'specific'
+				? (cfg.mineralName ?? 'Mineral')
+				: cfg.targetMode === 'money'
+					? 'Max $/s'
+					: cfg.targetMode === 'size_boost'
+						? 'Max Size'
+						: 'Rare'
+		);
+		if (cfg.targetMode !== 'money' && cfg.targetMode !== 'size_boost') {
+			if (cfg.minWeightKg) bits.push(`>=${cfg.minWeightKg}kg`);
+			if (cfg.targetModifierId === 'any') bits.push('Any Mod');
+			else if (cfg.targetModifierId) bits.push(cfg.targetModifierId);
+		} else if (cfg.targetMode === 'money' && cfg.includeSellBoost === false) {
+			bits.push('No Sell Boost');
+		}
 		if (cfg.shovelEnchantMode === 'mastered' || cfg.shovelEnchantMode === 'shovel-mastered') {
 			bits.push('Mastered');
 		}
@@ -730,7 +829,7 @@
 				<div class="mt-2 grid grid-cols-2 gap-1.5 rounded-lg bg-slate-950 p-1">
 					<button
 						type="button"
-						onclick={() => (options.targetMode = 'specific')}
+						onclick={() => setTargetMode('specific')}
 						class={`rounded-md px-3 py-2 text-xs font-semibold transition ${
 							options.targetMode === 'specific'
 								? 'bg-amber-500 text-slate-950'
@@ -741,7 +840,7 @@
 					</button>
 					<button
 						type="button"
-						onclick={() => (options.targetMode = 'rare_generic')}
+						onclick={() => setTargetMode('rare_generic')}
 						class={`rounded-md px-3 py-2 text-xs font-semibold transition ${
 							options.targetMode === 'rare_generic'
 								? 'bg-amber-500 text-slate-950'
@@ -750,7 +849,58 @@
 					>
 						Rare Minerals (Generic)
 					</button>
+					<button
+						type="button"
+						onclick={() => setTargetMode('money')}
+						class={`rounded-md px-3 py-2 text-xs font-semibold transition ${
+							options.targetMode === 'money'
+								? 'bg-amber-500 text-slate-950'
+								: 'text-slate-300 hover:text-white'
+						}`}
+					>
+						Max Money / s
+					</button>
+					<button
+						type="button"
+						onclick={() => setTargetMode('size_boost')}
+						class={`rounded-md px-3 py-2 text-xs font-semibold transition ${
+							options.targetMode === 'size_boost'
+								? 'bg-amber-500 text-slate-950'
+								: 'text-slate-300 hover:text-white'
+						}`}
+					>
+						Max Size Boost
+					</button>
 				</div>
+				{#if options.targetMode === 'money'}
+					<div class="mt-2.5 space-y-2.5 rounded-lg border border-slate-800 bg-slate-950/60 p-3">
+						<p class="text-[11px] leading-relaxed text-slate-400">
+							Maximizes expected $ / second across all unbanned locations using √Capacity ×
+							1.08 ores/pan (capped at 20 with Mass Reactor), 25/25/50 Luck order-statistics,
+							Weight, Modifiers, and Sell Boost.
+						</p>
+						<label class="flex items-start gap-2 text-xs text-slate-200">
+							<input
+								type="checkbox"
+								checked={options.includeSellBoost !== false}
+								onchange={(e) =>
+									(options.includeSellBoost = (e.currentTarget as HTMLInputElement).checked)}
+								class="mt-0.5 accent-amber-400"
+							/>
+							<span>
+								Apply Sell Boost (sell with this build)
+								<span class="block text-[11px] text-slate-400">
+									Turn off if you swap to a separate Sell loadout before selling.
+								</span>
+							</span>
+						</label>
+					</div>
+				{:else if options.targetMode === 'size_boost'}
+					<p class="mt-2 text-[11px] leading-relaxed text-slate-400">
+						Maximizes total Size Boost % across Pan Enchant, Equipment, Mutations, Museum, and
+						optional Potions/Totems (tie-breaks by panning speed &amp; luck).
+					</p>
+				{/if}
 			</div>
 
 			{#if options.targetMode === 'specific'}
@@ -832,6 +982,7 @@
 			{/if}
 
 			<!-- Weight & Modifier Filters -->
+			{#if options.targetMode !== 'money' && options.targetMode !== 'size_boost'}
 			<div class="space-y-3 border-t border-slate-800/80 pt-4">
 				<h3 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
 					Weight &amp; Modifier Constraints
@@ -898,6 +1049,7 @@
 					</select>
 				</div>
 			</div>
+			{/if}
 
 			<!-- Equipment Options -->
 			<div class="space-y-3 border-t border-slate-800/80 pt-4">
@@ -1127,18 +1279,24 @@
 				{#if options.optimizeRunes}
 					<label
 						class={`ml-5 flex items-center gap-2 text-xs ${
-							options.targetModifierId !== null ? 'text-slate-500' : 'text-slate-300'
+							options.targetMode !== 'money' &&
+							options.targetMode !== 'size_boost' &&
+							options.targetModifierId !== null
+								? 'text-slate-500'
+								: 'text-slate-300'
 						}`}
 					>
 						<input
 							type="checkbox"
 							bind:checked={options.allowPurityRune}
-							disabled={options.targetModifierId !== null}
+							disabled={options.targetMode !== 'money' &&
+								options.targetMode !== 'size_boost' &&
+								options.targetModifierId !== null}
 							class="accent-amber-400"
 						/>
 						<span>
 							Allow Purity Rune
-							{#if options.targetModifierId !== null}
+							{#if options.targetMode !== 'money' && options.targetMode !== 'size_boost' && options.targetModifierId !== null}
 								<span class="text-[11px] text-amber-300/90">(disabled for target modifier)</span>
 							{/if}
 						</span>
@@ -1279,6 +1437,182 @@
 			{/if}
 
 			<!-- Hero KPI Strip -->
+			{#if options.targetMode === 'money'}
+				{#if result.money}
+				<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+					<div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-emerald-300 uppercase">
+							Money / second
+						</p>
+						<p class="mt-1 font-mono text-xl font-bold text-white">
+							{fmtMoney(result.money.perSecond)} / s
+						</p>
+						<p class="mt-0.5 text-[11px] text-emerald-200/80">
+							{fmtMoney(result.money.perMinute)} / min • {fmtMoney(result.money.perHour)} / hour
+						</p>
+					</div>
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+						<div class="flex items-center justify-between gap-2">
+							<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+								Best Location
+							</p>
+							<button
+								type="button"
+								title={`Ban location ${result.money.bestLocation}`}
+								onclick={() => banItem('locationNames', result.money!.bestLocation)}
+								class="rounded border border-slate-700 bg-slate-950 px-1.5 py-0.5 text-[10px] font-medium text-slate-400 transition hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-rose-300"
+							>
+								Ban
+							</button>
+						</div>
+						<p class="mt-1 truncate font-mono text-lg font-bold text-amber-300">
+							{result.money.bestLocation}
+						</p>
+						{#if result.money.destroyedByMassReactor > 0}
+							<p class="mt-0.5 text-[11px] text-amber-300">
+								Mass Reactor: {result.money.keptOresPerPan.toFixed(0)} / {result.money.rawOresPerPan.toFixed(1)} ores kept • Avg {fmtMoney(result.money.avgValuePerKg)}/kg
+							</p>
+						{:else}
+							<p class="mt-0.5 text-[11px] text-slate-400">
+								Avg {fmtMoney(result.money.avgValuePerKg)}/kg • {result.money.keptOresPerPan.toFixed(1)} ores/pan
+							</p>
+						{/if}
+					</div>
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+							Per Pan
+						</p>
+						<p class="mt-1 font-mono text-lg font-bold text-white">
+							{fmtMoney(result.money.perPan)}
+						</p>
+						<p class="mt-0.5 text-[11px] text-slate-400">
+							{result.chanceInputs.timeMethod === 'autopan' ? 'Autopan' : 'Sand'}:
+							{#if Number.isFinite(result.money.cycleSeconds) && result.money.cycleSeconds > 0}
+								{result.money.cycleSeconds.toFixed(2)}s • {(60 / result.money.cycleSeconds).toFixed(1)} pan/min • {result.money.oresPerSecond.toFixed(1)} ores/s
+							{:else}
+								—
+							{/if}
+						</p>
+					</div>
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+							Value Multipliers
+						</p>
+						<p class="mt-1 font-mono text-lg font-bold text-sky-300">
+							{result.money.expectedWeightKg.toFixed(2)} kg · {result.money.expectedModifierMultiplier.toFixed(2)}× Mod{#if options.includeSellBoost !== false} · {result.money.sellMultiplier.toFixed(2)}× Sell{/if}
+						</p>
+						<p class="mt-0.5 text-[11px] text-slate-400">
+							Size +{result.chanceInputs.sizeBoostPct}% • Mod +{result.chanceInputs.modifierBoostPct}%{#if options.includeSellBoost !== false} • Sell +{Math.round(result.stats.sellBoost.final * 100)}%{/if}
+						</p>
+					</div>
+				</div>
+
+				<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+					<h3 class="text-xs font-semibold tracking-wider text-slate-400 uppercase">
+						Best Locations for this Build
+					</h3>
+					<div class="mt-2 overflow-x-auto">
+						<table class="w-full min-w-[34rem] text-left text-xs">
+							<thead class="text-slate-500">
+								<tr>
+									<th class="py-1 pr-3 font-medium">Location</th>
+									<th class="py-1 pr-3 text-right font-medium">$ / sec</th>
+									<th class="py-1 pr-3 text-right font-medium">Avg $ / kg</th>
+									<th class="py-1 pr-3 font-medium">Main Income</th>
+									<th class="py-1 text-right font-medium">Filter</th>
+								</tr>
+							</thead>
+							<tbody>
+								{#each result.money.locations as loc, i}
+									<tr class="border-t border-slate-800/70">
+										<td class="py-1.5 pr-3 text-slate-200">
+											{loc.location}
+											{#if i === 0}
+												<span class="ml-1 rounded bg-emerald-500/20 px-1.5 py-0.5 text-[10px] text-emerald-300">best</span>
+											{/if}
+										</td>
+										<td class="py-1.5 pr-3 text-right font-mono text-amber-300">
+											{fmtMoney(loc.perSecond)}
+										</td>
+										<td class="py-1.5 pr-3 text-right font-mono text-slate-300">
+											{fmtMoney(loc.avgValuePerKg)}
+										</td>
+										<td class="py-1.5 pr-3 text-slate-400">
+											{loc.topMinerals.map((m) => `${m.mineral} ${m.sharePct.toFixed(0)}%`).join(', ')}
+										</td>
+										<td class="py-1.5 text-right">
+											<button
+												type="button"
+												onclick={() => banItem('locationNames', loc.location)}
+												class="rounded border border-slate-700 bg-slate-950 px-2 py-0.5 text-[11px] text-slate-400 transition hover:border-rose-500/40 hover:bg-rose-500/10 hover:text-rose-300"
+											>
+												Ban
+											</button>
+										</td>
+									</tr>
+								{/each}
+							</tbody>
+						</table>
+					</div>
+				</div>
+				{:else}
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-xs text-slate-400">
+						No unbanned panning locations available. Remove a Location ban above to calculate money / second.
+					</div>
+				{/if}
+			{:else if options.targetMode === 'size_boost'}
+				<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+					<div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-emerald-300 uppercase">
+							Total Size Boost
+						</p>
+						<p class="mt-1 font-mono text-xl font-bold text-white">
+							+{result.chanceInputs.sizeBoostPct.toLocaleString('en-US')}%
+						</p>
+						<p class="mt-0.5 text-[11px] text-emerald-200/80">
+							Weight mult: {result.weightInfo.weightMultiplier.toFixed(2)}×
+						</p>
+					</div>
+
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+							Average Ore Weight
+						</p>
+						<p class="mt-1 font-mono text-lg font-bold text-amber-300">
+							{sizeModeWeights.avgKg.toFixed(2)} kg
+						</p>
+						<p class="mt-0.5 text-[11px] text-slate-400">
+							Max possible: {sizeModeWeights.maxKg.toFixed(1)} kg (2.8 kg base)
+						</p>
+					</div>
+
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+							Rolls &amp; Pan Cycle
+						</p>
+						<p class="mt-1 font-mono text-lg font-bold text-white">
+							{result.chanceInputs.timeMethod === 'autopan' ? 'Autopan' : 'Sand'}:
+							{getCycleSeconds(result.chanceInputs).toFixed(2)}s
+						</p>
+						<p class="mt-0.5 text-[11px] text-slate-400">
+							Luck {Math.round(result.chanceInputs.luck).toLocaleString('en-US')} • Cap
+							{Math.round(result.chanceInputs.capacity).toLocaleString('en-US')}
+						</p>
+					</div>
+
+					<div class="rounded-xl border border-slate-800 bg-slate-900/70 p-4">
+						<p class="text-[11px] font-semibold tracking-wider text-slate-400 uppercase">
+							Effective Rolls / sec
+						</p>
+						<p class="mt-1 font-mono text-lg font-bold text-sky-300">
+							{result.effectiveRollsPerSecond.toFixed(1)} / s
+						</p>
+						<p class="mt-0.5 text-[11px] text-slate-400">
+							Best panning speed at max Size Boost
+						</p>
+					</div>
+				</div>
+			{:else}
 			<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
 				<div class="rounded-xl border border-emerald-500/30 bg-emerald-500/10 p-4">
 					<p class="text-[11px] font-semibold tracking-wider text-emerald-300 uppercase">
@@ -1373,6 +1707,7 @@
 					</p>
 				</div>
 			</div>
+			{/if}
 
 			<!-- Comparison Banner -->
 			{#if compareStatsSummary}
@@ -1386,6 +1721,12 @@
 								T50 {fmtDuration(compareStatsSummary.summary.t50)} → {fmtDuration(result.t50Seconds)}
 								(Expected {fmtDuration(compareStatsSummary.compExpected)} →
 								{fmtDuration(result.expectedTimeSeconds)})
+							{:else if options.targetMode === 'money' && result.money && compareStatsSummary.compMoneyPerSecond !== null}
+								{fmtMoney(compareStatsSummary.compMoneyPerSecond)}/s →
+								{fmtMoney(result.money.perSecond)}/s
+							{:else if options.targetMode === 'size_boost'}
+								+{compareStatsSummary.compSizeBoostPct.toLocaleString('en-US')}% →
+								+{result.chanceInputs.sizeBoostPct.toLocaleString('en-US')}%
 							{:else}
 								{compareStatsSummary.compRollsPerSec.toFixed(1)}/s →
 								{result.effectiveRollsPerSecond.toFixed(1)}/s
@@ -1400,9 +1741,15 @@
 									: 'bg-rose-500/20 text-rose-300'
 							}`}
 						>
-							{compareStatsSummary.speedup >= 1
-								? `${compareStatsSummary.speedup.toFixed(2)}× faster`
-								: `${(1 / compareStatsSummary.speedup).toFixed(2)}× slower`}
+							{#if options.targetMode === 'size_boost'}
+								{compareStatsSummary.speedup >= 1
+									? `${compareStatsSummary.speedup.toFixed(2)}× heavier`
+									: `${(1 / compareStatsSummary.speedup).toFixed(2)}× smaller`}
+							{:else}
+								{compareStatsSummary.speedup >= 1
+									? `${compareStatsSummary.speedup.toFixed(2)}× faster`
+									: `${(1 / compareStatsSummary.speedup).toFixed(2)}× slower`}
+							{/if}
 						</span>
 					{/if}
 				</div>

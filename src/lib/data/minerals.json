@@ -199,7 +199,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 2.8339
 				}
-			]
+			],
+			"pricePerKg": 3500
 		},
 		{
 			"mineral": "Blue Ice",
@@ -225,7 +226,8 @@
 					"location": "The Void",
 					"chance_percent": 18.1132
 				}
-			]
+			],
+			"pricePerKg": 1500
 		},
 		{
 			"mineral": "Copper",
@@ -295,7 +297,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 8.5018
 				}
-			]
+			],
+			"pricePerKg": 800
 		},
 		{
 			"mineral": "Gold",
@@ -413,7 +416,8 @@
 					"location": "The Void",
 					"chance_percent": 18.1132
 				}
-			]
+			],
+			"pricePerKg": 1000
 		},
 		{
 			"mineral": "Obsidian",
@@ -451,7 +455,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 19.2707
 				}
-			]
+			],
+			"pricePerKg": 3000
 		},
 		{
 			"mineral": "Pearl",
@@ -477,7 +482,8 @@
 					"location": "Fortune River Delta",
 					"chance_percent": 10.9432
 				}
-			]
+			],
+			"pricePerKg": 5000
 		},
 		{
 			"mineral": "Platinum",
@@ -511,7 +517,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 10.1946
 				}
-			]
+			],
+			"pricePerKg": 2000
 		},
 		{
 			"mineral": "Pyrite",
@@ -533,7 +540,8 @@
 					"location": "Rubble Creek Deposits",
 					"chance_percent": 15.6389
 				}
-			]
+			],
+			"pricePerKg": 500
 		},
 		{
 			"mineral": "Seashell",
@@ -555,7 +563,8 @@
 					"location": "The Void",
 					"chance_percent": 18.1132
 				}
-			]
+			],
+			"pricePerKg": 2200
 		},
 		{
 			"mineral": "Silver",
@@ -641,7 +650,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 6.8014
 				}
-			]
+			],
+			"pricePerKg": 700
 		},
 		{
 			"mineral": "Coral",
@@ -667,7 +677,8 @@
 					"location": "The Void",
 					"chance_percent": 1.8113
 				}
-			]
+			],
+			"pricePerKg": 23000
 		},
 		{
 			"mineral": "Electrum",
@@ -725,7 +736,8 @@
 					"location": "The Void",
 					"chance_percent": 1.8113
 				}
-			]
+			],
+			"pricePerKg": 13000
 		},
 		{
 			"mineral": "Glowberry",
@@ -747,7 +759,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 1.3553
 				}
-			]
+			],
+			"pricePerKg": 12000
 		},
 		{
 			"mineral": "Malachite",
@@ -813,7 +826,8 @@
 					"location": "Crystal Cavern River",
 					"chance_percent": 0.08462
 				}
-			]
+			],
+			"pricePerKg": 18000
 		},
 		{
 			"mineral": "Neodymium",
@@ -859,7 +873,8 @@
 					"location": "Crystal Cavern River",
 					"chance_percent": 1.2693
 				}
-			]
+			],
+			"pricePerKg": 10000
 		},
 		{
 			"mineral": "Nickel",
@@ -881,7 +896,8 @@
 					"location": "The Void",
 					"chance_percent": 1.8113
 				}
-			]
+			],
+			"pricePerKg": 6000
 		},
 		{
 			"mineral": "Rock Candy",
@@ -895,7 +911,8 @@
 					"location": "Haunted Creek",
 					"chance_percent": 1.2967
 				}
-			]
+			],
+			"pricePerKg": 15000
 		},
 		{
 			"mineral": "Sapphire",
@@ -941,7 +958,8 @@
 					"location": "Rubble Creek Deposits",
 					"chance_percent": 0.5213
 				}
-			]
+			],
+			"pricePerKg": 25000
 		},
 		{
 			"mineral": "Smoky Quartz",
@@ -1015,7 +1033,8 @@
 					"location": "Crystal Cavern River",
 					"chance_percent": 0.8462
 				}
-			]
+			],
+			"pricePerKg": 16000
 		},
 		{
 			"mineral": "Titanium",
@@ -1065,7 +1084,8 @@
 					"location": "The Void",
 					"chance_percent": 1.8113
 				}
-			]
+			],
+			"pricePerKg": 7500
 		},
 		{
 			"mineral": "Topaz",
@@ -1139,7 +1159,8 @@
 					"location": "Fortune River Delta",
 					"chance_percent": 0.5472
 				}
-			]
+			],
+			"pricePerKg": 14000
 		},
 		{
 			"mineral": "Zircon",
@@ -1165,7 +1186,8 @@
 					"location": "Volcanic Sands",
 					"chance_percent": 1.1382
 				}
-			]
+			],
+			"pricePerKg": 25000
 		},
 		{
 			"mineral": "Amber",
@@ -1187,7 +1209,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 0.04518
 				}
-			]
+			],
+			"pricePerKg": 110000
 		},
 		{
 			"mineral": "Azuralite",
@@ -1233,7 +1256,8 @@
 					"location": "The Void",
 					"chance_percent": 0.09057
 				}
-			]
+			],
+			"pricePerKg": 120000
 		},
 		{
 			"mineral": "Candy Cane",
@@ -1247,7 +1271,8 @@
 					"location": "North Pole",
 					"chance_percent": 0.05586
 				}
-			]
+			],
+			"pricePerKg": 65000
 		},
 		{
 			"mineral": "Diopside",
@@ -1269,7 +1294,8 @@
 					"location": "Fungal Marsh",
 					"chance_percent": 0.05425
 				}
-			]
+			],
+			"pricePerKg": 99000
 		},
 		{
 			"mineral": "Glacial Quartz",
@@ -1295,7 +1321,8 @@
 					"location": "The Void",
 					"chance_percent": 0.09057
 				}
-			]
+			],
+			"pricePerKg": 100000
 		},
 		{
 			"mineral": "Gloomberry",
@@ -1309,7 +1336,8 @@
 					"location": "Abyssal Depths",
 					"chance_percent": 0.0004846
 				}
-			]
+			],
+			"pricePerKg": 80000
 		},
 		{
 			"mineral": "Jade",
@@ -1355,7 +1383,8 @@
 					"location": "The Void",
 					"chance_percent": 0.09057
 				}
-			]
+			],
+			"pricePerKg": 40000
 		},
 		{
 			"mineral": "Lapis Lazuli",
@@ -1417,7 +1446,8 @@
 					"location": "Haunted Creek",
 					"chance_percent": 0.04323
 				}
-			]
+			],
+			"pricePerKg": 40000
 		},
 		{
 			"mineral": "Meteoric Iron",
@@ -1455,7 +1485,8 @@
 					"location": "Rubble Creek Sands",
 					"chance_percent": 0.03281
 				}
-			]
+			],
+			"pricePerKg": 80000
 		},
 		{
 			"mineral": "Natron Salt",
@@ -1473,7 +1504,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 0.5668
 				}
-			]
+			],
+			"pricePerKg": 50000
 		},
 		{
 			"mineral": "Onyx",
@@ -1555,7 +1587,8 @@
 					"location": "Crystal Cavern River",
 					"chance_percent": 0.04231
 				}
-			]
+			],
+			"pricePerKg": 75000
 		},
 		{
 			"mineral": "Peridot",
@@ -1593,7 +1626,8 @@
 					"location": "The Magma Furnace",
 					"chance_percent": 0.05691
 				}
-			]
+			],
+			"pricePerKg": 60000
 		},
 		{
 			"mineral": "Pyrelith",
@@ -1607,7 +1641,8 @@
 					"location": "The Magma Furnace",
 					"chance_percent": 0.2276
 				}
-			]
+			],
+			"pricePerKg": 150000
 		},
 		{
 			"mineral": "Ruby",
@@ -1641,7 +1676,8 @@
 					"location": "Fortune River",
 					"chance_percent": 0.2289
 				}
-			]
+			],
+			"pricePerKg": 30000
 		},
 		{
 			"mineral": "Sandsteel",
@@ -1671,7 +1707,8 @@
 					"location": "Sandstone Stream",
 					"chance_percent": 0.1035
 				}
-			]
+			],
+			"pricePerKg": 27000
 		},
 		{
 			"mineral": "Silver Clamshell",
@@ -1697,7 +1734,8 @@
 					"location": "The Void",
 					"chance_percent": 0.09057
 				}
-			]
+			],
+			"pricePerKg": 50000
 		},
 		{
 			"mineral": "Ammonite Fossil",
@@ -1715,7 +1753,8 @@
 					"location": "The Void",
 					"chance_percent": 0.003623
 				}
-			]
+			],
+			"pricePerKg": 200000
 		},
 		{
 			"mineral": "Ashvein",
@@ -1741,7 +1780,8 @@
 					"location": "The Void",
 					"chance_percent": 0.003623
 				}
-			]
+			],
+			"pricePerKg": 222000
 		},
 		{
 			"mineral": "Aurorite",
@@ -1807,7 +1847,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 0.001356
 				}
-			]
+			],
+			"pricePerKg": 444444
 		},
 		{
 			"mineral": "Blue Faience",
@@ -1825,7 +1866,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.2039
 				}
-			]
+			],
+			"pricePerKg": 300000
 		},
 		{
 			"mineral": "Bone",
@@ -1843,7 +1885,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.005097
 				}
-			]
+			],
+			"pricePerKg": 200000
 		},
 		{
 			"mineral": "Borealite",
@@ -1877,7 +1920,8 @@
 					"location": "The Void",
 					"chance_percent": 0.003623
 				}
-			]
+			],
+			"pricePerKg": 280000
 		},
 		{
 			"mineral": "Cobalt",
@@ -1939,7 +1983,8 @@
 					"location": "Haunted Creek",
 					"chance_percent": 0.001729
 				}
-			]
+			],
+			"pricePerKg": 250000
 		},
 		{
 			"mineral": "Emerald",
@@ -2017,7 +2062,8 @@
 					"location": "Frostbite River",
 					"chance_percent": 0.001931
 				}
-			]
+			],
+			"pricePerKg": 250000
 		},
 		{
 			"mineral": "Glowmoss",
@@ -2043,7 +2089,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 0.0004517
 				}
-			]
+			],
+			"pricePerKg": 175000
 		},
 		{
 			"mineral": "Golden Pearl",
@@ -2061,7 +2108,8 @@
 					"location": "Fortune River Delta",
 					"chance_percent": 0.01641
 				}
-			]
+			],
+			"pricePerKg": 250000
 		},
 		{
 			"mineral": "Iridium",
@@ -2115,7 +2163,8 @@
 					"location": "The Void",
 					"chance_percent": 0.003623
 				}
-			]
+			],
+			"pricePerKg": 155000
 		},
 		{
 			"mineral": "Lightshard",
@@ -2149,7 +2198,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 0.0004518
 				}
-			]
+			],
+			"pricePerKg": 300000
 		},
 		{
 			"mineral": "Mercury",
@@ -2199,7 +2249,8 @@
 					"location": "Timelocked Sanctuary",
 					"chance_percent": 0.001084
 				}
-			]
+			],
+			"pricePerKg": 450000
 		},
 		{
 			"mineral": "Meteoric Gold",
@@ -2229,7 +2280,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.001019
 				}
-			]
+			],
+			"pricePerKg": 240000
 		},
 		{
 			"mineral": "Moonstone",
@@ -2263,7 +2315,8 @@
 					"location": "Astral Caverns",
 					"chance_percent": 0.0026
 				}
-			]
+			],
+			"pricePerKg": 200000
 		},
 		{
 			"mineral": "Opal",
@@ -2325,7 +2378,8 @@
 					"location": "Rubble Creek Sands",
 					"chance_percent": 0.0009376
 				}
-			]
+			],
+			"pricePerKg": 325000
 		},
 		{
 			"mineral": "Osmium",
@@ -2399,7 +2453,8 @@
 					"location": "Rubble Creek Deposits",
 					"chance_percent": 0.001043
 				}
-			]
+			],
+			"pricePerKg": 300000
 		},
 		{
 			"mineral": "Pyronium",
@@ -2425,7 +2480,8 @@
 					"location": "Volcanic Sands",
 					"chance_percent": 0.003415
 				}
-			]
+			],
+			"pricePerKg": 226000
 		},
 		{
 			"mineral": "Scarab Amber",
@@ -2443,7 +2499,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.07646
 				}
-			]
+			],
+			"pricePerKg": 500000
 		},
 		{
 			"mineral": "Selenite",
@@ -2469,7 +2526,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.06117
 				}
-			]
+			],
+			"pricePerKg": 135000
 		},
 		{
 			"mineral": "Aetherite",
@@ -2547,7 +2605,8 @@
 					"location": "Fortune River",
 					"chance_percent": 0.00005723
 				}
-			]
+			],
+			"pricePerKg": 4444444
 		},
 		{
 			"mineral": "Aquamarine",
@@ -2581,7 +2640,8 @@
 					"location": "Frozen Peak",
 					"chance_percent": 0.00001288
 				}
-			]
+			],
+			"pricePerKg": 4000000
 		},
 		{
 			"mineral": "Bismuth",
@@ -2603,7 +2663,8 @@
 					"location": "Fungal Marsh",
 					"chance_percent": 0.0001627
 				}
-			]
+			],
+			"pricePerKg": 2600000
 		},
 		{
 			"mineral": "Canopic Gold",
@@ -2621,7 +2682,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.001529
 				}
-			]
+			],
+			"pricePerKg": 3000000
 		},
 		{
 			"mineral": "Catseye",
@@ -2675,7 +2737,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.00005097
 				}
-			]
+			],
+			"pricePerKg": 2222222
 		},
 		{
 			"mineral": "Cinnabar",
@@ -2701,7 +2764,8 @@
 					"location": "The Magma Furnace",
 					"chance_percent": 0.0001138
 				}
-			]
+			],
+			"pricePerKg": 900000
 		},
 		{
 			"mineral": "Depleted Shard",
@@ -2727,7 +2791,8 @@
 					"location": "Starfall River",
 					"chance_percent": 0.000005425
 				}
-			]
+			],
+			"pricePerKg": 4500000
 		},
 		{
 			"mineral": "Diamond",
@@ -2793,7 +2858,8 @@
 					"location": "Rubble Creek Sands",
 					"chance_percent": 0.0001406
 				}
-			]
+			],
+			"pricePerKg": 1000000
 		},
 		{
 			"mineral": "Dragon Bone",
@@ -2815,7 +2881,8 @@
 					"location": "The Void",
 					"chance_percent": 0.0001811
 				}
-			]
+			],
+			"pricePerKg": 2000000
 		},
 		{
 			"mineral": "Fire Opal",
@@ -2845,7 +2912,8 @@
 					"location": "Sandstone Stream",
 					"chance_percent": 0.00005173
 				}
-			]
+			],
+			"pricePerKg": 1600000
 		},
 		{
 			"mineral": "Firefly Stone",
@@ -2871,7 +2939,8 @@
 					"location": "Overgrown Grotto",
 					"chance_percent": 0.000004668
 				}
-			]
+			],
+			"pricePerKg": 1500000
 		},
 		{
 			"mineral": "Gloomcap",
@@ -2881,7 +2950,8 @@
 					"location": "The Void",
 					"chance_percent": 0.0001811
 				}
-			]
+			],
+			"pricePerKg": 2340000
 		},
 		{
 			"mineral": "Jasper",
@@ -2911,7 +2981,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.0005097
 				}
-			]
+			],
+			"pricePerKg": 380000
 		},
 		{
 			"mineral": "Lost Soul",
@@ -2925,7 +2996,8 @@
 					"location": "The Void",
 					"chance_percent": 0.0001811
 				}
-			]
+			],
+			"pricePerKg": 6666666
 		},
 		{
 			"mineral": "Luminum",
@@ -2963,7 +3035,8 @@
 					"location": "The Void",
 					"chance_percent": 0.0001811
 				}
-			]
+			],
+			"pricePerKg": 1500000
 		},
 		{
 			"mineral": "Nautilus Shell",
@@ -2973,7 +3046,8 @@
 					"location": "Seashell Beach",
 					"chance_percent": 0.0005666
 				}
-			]
+			],
+			"pricePerKg": 2100000
 		},
 		{
 			"mineral": "Palladium",
@@ -3011,7 +3085,8 @@
 					"location": "Fortune River",
 					"chance_percent": 0.00002289
 				}
-			]
+			],
+			"pricePerKg": 500000
 		},
 		{
 			"mineral": "Peppermint Prism",
@@ -3025,7 +3100,8 @@
 					"location": "North Pole",
 					"chance_percent": 0.0001117
 				}
-			]
+			],
+			"pricePerKg": 2800000
 		},
 		{
 			"mineral": "Radium",
@@ -3051,7 +3127,8 @@
 					"location": "Meteor Falls",
 					"chance_percent": 0.00005425
 				}
-			]
+			],
+			"pricePerKg": 1500000
 		},
 		{
 			"mineral": "Rose Gold",
@@ -3109,7 +3186,8 @@
 					"location": "The Void",
 					"chance_percent": 0.0001811
 				}
-			]
+			],
+			"pricePerKg": 500000
 		},
 		{
 			"mineral": "Specterite",
@@ -3143,7 +3221,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 0.0001356
 				}
-			]
+			],
+			"pricePerKg": 2800000
 		},
 		{
 			"mineral": "Starshine",
@@ -3205,7 +3284,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 0.00004518
 				}
-			]
+			],
+			"pricePerKg": 2500000
 		},
 		{
 			"mineral": "Tourmaline",
@@ -3227,7 +3307,8 @@
 					"location": "Frozen Peak",
 					"chance_percent": 0.0001609
 				}
-			]
+			],
+			"pricePerKg": 2888000
 		},
 		{
 			"mineral": "Uranium",
@@ -3253,7 +3334,8 @@
 					"location": "Fortune River",
 					"chance_percent": 0.0001717
 				}
-			]
+			],
+			"pricePerKg": 1500000
 		},
 		{
 			"mineral": "Volcanic Key",
@@ -3267,7 +3349,8 @@
 					"location": "The Magma Furnace",
 					"chance_percent": 0.0005691
 				}
-			]
+			],
+			"pricePerKg": 1500000
 		},
 		{
 			"mineral": "Aetherium",
@@ -3297,7 +3380,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 5.607e-7
 				}
-			]
+			],
+			"pricePerKg": 4444444
 		},
 		{
 			"mineral": "Agate",
@@ -3327,7 +3411,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 4.588e-7
 				}
-			]
+			],
+			"pricePerKg": 3500000
 		},
 		{
 			"mineral": "Chrysoberyl",
@@ -3349,7 +3434,8 @@
 					"location": "Overgrown Grotto",
 					"chance_percent": 0.0000014
 				}
-			]
+			],
+			"pricePerKg": 21000000
 		},
 		{
 			"mineral": "Flarebloom",
@@ -3375,7 +3461,8 @@
 					"location": "The Void",
 					"chance_percent": 0.000002536
 				}
-			]
+			],
+			"pricePerKg": 30000000
 		},
 		{
 			"mineral": "Frostshard",
@@ -3397,7 +3484,8 @@
 					"location": "Frozen Peak",
 					"chance_percent": 0.000001609
 				}
-			]
+			],
+			"pricePerKg": 50000000
 		},
 		{
 			"mineral": "Inferlume",
@@ -3463,7 +3551,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.000001631
 				}
-			]
+			],
+			"pricePerKg": 14000000
 		},
 		{
 			"mineral": "Mythril",
@@ -3497,7 +3586,8 @@
 					"location": "The Void",
 					"chance_percent": 0.000002536
 				}
-			]
+			],
+			"pricePerKg": 20000000
 		},
 		{
 			"mineral": "Painite",
@@ -3539,7 +3629,8 @@
 					"location": "The Void",
 					"chance_percent": 0.000002536
 				}
-			]
+			],
+			"pricePerKg": 10000000
 		},
 		{
 			"mineral": "Pink Diamond",
@@ -3573,7 +3664,8 @@
 					"location": "The Void",
 					"chance_percent": 0.000002536
 				}
-			]
+			],
+			"pricePerKg": 6000000
 		},
 		{
 			"mineral": "Prismara",
@@ -3595,7 +3687,8 @@
 					"location": "Enchanted Ruins",
 					"chance_percent": 7.296e-7
 				}
-			]
+			],
+			"pricePerKg": 25000000
 		},
 		{
 			"mineral": "Radiant Gold",
@@ -3625,7 +3718,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 9.037e-7
 				}
-			]
+			],
+			"pricePerKg": 40000000
 		},
 		{
 			"mineral": "Red Beryl",
@@ -3651,7 +3745,8 @@
 					"location": "Fungal Marsh",
 					"chance_percent": 8.137e-7
 				}
-			]
+			],
+			"pricePerKg": 28000000
 		},
 		{
 			"mineral": "Sky Iron",
@@ -3661,7 +3756,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 0.000017
 				}
-			]
+			],
+			"pricePerKg": 40000000
 		},
 		{
 			"mineral": "Star Garnet",
@@ -3691,7 +3787,8 @@
 					"location": "Rotwood Swamp",
 					"chance_percent": 0.000001084
 				}
-			]
+			],
+			"pricePerKg": 44000000
 		},
 		{
 			"mineral": "Sunstone",
@@ -3713,7 +3810,8 @@
 					"location": "Astral Caverns",
 					"chance_percent": 5.2e-7
 				}
-			]
+			],
+			"pricePerKg": 28000000
 		},
 		{
 			"mineral": "Ushabti",
@@ -3731,7 +3829,8 @@
 					"location": "Pyramid - Tomb Vein 1",
 					"chance_percent": 0.000002549
 				}
-			]
+			],
+			"pricePerKg": 25000000
 		},
 		{
 			"mineral": "Vortessence",
@@ -3781,7 +3880,8 @@
 					"location": "Astral Caverns",
 					"chance_percent": 0.00000156
 				}
-			]
+			],
+			"pricePerKg": 20000000
 		},
 		{
 			"mineral": "Volcanic Core",
@@ -3795,7 +3895,8 @@
 					"location": "The Magma Furnace",
 					"chance_percent": 0.000004553
 				}
-			]
+			],
+			"pricePerKg": 40000000
 		},
 		{
 			"mineral": "Adamantine",
@@ -3805,7 +3906,8 @@
 					"location": "Enchanted Ruins",
 					"chance_percent": 1.167e-7
 				}
-			]
+			],
+			"pricePerKg": 250000000
 		},
 		{
 			"mineral": "Astral Spore",
@@ -3819,7 +3921,8 @@
 					"location": "Timelocked Sanctuary",
 					"chance_percent": 4.34e-8
 				}
-			]
+			],
+			"pricePerKg": 400000000
 		},
 		{
 			"mineral": "Bloodstone",
@@ -3833,7 +3936,8 @@
 					"location": "Timelocked Sanctuary",
 					"chance_percent": 5.425e-8
 				}
-			]
+			],
+			"pricePerKg": 250000000
 		},
 		{
 			"mineral": "Celestium",
@@ -3843,7 +3947,8 @@
 					"location": "Astral Caverns",
 					"chance_percent": 5.1997e-9
 				}
-			]
+			],
+			"pricePerKg": 800000000
 		},
 		{
 			"mineral": "Cryonic Artifact",
@@ -3853,7 +3958,8 @@
 					"location": "Frozen Peak",
 					"chance_percent": 6.438e-7
 				}
-			]
+			],
+			"pricePerKg": 100000000
 		},
 		{
 			"mineral": "Dinosaur Skull",
@@ -3863,7 +3969,8 @@
 					"location": "Infernal Heart",
 					"chance_percent": 0.000001842
 				}
-			]
+			],
+			"pricePerKg": 50000000
 		},
 		{
 			"mineral": "Eternal Lotus",
@@ -3873,7 +3980,8 @@
 					"location": "Pyramid - Tomb Vein 3",
 					"chance_percent": 1.134e-7
 				}
-			]
+			],
+			"pricePerKg": 600000000
 		},
 		{
 			"mineral": "Eternium",
@@ -3883,7 +3991,8 @@
 					"location": "Timelocked Sanctuary",
 					"chance_percent": 2.713e-8
 				}
-			]
+			],
+			"pricePerKg": 555555555
 		},
 		{
 			"mineral": "Eye of the Sands",
@@ -3905,7 +4014,8 @@
 					"location": "Mystic Floodplains",
 					"chance_percent": 3.615e-9
 				}
-			]
+			],
+			"pricePerKg": 350000000
 		},
 		{
 			"mineral": "Feather of Ma'at",
@@ -3917,7 +4027,8 @@
 					"location": "Pharaoh's Tomb",
 					"chance_percent": 0.1334
 				}
-			]
+			],
+			"pricePerKg": 20000000000
 		},
 		{
 			"mineral": "Forgotten Totem",
@@ -3927,7 +4038,8 @@
 					"location": "Seashell Beach",
 					"chance_percent": 2.833e-7
 				}
-			]
+			],
+			"pricePerKg": 42500000
 		},
 		{
 			"mineral": "Key of Life",
@@ -3949,7 +4061,8 @@
 					"location": "Lifespring Oasis",
 					"chance_percent": 1.549e-9
 				}
-			]
+			],
+			"pricePerKg": 1000000000
 		},
 		{
 			"mineral": "Moonspire",
@@ -3959,7 +4072,8 @@
 					"location": "Haunted Creek",
 					"chance_percent": 2.161e-8
 				}
-			]
+			],
+			"pricePerKg": 45000000
 		},
 		{
 			"mineral": "North Star",
@@ -3969,7 +4083,8 @@
 					"location": "North Pole",
 					"chance_percent": 2.792e-7
 				}
-			]
+			],
+			"pricePerKg": 42500000
 		},
 		{
 			"mineral": "Pumpkin Soul",
@@ -3979,7 +4094,8 @@
 					"location": "Haunted Creek",
 					"chance_percent": 4.322e-7
 				}
-			]
+			],
+			"pricePerKg": 40000000
 		},
 		{
 			"mineral": "Singularium",
@@ -3989,7 +4105,8 @@
 					"location": "Starfall River",
 					"chance_percent": 1.085e-8
 				}
-			]
+			],
+			"pricePerKg": 250000000
 		},
 		{
 			"mineral": "Solarium",
@@ -4011,7 +4128,8 @@
 					"location": "Sandstone Stream",
 					"chance_percent": 8.277e-9
 				}
-			]
+			],
+			"pricePerKg": 350000000
 		},
 		{
 			"mineral": "Starpiercer",
@@ -4021,7 +4139,8 @@
 					"location": "Meteor Falls",
 					"chance_percent": 2.17e-8
 				}
-			]
+			],
+			"pricePerKg": 450000000
 		},
 		{
 			"mineral": "Umbrite",
@@ -4031,7 +4150,8 @@
 					"location": "Abyssal Depths",
 					"chance_percent": 1.454e-7
 				}
-			]
+			],
+			"pricePerKg": 180000000
 		},
 		{
 			"mineral": "Vineheart",
@@ -4041,7 +4161,8 @@
 					"location": "Deeproot Spring",
 					"chance_percent": 1.807e-7
 				}
-			]
+			],
+			"pricePerKg": 125000000
 		},
 		{
 			"mineral": "Voidstone",
@@ -4051,7 +4172,8 @@
 					"location": "The Void",
 					"chance_percent": 7.245e-7
 				}
-			]
+			],
+			"pricePerKg": 111111111
 		}
 	]
 }

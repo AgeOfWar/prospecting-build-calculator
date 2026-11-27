@@ -1029,6 +1029,7 @@ async function syncMineralsAndLocations(mineralsPageHtml) {
 		const table = tables[ti];
 		const minIdx = findColumnIndex(table.headers, [/^mineral$/i, /\bname\b/i]);
 		const locIdx = findColumnIndex(table.headers, [/location/i]);
+		const priceIdx = findColumnIndex(table.headers, [/\$\s*\/\s*kg/i, /price/i]);
 		if (minIdx === -1) continue;
 
 		for (const row of table.rows) {
@@ -1040,9 +1041,20 @@ async function syncMineralsAndLocations(mineralsPageHtml) {
 				? decodeURIComponent(wikiUrl.slice(`${WIKI_ORIGIN}/wiki/`.length)).split('#')[0]
 				: null;
 
+			let pricePerKg = null;
+			if (priceIdx !== -1) {
+				const priceCell = row[priceIdx];
+				const sortValue = priceCell?.rawHtml?.match(/data-sort-value="([\d.]+)"/)?.[1];
+				const parsed = sortValue
+					? Number(sortValue)
+					: Number(String(priceCell?.text ?? '').replace(/[^\d.]/g, ''));
+				if (Number.isFinite(parsed) && parsed > 0) pricePerKg = parsed;
+			}
+
 			const entry = {
 				mineral: name,
 				rarity,
+				pricePerKg,
 				pageTitle: pageTitleFromLink,
 				wikiLocations: [],
 				locations: [],
@@ -1209,6 +1221,7 @@ async function syncMineralsAndLocations(mineralsPageHtml) {
 			rarity: entry.rarity,
 			locations: entry.locations
 		};
+		if (entry.pricePerKg !== null) out.pricePerKg = entry.pricePerKg;
 		if (entry.chests.length > 0) out.chests = entry.chests;
 		return out;
 	});

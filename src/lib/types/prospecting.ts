@@ -226,6 +226,8 @@ export interface MineralChestDrop {
 export interface MineralEntry {
 	mineral: string;
 	rarity: MineralRarity | string;
+	/** Base sell value in $ per kg (wiki "$/kg" column). */
+	pricePerKg?: number;
 	locations: MineralLocationChance[];
 	chests?: MineralChestDrop[];
 }

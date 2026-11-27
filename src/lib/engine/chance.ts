@@ -118,8 +118,8 @@ export const DEFAULT_CHANCE_INPUTS: ChanceInputs = {
 
 const MODIFIERS_BY_ID = new Map<string, MineralModifier>(MODIFIERS.map((m) => [m.id, m]));
 
-const BASE_MIN_KG = 0.1;
-const BASE_MAX_KG = 2.8;
+export const BASE_MIN_KG = 0.1;
+export const BASE_MAX_KG = 2.8;
 
 /** Empirical Shake Speed % -> Shakes/second table from the reference calculator. */
 export const SHAKE_SPEED_DATA: ReadonlyArray<readonly [number, number]> = [
