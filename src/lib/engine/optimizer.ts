@@ -184,7 +184,7 @@ export const DEFAULT_OPTIMIZER_OPTIONS: OptimizerOptions = {
 	allowPurityRune: true,
 	includeTotems: false,
 	potionMode: 'none',
-	minToughness: 0,
+	minToughness: 11,
 	solarMagnifier: false,
 	volcanicEruption: false,
 	modifierSurge: false,

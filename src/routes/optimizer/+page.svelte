@@ -156,7 +156,7 @@
 
 	let options = $state<OptimizerOptions>({
 		...DEFAULT_OPTIMIZER_OPTIONS,
-		targetMode: 'specific',
+		targetMode: 'rare_generic',
 		mineralName: 'Singularium'
 	});
 

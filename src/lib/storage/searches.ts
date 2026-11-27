@@ -134,7 +134,7 @@ export function normalizeOptimizerSearchConfig(raw: unknown): OptimizerSearchCon
 		allowPurityRune: asBoolean(obj.allowPurityRune, DEFAULT_OPTIMIZER_OPTIONS.allowPurityRune),
 		includeTotems: asBoolean(obj.includeTotems, DEFAULT_OPTIMIZER_OPTIONS.includeTotems),
 		potionMode: normalizePotionMode(obj.potionMode),
-		minToughness: Math.max(0, Math.floor(asFiniteNumber(obj.minToughness, 0))),
+		minToughness: Math.max(0, Math.floor(asFiniteNumber(obj.minToughness, DEFAULT_OPTIMIZER_OPTIONS.minToughness))),
 		solarMagnifier: asBoolean(obj.solarMagnifier, DEFAULT_OPTIMIZER_OPTIONS.solarMagnifier),
 		volcanicEruption: asBoolean(obj.volcanicEruption, DEFAULT_OPTIMIZER_OPTIONS.volcanicEruption),
 		modifierSurge: asBoolean(obj.modifierSurge, DEFAULT_OPTIMIZER_OPTIONS.modifierSurge),
